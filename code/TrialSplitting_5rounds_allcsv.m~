@@ -2,14 +2,13 @@
 % DONE 
 %MAKE SURE YOU CHANGE THE SUBJECT NUMBER
 
-current = pwd;
 trialsPath = uigetdir; % SELECT THE FOLDER 'raw' OVER HERE
 x=trialsPath;
 cd(trialsPath);
 string = ls;
 list = strsplit(string);
 subjects = list(~cellfun('isempty',list));
-
+current = pwd;
 
 %shimmer has one col of data, so no dot indexing
 
