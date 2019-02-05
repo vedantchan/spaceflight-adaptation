@@ -1,3 +1,8 @@
+
+% General function to plot any 5 plots across the 5 phases of the experiment.
+% Relies on the E4 naming scheme - check the dialog box for the file order 
+% to ensure plots are in the correct order. 
+
 clear; close all;
 
 [file,path] = uigetfile('*.fig','MultiSelect','on');
@@ -24,20 +29,32 @@ ax4 = gca;
 h5 = openfig(file{3},'invisible');
 ax5 = gca;
 
-figstitle = inputdlg('What is the title of this plot?')
+figstitle = inputdlg('What is the title of this file?')
+plottitle = inputdlg('What is the title of this plot?')
 
-h = figure('Position',[1,1,700,300]);
+h = figure('Units','normalized','Position',[0 0 0.75 0.25]);
+pbaspect auto
 
 s1 = subplot(1,6,1);
 title('UP1');
+pbaspect([1 1 1])
+
+
 s2 = subplot(1,6,2);
 title('UP2')
+pbaspect([1 1 1])
+
 s3 = subplot(1,6,3);
 title('P1')
+pbaspect([1 1 1])
+
 s4 = subplot(1,6,4);
 title('P2')
+pbaspect([1 1 1])
+
 s5 = subplot(1,6,5);
 title('REC')
+pbaspect([1 1 1])
 
 fig1 = get(ax1,'children');
 fig2 = get(ax2,'children');
@@ -51,6 +68,7 @@ copyobj(fig3,s3);
 copyobj(fig4,s4);
 copyobj(fig5,s5);
 
+sgtitle(plottitle{1})
 savefig(figstitle{1})
 saveas(gcf,strcat(figstitle{1},'.png'))
 
