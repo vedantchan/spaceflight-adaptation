@@ -20,7 +20,7 @@
 clear all;
 close;
 
-
+origin = pwd;
 %get files
 try
 %load in the data
@@ -32,13 +32,13 @@ catch
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
 
-mainfolder = 'Autocorr_data';
-mkdir(mainfolder);
-answer = inputdlg('Enter the name of the folder which you would like to store the autocorrelation data in. Be sure to specify subject, perturbation type if applicable, and type of data (shimmer, e4, etc))','Folder Name'); 
+msgbox("Select the destination directory for autocorr data")
+mainfolder = uigetdir;
+answer = inputdlg('Enter folder name, e.g. subj1_e4','Folder Name'); 
 
 datafolder = strcat(mainfolder,'/',answer{1});
 mkdir(datafolder);
-
+cd(mainfolder)
 
 %------------------------------------------------------------
 %NOTE: shimmer gives weird stuff 
@@ -158,3 +158,4 @@ if contains(file,'E4')
     end   
 end
 
+cd(origin)
