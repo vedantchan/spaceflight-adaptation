@@ -1,14 +1,14 @@
 
 
-ha1 = openfig('Autocorr_data/ST_autocorr_all/HR_smoothedandresampled.csv_E4_UP1.csv_plot.fig','reuse');
+ha1 = openfig('Autocorr_data/K3_autocorr_all/HR_smoothedandresampled.csv_E4_UP1.csv_plot.fig','reuse');
 axa1 = gca;
-ha2 = openfig('Autocorr_data/ST_autocorr_all/HR_smoothedandresampled.csv_E4_UP2.csv_plot.fig','reuse');
+ha2 = openfig('Autocorr_data/K3_autocorr_all/HR_smoothedandresampled.csv_E4_UP2.csv_plot.fig','reuse');
 axa2 = gca;
-ha3 = openfig('Autocorr_data/ST_autocorr_all/HR_smoothedandresampled.csv_E4_P1.csv_plot.fig','reuse');
+ha3 = openfig('Autocorr_data/K3_autocorr_all/HR_smoothedandresampled.csv_E4_P1.csv_plot.fig','reuse');
 axa3 = gca;
-ha4 = openfig('Autocorr_data/ST_autocorr_all/HR_smoothedandresampled.csv_E4_P2.csv_plot.fig','reuse');
+ha4 = openfig('Autocorr_data/K3_autocorr_all/HR_smoothedandresampled.csv_E4_P2.csv_plot.fig','reuse');
 axa4 = gca;
-ha5 = openfig('Autocorr_data/ST_autocorr_all/HR_smoothedandresampled.csv_E4_Rec.csv_plot.fig','reuse');
+ha5 = openfig('Autocorr_data/K3_autocorr_all/HR_smoothedandresampled.csv_E4_Rec.csv_plot.fig','reuse');
 axa5 = gca;
 
 hb1 = openfig('Autocorr_data/EM_autocorr_all/HR_smoothedandresampled.csv_E4_UP1.csv_plot.fig','reuse');
