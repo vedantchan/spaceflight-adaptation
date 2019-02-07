@@ -22,6 +22,8 @@ close;
 
 origin = pwd;
 %get files
+
+msgbox("Select your data (select by subject)")
 try
 %load in the data
 [file,path] = uigetfile('*.csv','MultiSelect','on'); % 'files' is a cell arrays, each cell containg the name of the file

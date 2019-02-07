@@ -11,8 +11,10 @@ catch
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
 
-d = 'KeyAnalysis_results/';
-mkdir(d);
+d = 'KeyAnalysis_results_other/';
+mkdir(d); %makes directory within wherever you are running this code
+
+
 for i = 1:length(file)
     KEYS = importdata(strcat(path,file{i}));
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
@@ -26,6 +28,10 @@ for i = 1:length(file)
     [numkeystrokespermin, bin] = histcounts(MINS, start:finish);
     average = mean(numkeystrokespermin); %200 something makes sense
 
+    plot(histcounts(MINS, start:finish), 'color', 'red', 'linewidth', 1)
+
+    saveas(gcf, strcat(d,file{i}(1:end-4), 'test.fig'));
+    
 %% mistakes
 
     key = extractBetween(KEYS(2:end), 27, 32);
