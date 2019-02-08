@@ -15,7 +15,7 @@ catch
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
 
-uiwait(msgbox("Select the destination directory for keystroke data"))
+uiwait(msgbox("Select the destination directory for keystroke data (should be 'keystroke')"))
 mainfolder = uigetdir;
 answer = inputdlg('Enter subject folder name, e.g. subj1','Folder Name'); 
 
