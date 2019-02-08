@@ -10,7 +10,7 @@ catch
     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
-
+arr = [];
 d = 'KeyAnalysis_results/';
 mkdir(d);
 for i = 1:length(file)
@@ -40,7 +40,7 @@ for i = 1:length(file)
     
     %new analysis (10/10); calculuates mistakes over total time
     averagemistakes = (mistakes/(finish-start));
-    
+    arr = [arr averagemistakes];
     
     % write into a file; this is one file per person
     

@@ -11,11 +11,11 @@ catch
     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end
-
+file = {file}
 %% Keys splitting
 d = 'Keys_split/';
 mkdir('Keys_split');
-if contains(path,'Key')
+if contains(path,'s')
     for i = 1:length(file)
         data = importdata(strcat(path,file{i}));
         lendata = length(data); 

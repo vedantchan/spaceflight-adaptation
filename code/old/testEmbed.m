@@ -20,7 +20,7 @@ signal = exp(-0.007*x).*cos(0.1*x);
 
 fs = 4; %CHANGE AS NEEDED
 
-%plot(signal);
+plot(signal);
 
 %% Time delay
 
@@ -40,7 +40,7 @@ L = find(acorr < max(acorr)/exp(1),1);
 
 %% embedding
 
-k = 7
+k = 1
 
 delayedsignal = [zeros(1,k*L) signal];
 delayedsignal(length(signal)+1:end) = [];
@@ -49,6 +49,6 @@ delayedsignal(length(signal)+1:end) = [];
 plot(signal(k*L+1:end),delayedsignal(k*L+1:end),'k')
 title(strcat('2-D Time-Delay Embedding: ',subjname))
 xlabel('signal (t)')
-ylabel('signal (t+L)')
+ylabel('signal (t+kL)')
 %savefig(strcat('plots/2d-embeddings/2dEmbed',subjname));
 

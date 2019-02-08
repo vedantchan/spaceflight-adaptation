@@ -20,7 +20,6 @@ for i = 1:length(file)
     filepath = strcat(path,file{i});
     signal = load(filepath);
     signal = signal.';
-    fs = 4; %CHANGE AS NEEDED
     
     %plot(signal);
     
@@ -32,7 +31,7 @@ for i = 1:length(file)
     lagtime = lagtime(mid:end);
     L = find(acorr < max(acorr)/exp(1),1);
     
-    k = 2
+    k = 2 %Change as needed
 
     delayedsignal = [zeros(1,k*L) signal];
     delayedsignal(length(signal)+1:end) = [];
