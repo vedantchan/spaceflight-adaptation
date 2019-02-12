@@ -11,6 +11,7 @@ end
 
 %% Analysis
 cd(path);
+mkdir('MATSfiles');
 for i = 1:length(file)
     signal = load(file{i});
     plot(signal)
@@ -32,16 +33,6 @@ for i = 1:length(file)
     end
     
 end
-
-
-
-
-
-
-
-
-
-
 
 
 
