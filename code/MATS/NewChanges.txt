@@ -1,0 +1,30 @@
+Version 1.1 introduced in 13/1/2019
+-----------------------------------
+The major change in v1.1 is the replacement of the k-d-tree data structure routines of Guy Shechter developed independently and compiled for matlab use. From this version onwards, the Matlab implementation of k-d-tree is used. Thus v1.1 involves no external files and can safely run to any platform.
+
+Changes in the revised version, 23/2/2017. 
+-------------------------------------------
+
+Some changes have been made since this file was updated, but we did not register them. Mainly the changes regard the adaptability of MATS to newer versions of Matlab, as well as to Linux and Mac with regard to external files for k-d-tree data structure called in matlab. It should now run properly to all operating systems and Matlab versions. If users experience any problems running MATS please contact by email: dkugiu@auth.gr 
+
+Changes in the revised version, 26/11/2012. 
+-------------------------------------------
+
+- Bug in function CorrelationDimension.m. The initialization of vector ‘rV’ was done before the loop for lag and then its dimension was changed in the loop, and therefore the program crashed when more than one lag was given in the input (not tested for this!). The initialization of vector ‘rV’ is now moved in the beginning of the loop for lag and it works fine.
+
+- k-d-tree routines for high-dimensional data structure: These routines written in C are now compiled and run also for MACOSX.
+
+Changes in the revised version, 28/4/2012. 
+-------------------------------------------
+
+- Read .mat files (enable reading several matrix variables from one mat file).
+
+- HjorthParameters.m : The code is corrected. Thanks for pointing this goes to Tuan Hoang, PhD Candidate of Information Science, Faculty of ISE, University of Canberra, Australia.
+
+- MeanFrequency.m and EnergyBand.m: A small bug (normalization of frequencies) has been corrected, thanks for pointing this goes to Robert Reijntjes, Leiden University Medical Centre. 
+
+- k-d-tree routines for high-dimensional data structure: These routines written in C are now compiled and run also for 64bit Windows.
+
+- FalseNearestNeighbors.m: A criterion is added for the maximum distance to allow for searching for the nearest neighbor. This change should not alter the results in most practical cases.  
+
+
