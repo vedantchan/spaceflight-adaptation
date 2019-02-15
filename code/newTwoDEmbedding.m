@@ -2,7 +2,7 @@
 
 clear; close all;
 
-[file,path] = uigetfile('*.csv','MultiSelect','on'); % 'files' is a cell arrays, each cell containg the name of the file
+[file,path] = uigetfile('*','MultiSelect','on'); % 'files' is a cell arrays, each cell containg the name of the file
 
 subjname = inputdlg("Subject ID?")
 
@@ -19,6 +19,7 @@ subjname = inputdlg("Subject ID?")
 for i = 1:length(file)
     filepath = strcat(path,file{i});
     signal = load(filepath);
+    signal = signal.tmp;
     signal = signal.';
     
     %plot(signal);

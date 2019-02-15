@@ -35,6 +35,7 @@ for i = 1:length(file)
     [numkeystrokespermin, binedge, binindex] = histcounts(MINS, start:finish);
     
     average = mean(numkeystrokespermin); % 200 something makes sense
+    dlmwrite(strcat(datafolder,'/',file{i}(1:end-4),'speed.csv'),numkeystrokespermin);
     
 %% mistakes
 
