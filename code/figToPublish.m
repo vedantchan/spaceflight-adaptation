@@ -18,3 +18,4 @@ for i = 1:length(file)
    
 end
 
+cd(origin)
