@@ -5,7 +5,8 @@
 
 clear; close all;
 
-uiwait(msgbox("Select your SPLIT data"))
+current = pwd;
+uiwait(msgbox("Select your SPLIT data (one subject)"))
 
 try
 %load in the data
@@ -14,7 +15,7 @@ catch
     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
-
+cd(path)
 uiwait(msgbox("Select the destination directory for keystroke data (should be 'keystroke')"))
 mainfolder = uigetdir;
 answer = inputdlg('Enter subject folder name, e.g. subj1','Folder Name'); 
@@ -105,3 +106,5 @@ for i = 1:length(file)
     saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistakerate.fig')); %already specifies the round type
     
 end
+
+cd(current)

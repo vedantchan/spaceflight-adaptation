@@ -18,8 +18,9 @@ for subjectCount = 1:length(subjects)
     %[file, path] = uigetfile('*.csv');   
     %[file, path] = uigetfile('*.csv', 'Multiselect','on');
     subjectPath = [trialsPath subjects{subjectCount} '/'];
+    
     outPath = [trialsPath, '/', subjects{subjectCount} '/' subjects{subjectCount} 'EmpaticaData/'];
-    zipPath = [trialsPath, '/', subjects{subjectCount} '/' subjects{subjectCount} 'EmpaticaData.zip'];
+    zipPath = [trialsPath, '/''.zip'];
     
     unzip(zipPath,outPath);
     
@@ -47,78 +48,7 @@ for subjectCount = 1:length(subjects)
     %file =
 
 
-
-    if contains(path,'Shim')
-        for i = 1:length(file)
-            if contains(file{i},'HEAD')
-            %if contains(file,'HEAD')
-
-                data = importdata(strcat(path,file{i}));
-                           % data = importdata(strcat(path,file));
-
-                lendata = length(data);
-
-                split_ind = uint64(round(lendata/14))*3;
-
-                %split into perturbed and unperturbed
-                    unpert1 = data(1:split_ind,:);
-        plot(unpert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_UP1','.fig'));
-        unpert2= data(split_ind:split_ind*2,:);
-        plot(unpert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_UP2','.fig'));
-        pert1 = data(split_ind*2:split_ind*3,:);
-        plot(pert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_P1','.fig'));
-        pert2 = data(split_ind*3:split_ind*4,:);
-        plot(pert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_P2','.fig'));
-        recover = data(split_ind*4:end,:);
-        plot(recover)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_Rec','.fig'));
-
-                dlmwrite(strcat(subjects{subjectCount}, '/','ShimHEAD_UP1','.csv'), unpert1,',');  % manually change where you write to
-                dlmwrite(strcat(subjects{subjectCount}, '/','ShimHEAD_UP2','.csv'), unpert2,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_P1','.csv'), pert1,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_P2','.csv'), pert2,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_Rec','.csv'), recover,',');
-            elseif contains(file{i},'BODY')    
-            %elseif contains(file,'BODY')    
-
-                data = importdata(strcat(path,file{i}));
-                            %data = importdata(strcat(path,file));
-
-                lendata = length(data);
-
-                split_ind = uint64(round(lendata/14))*3;
-
-                %split into perturbed and unperturbed
-        unpert1 = data(1:split_ind,:);
-        plot(unpert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_UP1','.fig'));
-        unpert2= data(split_ind:split_ind*2,:);
-        plot(unpert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_UP2','.fig'));
-        pert1 = data(split_ind*2:split_ind*3,:);
-        plot(pert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_P1','.fig'));
-        pert2 = data(split_ind*3:split_ind*4,:);
-        plot(pert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_P2','.fig'));
-        recover = data(split_ind*4:end,:);
-        plot(recover)
-        saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_Rec','.fig'));
-
-
-                dlmwrite(strcat(subjects{subjectCount}, '/','ShimBODY_UP1','.csv'), unpert1,',');  % manually change where you write to
-                dlmwrite(strcat(subjects{subjectCount}, '/','ShimBODY_UP2','.csv'), unpert2,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_P1','.csv'), pert1,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_P2','.csv'), pert2,',');
-                dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_Rec','.csv'), recover,',');
-             end    
-       end
-    end
-
+%% Empatica split
     if contains(path,'Empatica')
        for i = 1:length(file)
         header = 1;
@@ -144,42 +74,133 @@ for subjectCount = 1:length(subjects)
         recover = data.data(split_ind*4:end,:);
         plot(recover)
         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_Rec','.fig'));
-
-
-
-        dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP1','.csv'), unpert1,',');  % manually change where you write to
+        
+        dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP1','.csv'), unpert1,',');
         dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P1','.csv'), pert1,',');
         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P2','.csv'), pert2,',');
         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_Rec','.csv'), recover,',');
 
+%           FOR SUBJECT 3
+%         unpert2 = data.data(1:split_ind,:);
+%         plot(unpert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.fig'));
+%         pert1= data.data(split_ind:split_ind*2,:);
+%         plot(pert1)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P1','.fig'));
+%         pert2 = data.data(split_ind*2:split_ind*3,:);
+%         plot(pert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P2','.fig'));
+%         recover = data.data(split_ind*3:end,:);
+%         plot(recover)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_Rec','.fig'));
+% 
+%         dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
+%         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P1','.csv'), pert1,',');
+%         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P2','.csv'), pert2,',');
+%         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_Rec','.csv'), recover,',');
+
         end
     end
 end
-% Keys split
-if contains(path,'Key')
-    d = 'Keys_split/';
-    mkdir('Keys_split');
-    for i = 1:length(file)
-        data = importdata(strcat(path,file{i},'.txt'));
-        lendata = length(data); 
-        split_ind = uint64(round(lendata/14))*3;
-        
-        conv = string(data);
-    
-        unpert1 = data.data(1:split_ind,:);
-        unpert2= data.data(split_ind:split_ind*2,:);
-        pert1 = data.data(split_ind*2:split_ind*3,:);
-        pert2 = data.data(split_ind*3:split_ind*4,:);
-        recover = data.data(split_ind*4:end,:);
-        
-        dlmwrite(strcat(d,file{i},'_keysplit_UP1.txt'),unpert1);
-        dlmwrite(strcat(d, file{i},'_keysplit_UP2.txt'),unpert2);
-        dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert1);
-        dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert2);
-        dlmwrite(strcat(d, file{i},'_keysplit_Rec.txt'),recover);
 
-    end
-end
+
+%% shimmer split
+%     if contains(path,'Shim')
+%         for i = 1:length(file)
+%             if contains(file{i},'HEAD')
+%             %if contains(file,'HEAD')
+% 
+%                 data = importdata(strcat(path,file{i}));
+%                            % data = importdata(strcat(path,file));
+% 
+%                 lendata = length(data);
+% 
+%                 split_ind = uint64(round(lendata/14))*3;
+% 
+%                 %split into perturbed and unperturbed
+%                     unpert1 = data(1:split_ind,:);
+%         plot(unpert1)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_UP1','.fig'));
+%         unpert2= data(split_ind:split_ind*2,:);
+%         plot(unpert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_UP2','.fig'));
+%         pert1 = data(split_ind*2:split_ind*3,:);
+%         plot(pert1)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_P1','.fig'));
+%         pert2 = data(split_ind*3:split_ind*4,:);
+%         plot(pert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_P2','.fig'));
+%         recover = data(split_ind*4:end,:);
+%         plot(recover)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimHEAD_Rec','.fig'));
+% 
+%                 dlmwrite(strcat(subjects{subjectCount}, '/','ShimHEAD_UP1','.csv'), unpert1,',');  % manually change where you write to
+%                 dlmwrite(strcat(subjects{subjectCount}, '/','ShimHEAD_UP2','.csv'), unpert2,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_P1','.csv'), pert1,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_P2','.csv'), pert2,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimHEAD_Rec','.csv'), recover,',');
+%             elseif contains(file{i},'BODY')    
+%             %elseif contains(file,'BODY')    
+% 
+%                 data = importdata(strcat(path,file{i}));
+%                             %data = importdata(strcat(path,file));
+% 
+%                 lendata = length(data);
+% 
+%                 split_ind = uint64(round(lendata/14))*3;
+% 
+%                 %split into perturbed and unperturbed
+%         unpert1 = data(1:split_ind,:);
+%         plot(unpert1)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_UP1','.fig'));
+%         unpert2= data(split_ind:split_ind*2,:);
+%         plot(unpert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_UP2','.fig'));
+%         pert1 = data(split_ind*2:split_ind*3,:);
+%         plot(pert1)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_P1','.fig'));
+%         pert2 = data(split_ind*3:split_ind*4,:);
+%         plot(pert2)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_P2','.fig'));
+%         recover = data(split_ind*4:end,:);
+%         plot(recover)
+%         saveas(gcf,strcat(subjects{subjectCount}, '/','ShimBODY_Rec','.fig'));
+% 
+% 
+%                 dlmwrite(strcat(subjects{subjectCount}, '/','ShimBODY_UP1','.csv'), unpert1,',');  % manually change where you write to
+%                 dlmwrite(strcat(subjects{subjectCount}, '/','ShimBODY_UP2','.csv'), unpert2,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_P1','.csv'), pert1,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_P2','.csv'), pert2,',');
+%                 dlmwrite(strcat(subjects{subjectCount},'/','ShimBODY_Rec','.csv'), recover,',');
+%              end    
+%        end
+%     end
+
+%% Keys split
+% if contains(path,'Key')
+%     d = 'Keys_split/';
+%     mkdir('Keys_split');
+%     for i = 1:length(file)
+%         data = importdata(strcat(path,file{i},'.txt'));
+%         lendata = length(data); 
+%         split_ind = uint64(round(lendata/14))*3;
+%         
+%         conv = string(data);
+%     
+%         unpert1 = data.data(1:split_ind,:);
+%         unpert2= data.data(split_ind:split_ind*2,:);
+%         pert1 = data.data(split_ind*2:split_ind*3,:);
+%         pert2 = data.data(split_ind*3:split_ind*4,:);
+%         recover = data.data(split_ind*4:end,:);
+%         
+%         dlmwrite(strcat(d,file{i},'_keysplit_UP1.txt'),unpert1);
+%         dlmwrite(strcat(d, file{i},'_keysplit_UP2.txt'),unpert2);
+%         dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert1);
+%         dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert2);
+%         dlmwrite(strcat(d, file{i},'_keysplit_Rec.txt'),recover);
+% 
+%     end
+%end
 
 cd(current);
