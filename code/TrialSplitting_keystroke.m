@@ -16,9 +16,14 @@ if class(file) == 'char'
     file = {file};
 end
 
-uiwait(msgbox("Select the destination directory for split keystroke data. Should be keystroke/subj[ID]"))
+uiwait(msgbox("Select the destination directory for split keystroke data. Should be keystroke/Splitdata"))
 mainfolder = uigetdir;
 cd(mainfolder);
+answer = inputdlg('Enter subject folder name, e.g. subj1','Folder Name'); 
+
+datafolder = strcat(mainfolder,'/',answer{1});
+mkdir(datafolder);
+
 
 for i = 1:length(file)
         data = importdata(strcat(path,file{i}));
@@ -37,11 +42,11 @@ for i = 1:length(file)
         P2 = table(pert2);
         Rec = table(recover);
         
-        writetable(UP1,strcat(mainfolder, '/',file{i}(1:end-4),'_keysplit_UP1.txt')); %end-4 gets rid of the .txt
-        writetable(UP2,strcat(mainfolder, '/',file{i}(1:end-4),'_keysplit_UP2.txt'));
-        writetable(P1,strcat(mainfolder, '/', file{i}(1:end-4),'_keysplit_P1.txt'));
-        writetable(P2,strcat(mainfolder,'/', file{i}(1:end-4),'_keysplit_P2.txt'));
-        writetable(Rec,strcat(mainfolder, '/', file{i}(1:end-4),'_keysplit_REC.txt'));
+        writetable(UP1,strcat(datafolder, '/',file{i}(1:end-4),'_keysplit_UP1.txt')); %end-4 gets rid of the .txt
+        writetable(UP2,strcat(datafolder, '/',file{i}(1:end-4),'_keysplit_UP2.txt'));
+        writetable(P1,strcat(datafolder, '/', file{i}(1:end-4),'_keysplit_P1.txt'));
+        writetable(P2,strcat(datafolder,'/', file{i}(1:end-4),'_keysplit_P2.txt'));
+        writetable(Rec,strcat(datafolder, '/', file{i}(1:end-4),'_keysplit_REC.txt'));
         
        
 end
