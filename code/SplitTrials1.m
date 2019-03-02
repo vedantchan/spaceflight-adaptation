@@ -64,7 +64,7 @@ for subjectCount = 1:length(subjects)
             data = importdata(strcat(outPath,file{i}),delim,header);
              lendata = length(data.data);
             
-            split_ind = uint64(round(lendata/14))*3;
+            split_ind = uint64(round(lendata/11))*3;
             
              %split 
              unpert1 = data.data(1:split_ind,:);
@@ -89,24 +89,24 @@ for subjectCount = 1:length(subjects)
             dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_P2','.csv'), pert2,',');
             dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_Rec','.csv'), recover,',');
             
-            %           FOR SUBJECT 3
-            %         unpert2 = data.data(1:split_ind,:);
-            %         plot(unpert2)
-            %         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.fig'));
-            %         pert1= data.data(split_ind:split_ind*2,:);
-            %         plot(pert1)
-            %         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P1','.fig'));
-            %         pert2 = data.data(split_ind*2:split_ind*3,:);
-            %         plot(pert2)
-            %         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P2','.fig'));
-            %         recover = data.data(split_ind*3:end,:);
-            %         plot(recover)
-            %         saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_Rec','.fig'));
-            % 
-            %         dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
-            %         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P1','.csv'), pert1,',');
-            %         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P2','.csv'), pert2,',');
-            %         dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_Rec','.csv'), recover,',');
+%             %           FOR SUBJECT 3
+%             unpert2 = data.data(1:split_ind,:);
+%             plot(unpert2)
+%             saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_UP2','.fig'));
+%             pert1= data.data(split_ind:split_ind*2,:);
+%             plot(pert1)
+%             saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P1','.fig'));
+%             pert2 = data.data(split_ind*2:split_ind*3,:);
+%             plot(pert2)
+%             saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P2','.fig'));
+%             recover = data.data(split_ind*3:end,:);
+%             plot(recover)
+%             saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_Rec','.fig'));
+%             
+%              dlmwrite(strcat(subjectSplit, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
+%              dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_P1','.csv'), pert1,',');
+%              dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_P2','.csv'), pert2,',');
+%              dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_Rec','.csv'), recover,',');
             
              end
         end
