@@ -5,54 +5,53 @@
 
 clear; close all;
 
-[file,path] = uigetfile('*.fig','MultiSelect','on');
+[prefile,path] = uigetfile('*.fig','MultiSelect','on');
 
-file = sort(file);
+file = epochsort(prefile);
 
 origin = pwd;
 cd(path)
 
-msgbox(strcat('File order is ',file{4},'\n',file{5},'\n',file{1},'\n',file{2},'\n',file{3}))
+msgbox(strcat('File order is ',file{1},'\n',file{2},'\n',file{3},'\n',file{4},'\n',file{5}))
 
-h1 = openfig(file{4},'invisible');
+h1 = openfig(file{1},'invisible');
 ax1 = gca;
 
-h2 = openfig(file{5},'invisible');
+h2 = openfig(file{2},'invisible');
 ax2 = gca;
 
-h3 = openfig(file{1},'invisible');
+h3 = openfig(file{3},'invisible');
 ax3 = gca;
 
-h4 = openfig(file{2},'invisible');
+h4 = openfig(file{4},'invisible');
 ax4 = gca;
 
-h5 = openfig(file{3},'invisible');
+h5 = openfig(file{5},'invisible');
 ax5 = gca;
 
 figstitle = inputdlg('What is the title of this file?');
-plottitle = inputdlg('What is the title of this plot?');
 
 h = figure('Units','normalized','Position',[0 0 0.75 0.25]);
 pbaspect auto
 
-s1 = subplot(1,6,1);
+s1 = subplot(1,5,1);
 title('UP1');
 pbaspect([1 1 1])
 
 
-s2 = subplot(1,6,2);
+s2 = subplot(1,5,2);
 title('UP2')
 pbaspect([1 1 1])
 
-s3 = subplot(1,6,3);
+s3 = subplot(1,5,3);
 title('P1')
 pbaspect([1 1 1])
 
-s4 = subplot(1,6,4);
+s4 = subplot(1,5,4);
 title('P2')
 pbaspect([1 1 1])
 
-s5 = subplot(1,6,5);
+s5 = subplot(1,5,5);
 title('REC')
 pbaspect([1 1 1])
 
@@ -68,8 +67,8 @@ copyobj(fig3,s3);
 copyobj(fig4,s4);
 copyobj(fig5,s5);
 
-sgtitle(plottitle{1})
 savefig(figstitle{1})
 saveas(gcf,strcat(figstitle{1},'.png'))
 
 cd(origin);
+clear;

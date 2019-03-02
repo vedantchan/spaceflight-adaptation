@@ -1,7 +1,7 @@
 function [files] = epochsort(prefiles)
 %sortfiles : Sorts given files by epoch, using identifiers in name. 
 
-files = cell(1,5)
+files = cell(1,5);
 
 for i = 1:length(prefiles)
     
