@@ -12,7 +12,10 @@ file = epochsort(prefile);
 origin = pwd;
 cd(path)
 
-msgbox(strcat('File order is ',file{1},'\n',file{2},'\n',file{3},'\n',file{4},'\n',file{5}))
+uiwait(msgbox(strcat('File order is ',file{1},'\n',file{2},'\n',file{3},'\n',file{4},'\n',file{5})))
+uiwait(msgbox('Where do you want to store this?'))
+mainfolder = uigetdir;
+
 
 h1 = openfig(file{1},'invisible');
 ax1 = gca;
@@ -67,8 +70,8 @@ copyobj(fig3,s3);
 copyobj(fig4,s4);
 copyobj(fig5,s5);
 
-savefig(figstitle{1})
-saveas(gcf,strcat(figstitle{1},'.png'))
+savefig(strcat(mainfolder, '/',figstitle{1}))
+saveas(gcf,strcat(mainfolder,'/',figstitle{1},'.png'))
 
 cd(origin);
-clear;
+close;clear;
