@@ -75,7 +75,7 @@ for i = 1:10
         text(-1000,0.5,string(epochs{j}))
         %pbaspect([5 1 1])
     end
-    title(strcat('Subject ',num2str(i)));
+    title(strcat('Subject - ',num2str(i)));
 end
 
 sgtitle(plottitle)
