@@ -3,25 +3,29 @@
 % need to write for shimmer (10/6)
 %10/6: DONE :)
 
-%
-
 %run for ONE subject; runs on the "split" file (which is done right before
 %this is done. 
 
 clear; close all;
 
+%3/1/19: make better by running on entire folder (maybe?)
+
 %% Get files, make folders
+
+
+uiwait(msgbox("Select your data from the smoothed folder (select by subject)"))
 [file, path] = uigetfile('*.csv','MultiSelect','on');   
 
-mainfolder = 'XCorrelation';
-mkdir(mainfolder);
-
-answer = inputdlg('Enter the name of the folder which you would like to store the cross correlation data in. Be sure to specify subjectand type of data (shimmer, e4, etc))','Folder Name'); 
+uiwait(msgbox("Select the destination directory for xcorr data"))
+mainfolder = uigetdir;
+answer = inputdlg('Enter folder name, e.g. subj1_e4','Folder Name'); 
 
 datafolder = strcat(mainfolder,'/',answer{1});
 mkdir(datafolder);
+cd(mainfolder)
 
 %% Organize by trial type
+
 P1trials = [];
 P2trials = [];
 UP1trials = [];
@@ -61,22 +65,18 @@ mkdir(Recfolder);
 %analyze!
 for run = 1:length(P1trials)-1
     count = 1;
-    
     data1 = importdata(strcat(path,P1trials{run}));
     lengthdata1 = length(data1);
 
     while count < length(P1trials) % needs to be less than because we are using this index to add to the previous index to compare (so total in index will be max length)
         if count+run <= length(P1trials)
             data2 = importdata(strcat(path,P1trials{run+count}));
-        
-            lengthdata2 = length(data2);
-        
+            lengthdata2 = length(data2);  
             if lengthdata1 > lengthdata2
                 range = lengthdata2;
             else
                 range = lengthdata1;
             end
-        
             % perform xcorr
             [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);

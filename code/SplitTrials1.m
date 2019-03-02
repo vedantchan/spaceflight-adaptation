@@ -2,9 +2,11 @@
 % DONE 
 %MAKE SURE YOU CHANGE THE SUBJECT NUMBER
 
+% 3/1/19: writes to a split folder within the raw/subj# folder
+
 current = pwd;
+uiwait(msgbox('Select your raw folder'))
 trialsPath = uigetdir; % SELECT THE FOLDER 'raw' OVER HERE
-x=trialsPath;
 cd(trialsPath);
 string = ls;
 list = strsplit(string);
@@ -17,11 +19,17 @@ for subjectCount = 1:length(subjects)
     %load in the data
     %[file, path] = uigetfile('*.csv');   
     %[file, path] = uigetfile('*.csv', 'Multiselect','on');
-    subjectPath = [trialsPath subjects{subjectCount} '/'];
-    
+    subjectPath = [trialsPath  '/' subjects{subjectCount} '/'];
     outPath = [trialsPath, '/', subjects{subjectCount} '/' subjects{subjectCount} 'EmpaticaData/'];
-    zipPath = [trialsPath, '/''.zip'];
+    zipPath = [trialsPath '/' subjects{subjectCount} '/' subjects{subjectCount} 'Empatica.zip'];
     
+    %change names of zipfile to something better ONLY IF IT HASN'T BEEN
+    %DONE ALREADY
+    zipfile = ls([subjectPath '*.zip']);
+    if contains(zipfile, zipPath) == 0
+        copyfile(zipfile, [subjectPath subjects{subjectCount} 'Empatica.zip'])
+    end
+   
     unzip(zipPath,outPath);
     
     string = ls(outPath);
@@ -42,9 +50,10 @@ for subjectCount = 1:length(subjects)
         end
     end
     
-    path = outPath
-    cd(path)
-    mkdir(subjects{subjectCount})
+%     path = outPath
+%     cd(path)
+    subjectSplit = [subjectPath '/' 'EmpaticaSplit'];
+    mkdir(subjectSplit)
     %file =
 
 
@@ -61,25 +70,25 @@ for subjectCount = 1:length(subjects)
         %split 
         unpert1 = data.data(1:split_ind,:);
         plot(unpert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP1','.fig'));
+        saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_UP1','.fig'));
         unpert2= data.data(split_ind:split_ind*2,:);
         plot(unpert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.fig'));
+        saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_UP2','.fig'));
         pert1 = data.data(split_ind*2:split_ind*3,:);
         plot(pert1)
-        saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P1','.fig'));
+        saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P1','.fig'));
         pert2 = data.data(split_ind*3:split_ind*4,:);
         plot(pert2)
-        saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_P2','.fig'));
+        saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P2','.fig'));
         recover = data.data(split_ind*4:end,:);
         plot(recover)
-        saveas(gcf,strcat(subjects{subjectCount}, '/',file{i},'_','E4_Rec','.fig'));
+        saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_Rec','.fig'));
         
-        dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP1','.csv'), unpert1,',');
-        dlmwrite(strcat(subjects{subjectCount}, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
-        dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P1','.csv'), pert1,',');
-        dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_P2','.csv'), pert2,',');
-        dlmwrite(strcat(subjects{subjectCount},'/',file{i},'_','E4_Rec','.csv'), recover,',');
+        dlmwrite(strcat(subjectSplit, '/',file{i},'_','E4_UP1','.csv'), unpert1,',');
+        dlmwrite(strcat(subjectSplit, '/',file{i},'_','E4_UP2','.csv'), unpert2,',');
+        dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_P1','.csv'), pert1,',');
+        dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_P2','.csv'), pert2,',');
+        dlmwrite(strcat(subjectSplit,'/',file{i},'_','E4_Rec','.csv'), recover,',');
 
 %           FOR SUBJECT 3
 %         unpert2 = data.data(1:split_ind,:);

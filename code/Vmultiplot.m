@@ -29,8 +29,8 @@ ax4 = gca;
 h5 = openfig(file{3},'invisible');
 ax5 = gca;
 
-figstitle = inputdlg('What is the title of this file?')
-plottitle = inputdlg('What is the title of this plot?')
+figstitle = inputdlg('What is the title of this file?');
+plottitle = inputdlg('What is the title of this plot?');
 
 h = figure('Units','normalized','Position',[0 0 0.75 0.25]);
 pbaspect auto

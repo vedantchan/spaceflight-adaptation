@@ -3,12 +3,13 @@
 % This script will autocorrelate any data specified. Time lag will be the
 % entire time interval of the data set. 
 
+%% NOT USED
 % Ljung Box Test will be used to determine autocorrelatedness based on standard p-value significance measures.  Regression will also be used to determine 
 % to determine if the data has a "normal" rate of decay (regression will
 % return some value pertaining to "normalness" (yet to be determined).
 % Regression will probably be exponential decay.
-
 %^^nevermind about any of that
+%%
 
 %naming suggestion: use strfind, get index, use index to index 'path' so
 %you can get the name from the path
@@ -20,22 +21,15 @@
 clear all;
 close;
 
+%3/1/19: make better by running on entire folder (maybe?)
+
 origin = pwd;
 %get files
 
-
-msgbox("Select your data (select by subject)")
-try
-%load in the data
+uiwait(msgbox("Select your data from the smoothed folder (select by subject)"))
 [file,path] = uigetfile('*.csv','MultiSelect','on'); % 'files' is a cell arrays, each cell containg the name of the file
-%for singular files
-%[file,path] = uigetfile('*.csv');
-catch 
-    disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
-    disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
-end    
 
-msgbox("Select the destination directory for autocorr data")
+uiwait(msgbox("Select the destination directory for autocorr data"))
 mainfolder = uigetdir;
 answer = inputdlg('Enter folder name, e.g. subj1_e4','Folder Name'); 
 
