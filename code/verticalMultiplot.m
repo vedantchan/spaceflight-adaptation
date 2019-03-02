@@ -1,6 +1,5 @@
-% General function to plot any 5 plots across the 5 phases of the experiment.
-% Relies on the E4 naming scheme - check the dialog box for the file order 
-% to ensure plots are in the correct order. 
+% General function to plot any 10 plots vertically.
+
 
 clear; close all;
 
