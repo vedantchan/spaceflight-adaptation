@@ -183,31 +183,6 @@ end
 %        end
 %     end
 
-%% Keys split
-% if contains(path,'Key')
-%     d = 'Keys_split/';
-%     mkdir('Keys_split');
-%     for i = 1:length(file)
-%         data = importdata(strcat(path,file{i},'.txt'));
-%         lendata = length(data); 
-%         split_ind = uint64(round(lendata/14))*3;
-%         
-%         conv = string(data);
-%     
-%         unpert1 = data.data(1:split_ind,:);
-%         unpert2= data.data(split_ind:split_ind*2,:);
-%         pert1 = data.data(split_ind*2:split_ind*3,:);
-%         pert2 = data.data(split_ind*3:split_ind*4,:);
-%         recover = data.data(split_ind*4:end,:);
-%         
-%         dlmwrite(strcat(d,file{i},'_keysplit_UP1.txt'),unpert1);
-%         dlmwrite(strcat(d, file{i},'_keysplit_UP2.txt'),unpert2);
-%         dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert1);
-%         dlmwrite(strcat(d, file{i},'_keysplit_P2.txt'),pert2);
-%         dlmwrite(strcat(d, file{i},'_keysplit_Rec.txt'),recover);
-% 
-%     end
-%end
 
 cd(current);
 
