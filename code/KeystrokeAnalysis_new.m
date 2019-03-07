@@ -3,6 +3,9 @@
 % have a separate code that will layer all the avg mistakes/avg speed/etc (any of the singular value data) of 
 % each participant over each other
 
+% 3/1/19: DONE
+% 3/6/19: not done; added mistake percent
+
 clear; close all;
 
 current = pwd;
@@ -36,7 +39,8 @@ for i = 1:length(file)
     [numkeystrokespermin, binedge, binindex] = histcounts(MINS, start:finish);
     
     average = mean(numkeystrokespermin); % 200 something makes sense
-    dlmwrite(strcat(datafolder,'/',file{i}(1:end-4),'speed.csv'),numkeystrokespermin);
+    
+    
     
 %% mistakes
 
@@ -64,22 +68,29 @@ for i = 1:length(file)
         end
     end
     
-    %calculates avg mistake per min
+    %calculates avg mistake per min + mistake/key press freq
     datacount = 1;
-    mistakevector = zeros(1,length(binedge)-1);
+    mistakepermin = zeros(1,length(binedge)-1);
+    mistakepercent = zeros(1,length(binedge)-1);
     for n = 1:length(indicies)
             while datacount <= indicies(n)
                 if er(datacount) == 1
-                    mistakevector(n) = mistakevector(n)+1;
+                    mistakepermin(n) = mistakepermin(n)+1;
                 end
                 datacount = datacount+1;
             end
+            mistakepercent(n) = mistakepermin(n)/numkeystrokespermin(n);
     end
        
     % write into a file; this is one file per person    
-    T = table(average,totalmistakes,averagemistakes);
-    writetable(T,strcat(datafolder, '/',file{i}(1:end-4), '_avg+mistakes+avgcor.csv')); % NEED TO SPECIFY DIRECTORY: this will be determined after the shim data is done (there is one directory per person)
+    Tsingle = table(average,totalmistakes,averagemistakes);
+    writetable(Tsingle,strcat(datafolder, '/',file{i}(1:end-4), '_avg+mistakes+avgcor.csv')); % NEED TO SPECIFY DIRECTORY: this will be determined after the shim data is done (there is one directory per person)
     
+    Tmulti = table(numkeystrokespermin,mistakepercent,mistakepermin);
+    writetable(Tmulti,strcat(datafolder,'/',file{i}(1:end-4),'numkeystroke+mistakefreq+mistakepermin.csv'));
+    
+    %dlmwrite(strcat(datafolder,'/',file{i}(1:end-4),'speed.csv'),numkeystrokespermin);
+
 %% plots
     % would it be easier to put all plots together?
     % no, we want to compare b/w subjects 
@@ -101,10 +112,17 @@ for i = 1:length(file)
     saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistake.fig')); %already specifies the round type
 
     %plot avg mistakes per min
-    plot(1:length(indicies),mistakevector);
+    plot(1:length(indicies),mistakepermin);
     title('Average mistakes per minute')
     saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistakerate.fig')); %already specifies the round type
     
+    %plot mistakes over typing frequency
+    plot(1:length(indicines),mistakepercent);
+    title('Mistake Percentage per minute');
+    saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistakepercent.fig')); 
+    
+    
+
 end
 
 cd(current)
