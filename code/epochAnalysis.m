@@ -124,6 +124,8 @@ savefig('plots/epoch/VAS-subjectcorr.fig')
 makeepochcorrplot(vas,'VAS')
 savefig('plots/epoch/VAS-epochcorr.fig')
 
+makesubjectcorrplot(puzzle,'Puzzle')
+makeepochcorrplot(puzzle,'Puzzle')
 %% plotting functions
 
 function [] = makesubplot(inputtable,name)
