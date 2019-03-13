@@ -70,6 +70,9 @@ vas = [];
 van = [];
 puzzle = [];
 memory=[];
+meanHR=[];
+meanTEMP=[];
+meanEDA=[];
 for i = 1:10
    
     subjname = strcat('Subj',num2str(i));
@@ -86,10 +89,50 @@ for i = 1:10
     subjmemory = trialdata(21:25,subjname);
     memory = [memory,subjmemory];
     
+    subjmeanHR = trialdata(51:55,subjname);
+    meanHR=[meanHR,subjmeanHR];
+    
+    subjmeanTEMP = trialdata(57:61,subjname);
+    meanTEMP = [meanTEMP,subjmeanTEMP];
+    
+    subjmeanEDA = trialdata(63:67,subjname);
+    meanEDA = [meanEDA,subjmeanEDA];
 end
+mkdir('plots/epoch/')
+%% Plot avgs
+
+makeoverlayplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-overlay.fig')
+
+makeoverlayplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-overlay.fig')
+
+makenormplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-normalized.fig')
+
+
+%% Correlate avgs
+
+makesubjectcorrplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-subjcorr.fig')
+
+makesubjectcorrplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-subjcorr.fig')
+
+makesubjectcorrplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-subjcorr.fig')
+
+
+makeepochcorrplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-epochcorr.fig')
+
+makeepochcorrplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-epochcorr.fig')
+
+makeepochcorrplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-epochcorr.fig')
 
 %% Make data plots
-mkdir('plots/epoch/')
 makesubplot(van,"VAN");
 savefig('plots/epoch/VAN-subplot.fig')
 makeoverlayplot(van,"VAN");
@@ -147,7 +190,7 @@ sgtitle(name)
 end
 
 function [] = makenormplot(inputtable,name)
-hold off
+ ;
 figure()
 
 for i = 1:10
@@ -174,7 +217,7 @@ ylim([-0.25 1.25])
 end
 
 function [] = makeoverlayplot(inputtable,name)
-hold off
+ ;
 figure()
 
 for i = 1:10
@@ -200,7 +243,7 @@ end
 
 function[] = makesubjectcorrplot(inputtable,name) 
 
-hold off;
+ ;
 figure()
 array = table2array(inputtable);
 imagesc(corrcoef(array))
@@ -215,10 +258,9 @@ ylabel(cbar,"Correlation Coefficient")
 end
 
 function[] = makeepochcorrplot(inputtable,name)
-hold off;
-figure()
+
 labels={'UP1','UP2','P1','P2','REC'};
-hold off
+
 figure()
 array = table2array(inputtable);
 imagesc(corrcoef(array.'))
