@@ -1,32 +1,19 @@
-%% Description
+%% 3/23/19
 
 % This script will autocorrelate any data specified. Time lag will be the
 % entire time interval of the data set. 
 
-%% NOT USED
-% Ljung Box Test will be used to determine autocorrelatedness based on standard p-value significance measures.  Regression will also be used to determine 
-% to determine if the data has a "normal" rate of decay (regression will
-% return some value pertaining to "normalness" (yet to be determined).
-% Regression will probably be exponential decay.
-%^^nevermind about any of that
-%%
-
-%naming suggestion: use strfind, get index, use index to index 'path' so
-%you can get the name from the path
-
-% THIS TAKES SMOOTHED AND Z-VECTOR DATA, NOT ORIGINAL DATA
+% This takes smoothed and r/w vector data, NOT ORIGINAL DATA
 % Performed on the split trials
 
 %% Script
 clear all;
 close;
 
-%3/1/19: make better by running on entire folder (maybe?)
-
 origin = pwd;
 %get files
 
-uiwait(msgbox("Select your data from the smoothed folder (select by subject)"))
+uiwait(msgbox("Select your data from the smoothed or shimmer folder (select by subject)"))
 [file,path] = uigetfile('*.csv','MultiSelect','on'); % 'files' is a cell arrays, each cell containg the name of the file
 
 uiwait(msgbox("Select the destination directory for autocorr data"))
@@ -42,29 +29,19 @@ cd(mainfolder)
 %------------------------------------------------------------
 
 %% Shimmer Autocorr
-if contains(file, 'Shim')
-    for subjcount = 1:length(file)
-
-%-------------------HEAD ANALYSIS-------------------------------        
-        if contains(file{subjcount},'HEAD') 
-      %if contains(file,'HEAD')
-           headfolder = strcat(datafolder,'/','Head'); % NEED TO INCLUDE THIS IN NAME
-           mkdir(headfolder);
-
-           data = importdata(strcat(path,file{subjcount})); % usually a struct, but if choosing from split data, it is regular bc no header
+if contains(path, 'shimmer', 'IgnoreCase', true)
+    for subjcount = 1:length(file) 
+         data = importdata(strcat(path,file{subjcount})); % usually a struct, but if choosing from split data, it is regular bc no header
            %for singular files
            %data = importdata(strcat(path,file));
            %time = data(:,1); %CHECK: IS THIS INCLUDED IN SMOOTHED DATA: 10/6 NO ITS NOT
-           lin_z = data(:,1);
+           rvec = data(:,2);          
+           [acorr, lagtime] = xcorr(rvec-mean(rvec),'coeff');
+           plot(lagtime, acorr); 
            
-           
-            [acorr, lagtime] = xcorr(lin_z-mean(lin_z),'coeff');
-              plot(acorr); 
-%               [curve, goodness, output] = fit(lagtime, acorr(round(length(acorr)/2):end,1), 'exp1'); 
-%               plot(lagtime,curve); hold off;
-               area = trapz(acorr);
-               areaabs = trapz(abs(acorr));
-              saveas(gcf,strcat(headfolder,'/',file{subjcount},'_plot.fig')); %save autocorr plot 
+           area = trapz(acorr);
+           areaabs = trapz(abs(acorr));
+           saveas(gcf,strcat(headfolder,'/',file{subjcount},'_plot.fig')); %save autocorr plot 
                              %saveas(gcf,strcat(headfolder,'/',file,'_plot.fig')); %save autocorr plot 
 
               T = table(area,areaabs);
@@ -95,8 +72,8 @@ if contains(file, 'Shim')
            data = importdata(strcat(path,file{subjcount})); % usually a struct, but if choosing from split data, it is regular bc no header
            %for singular files
            %data = importdata(strcat(path,file));
-           lin_z = data(:,1);              
-           [acorr, lagtime] = xcorr(lin_z-mean(lin_z),'coeff');
+           rvec = data(:,1);              
+           [acorr, lagtime] = xcorr(rvec-mean(rvec),'coeff');
               
               plot(lagtime,acorr); 
 %               [curve, goodness, output] = fit(lagtime, acorr(round(length(acorr)/2):end,1), 'exp1'); 

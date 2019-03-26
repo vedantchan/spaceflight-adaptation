@@ -1,7 +1,4 @@
 % z vectorization
-
-% run for each subj individually 3/24/19
-
 clear; close all;
 
 uiwait(msgbox('Select your shimmer split folder'))
@@ -9,14 +6,13 @@ trialsPath = uigetdir;
 %store files
 files = dir(fullfile(trialsPath, '*.csv')); %try just putting name together
 
-% uiwait(msgbox("Select the destination directory for shimmer data (should be shimmer folder)"))
-% mainfolder = uigetdir;
-% answer = inputdlg('Enter subject folder name, e.g. subj1','Folder Name'); 
+uiwait(msgbox("Select the destination directory for shimmer data (should be shimmer folder)"))
+mainfolder = uigetdir;
+answer = inputdlg('Enter subject folder name, e.g. subj1','Folder Name'); 
 
-%datafolder = strcat(mainfolder,'/',answer{1});
-%mkdir(datafolder);
-
-cd(trialsPath) % now working in subject folder
+datafolder = strcat(mainfolder,'/',answer{1});
+mkdir(datafolder);
+cd(datafolder) % now working in subject folder
 
 mkdir('Zvector')
 mkdir('Otherplots')
@@ -30,10 +26,8 @@ for i = 1:length(files)
     z = data.data(:,4);
     zvec = sqrt((x.^2) + (y.^2) + (z.^2));    
     plot(data.data(:,1), zvec)
-    saveas(gcf,['Zvector' '/' files(i).name(1:end-4) '_zvec.fig']);
-    dlmwrite(['Zvector' '/' files(i).name(1:end-4) '_zvec.csv'],[data.data(:,1) zvec]);
-    
-    %angular?
+    saveas(gcf,[datafolder '/' 'Zvector' '/' files(i).name(1:end-4) '_zvec.fig']);
+    dlmwrite([datafolder '/' 'Zvector' '/' files(i).name(1:end-4) '_zvec.csv'],[data.data(:,1) zvec]);
     
     %plots
     plot(data.data(:,1), data.data(:,2),'g'); hold on;
@@ -43,7 +37,7 @@ for i = 1:length(files)
     xlabel('Time in ticks (100.21Hz/sec)') 
     ylabel('Accelerometer WR (m/(s^2))') 
     legend('x-plane','y-plane','z-plane')
-    saveas(gcf,['Otherplots' '/' files(i).name(1:end-4) '_lin.fig']);
+    saveas(gcf,[datafolder '/' 'Otherplots' '/' files(i).name(1:end-4) '_lin.fig']);
     
     plot(data.data(:,1), data.data(:,8),'g'); hold on;
     plot(data.data(:,1), data.data(:,9), 'r'); hold on;
@@ -52,7 +46,7 @@ for i = 1:length(files)
     xlabel('Time in ticks (100.21Hz/sec)')
     ylabel('Gyrometer (deg/sec)') 
     legend('x-plane','y-plane','z-plane')
-    saveas(gcf,['Otherplots' '/' files(i).name(1:end-4) '_ang.fig']);
+    saveas(gcf,[datafolder '/' 'Otherplots' '/' files(i).name(1:end-4) '_ang.fig']);
 
 
 
