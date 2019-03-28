@@ -32,7 +32,7 @@ for i = 1:length(file)
     lagtime = lagtime(mid:end);
     L = find(acorr < max(acorr)/exp(1),1);
     
-    k = 2 %Change as needed
+    k = 2; %Change as needed
 
     delayedsignal = [zeros(1,k*L) signal];
     delayedsignal(length(signal)+1:end) = [];
