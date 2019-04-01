@@ -49,9 +49,9 @@ if contains(path, 'shimmer', 'IgnoreCase', true)
            saveas(gcf,strcat(datafolder,'/',file{filecount}(1:end-4),'_plot.fig')); %save autocorr plot 
                       %saveas(gcf,strcat(headfolder,'/',file,'_plot.fig')); %save autocorr plot 
 
-           T = table(area,areaabs,acorr');
-            writetable(T, strcat(datafolder,'/',file{filecount}(1:end-4),'_areas&autocorr.csv'));   
-            
+           T = table(area,areaabs);
+            writetable(T, strcat(datafolder,'/',file{filecount}(1:end-4),'_areas.csv'));   
+            dlmwrite(strcat(datafolder,'/',file{filecount}(1:end-4),'_autocorr.csv'),[lagtime' acorr]);
     end
 end
     
@@ -77,7 +77,7 @@ if contains(file,'E4')
               
               T = table(area,areaabs);
               writetable(T, strcat(datafolder,'/',file{datatypecount},'_areas.csv'));
-              
+              dlmwrite(strcat(datafolder,'/',file{datatypecount},'_autocorrvec.csv'), [lagtime' acorr]), 
                %-----------perform LB test----------
 %              [h_other,pvalue_other,Qstat_other,crit] = lbqtest(data,'Lags',[5,10,15]);
 %                h = [h h_other];

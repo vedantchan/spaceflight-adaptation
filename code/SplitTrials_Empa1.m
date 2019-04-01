@@ -10,7 +10,7 @@ current = pwd;
 uiwait(msgbox('Select your raw folder'))
 trialsPath = uigetdir; % SELECT THE FOLDER 'raw' OVER HERE
 cd(trialsPath);
-string = ls;x
+string = ls;
 list = strsplit(string);
 subjects = list(~cellfun('isempty',list));
 
