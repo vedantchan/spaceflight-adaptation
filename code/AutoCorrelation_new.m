@@ -60,14 +60,7 @@ end
 
 if contains(file,'E4')
     for datatypecount = 1:length(file)        
-        data = importdata(strcat(path,file{datatypecount}));
-        
-%        noautocorrdetected = []; %make a vector of the names of the graphs that accept null hypothesis (that there is no autocorr)
-%        names = [];
-%        h = [];
-%        pvalue = [];
-%        Qstat = [];    
-           %perform autocorr
+        data = importdata(strcat(path,file{datatypecount}));      
             [acorr, lagtime] = xcorr(data-mean(data),'coeff');
               
               plot(lagtime,acorr);
@@ -78,17 +71,6 @@ if contains(file,'E4')
               T = table(area,areaabs);
               writetable(T, strcat(datafolder,'/',file{datatypecount},'_areas.csv'));
               dlmwrite(strcat(datafolder,'/',file{datatypecount},'_autocorrvec.csv'), [lagtime' acorr]), 
-               %-----------perform LB test----------
-%              [h_other,pvalue_other,Qstat_other,crit] = lbqtest(data,'Lags',[5,10,15]);
-%                h = [h h_other];
-%                pvalue = [pvalue pvalue_other];
-%                Qstat = [Qstat Qstat_other];
-%                
-%                if h_other == 0
-%                    noautocorrdetected = [noautocorrdetected file{datatypecount}];
-%                end
-           %---------------------------------------------------------------------------
-        
     end   
 end
 

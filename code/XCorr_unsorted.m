@@ -156,7 +156,7 @@ for run = 1:length(P2trials)-1
 
             T = table(area,areaabs,firstpeak,peak, firsttrough, trough,otherpeaks, othertroughs);
             writetable(T, strcat(datafolder,'/',P2trials{run}(1:5),'_v_',P2trials{run+count}(1:5),'_P2xcor-analysis.csv'));
-           dlmwrite(strcat(datafolder,'/',P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5),'_P2xcor.csv'), xcor);
+           dlmwrite(strcat(datafolder,'/',P2trials{run}(1:5),'_v_',P2trials{run+count}(1:5),'_P2xcor.csv'), xcor);
 
         end
         count=count+1;
@@ -207,7 +207,7 @@ for run = 1:length(UP1trials)-1
             
 
             T = table(area,areaabs,firstpeak,peak, firsttrough, trough,otherpeaks, othertroughs);
-                        dlmwrite(strcat(datafolder,'/',P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5),'_UP1xcor.csv'), xcor);
+                        dlmwrite(strcat(datafolder,'/',UP1trials{run}(1:5),'_v_',UP1trials{run+count}(1:5),'_UP1xcor.csv'), xcor);
             writetable(T, strcat(datafolder,'/',UP1trials{run}(1:5),'_v_',UP1trials{run+count}(1:5),'_UP1xcor-analysis.csv'));
         end
         count=count+1;
@@ -255,7 +255,7 @@ for run = 1:length(UP2trials)-1
             otherpeaks(length(otherpeaks)+1:maxLength) = 0;
             othertroughs(length(othertroughs)+1:maxLength) = 0;
             
-            dlmwrite(strcat(datafolder,'/',P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5),'_UP2xcor.csv'), xcor);
+            dlmwrite(strcat(datafolder,'/',UP2trials{run}(1:5),'_v_',UP2trials{run+count}(1:5),'_UP2xcor.csv'), xcor);
             T = table(area,areaabs,firstpeak,peak, firsttrough, trough,otherpeaks, othertroughs);
             writetable(T, strcat(datafolder,'/',UP2trials{run}(1:5),'_v_',UP2trials{run+count}(1:5),'_UP2xcor-analysis.csv'));
         end
@@ -305,7 +305,7 @@ for run = 1:length(Rectrials)-1
             otherpeaks(length(otherpeaks)+1:maxLength) = 0;
             othertroughs(length(othertroughs)+1:maxLength) = 0;
             
-            dlmwrite(strcat(datafolder,'/',P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5),'_Recxcor.csv'), xcor);
+            dlmwrite(strcat(datafolder,'/',Rectrials{run}(1:5),'_v_',Rectrials{run+count}(1:5),'_Recxcor.csv'), xcor);
             T = table(area,areaabs,firstpeak,peak, firsttrough, trough,otherpeaks, othertroughs);
             writetable(T, strcat(datafolder,'/',Rectrials{run}(1:5),'_v_',Rectrials{run+count}(1:5),'_Recxcor-analysis.csv'));
         end
