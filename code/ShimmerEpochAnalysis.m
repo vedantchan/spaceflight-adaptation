@@ -59,7 +59,7 @@ for subjCount = 1:length(subjlist)
     
     for file = 1:length(splitfiles)
         if contains(splitfiles(file).name,'body','IgnoreCase',true) %TEST FOR EMPTY
-            if contains(splitfiles(file).name,'body_UP1','IgnoreCase',true)
+            if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
@@ -72,7 +72,7 @@ for subjCount = 1:length(subjlist)
                 UP1(1) = rms(x);
                 UP1(2) = rms(y);
                 UP1(3) = rms(z);
-                UP1(4) = sqrt((UP(1).^2) + (UP1(2).^2) + (UP1(3).^2));    %CHECK
+                UP1(4) = sqrt((UP1(1).^2) + (UP1(2).^2) + (UP1(3).^2));    %CHECK
                 UP1(9) = peak2peak(x);
                 UP1(10) = peak2peak(y);
                 UP1(11) = peak2peak(z);
@@ -102,7 +102,7 @@ for subjCount = 1:length(subjlist)
                 UP1(19) = max(wT);
                 UP1(20) = min(wT);
                 
-            elseif contains(splitfiles(file).name,'body_UP2','IgnoreCase',true)
+            elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
@@ -144,7 +144,7 @@ for subjCount = 1:length(subjlist)
                  UP2(16) = peak2peak(wT);
                 UP2(19) = max(wT);
                 UP2(20) = min(wT);
-            elseif contains(splitfiles(file).name,'body_P1','IgnoreCase',true)
+            elseif contains(splitfiles(file).name,'P1','IgnoreCase',true)
                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
@@ -186,7 +186,7 @@ for subjCount = 1:length(subjlist)
                  P1(16) = peak2peak(wT);
                 P1(19) = max(wT);
                 P1(20) = min(wT);
-            elseif contains(splitfiles(file).name,'body_P2','IgnoreCase',true)
+            elseif contains(splitfiles(file).name,'P2','IgnoreCase',true)
                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
@@ -228,7 +228,7 @@ for subjCount = 1:length(subjlist)
                  P2(16) = peak2peak(wT);
                 P2(19) = max(wT);
                 P2(20) = min(wT);
-            elseif contains(splitfiles(file).name,'body_Rec','IgnoreCase',true)
+            elseif contains(splitfiles(file).name,'Rec','IgnoreCase',true)
                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
@@ -276,8 +276,11 @@ for subjCount = 1:length(subjlist)
             writetable(T,strcat(epochfolder, 'body_epochdata.csv'));
             
         elseif contains(splitfiles(file).name,'head','IgnoreCase',true)
+               disp('head')
         elseif contains(splitfiles(file).name,'right_arm','IgnoreCase',true)
+            disp('rarm')
         elseif contains(splitfiles(file).name,'left_arm','IgnoreCase',true)
+            disp('larm')
         end
     end 
 end
