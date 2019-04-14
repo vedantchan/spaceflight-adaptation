@@ -16,10 +16,10 @@ clear all; close;
 % Copy the whole thing over into the raw/subj# folder
 
 % If you get an error running the script, it's probably because the zip
-% file has already been opened or something
+% file has already been opened (or something)
 
-% There are 2 foldersthat will be made when you unzip the files; first, the
-% subj#-selected.zip will zip into a folder called ShimmerData; this
+% There are 2 folders that will be made when you unzip the files; first, the
+% subj#-selected.zip will zip out to a folder called ShimmerData; this
 % contains the SUBFOLDERS that contain the CSV files. (because shimmer hates
 % us.)
 
@@ -36,8 +36,8 @@ clear all; close;
 
 % raw data stays in raw file, everything else will be in shimmer file
 
-%be careful: the data that comes out matches what is coming from box, not
-%from zipped file in the raw folder (not comparable for some reason)
+%be careful: the size of the data that comes out matches what is coming from box, not
+%from zipped file in the raw folder (size is not comparable for some reason)
 
 % I THINK IT WORKS 3/24/19
 %% actual code
@@ -53,7 +53,7 @@ subjects = list(~cellfun('isempty',list));
 %shimmer has one col of data, so no dot indexing
 
 % must copy file as group, make sure file is zipped
-%files are within folder, whichis within the previously zipped folder (2
+%files are within folder, which is within the previously zipped folder (2
 %folder layers within subj# before file)
 
 for subjectCount = 1:length(subjects)

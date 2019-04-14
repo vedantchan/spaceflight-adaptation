@@ -1,1 +1,1543 @@
 .DS_Store
+data/autocorr/subj1_shim/body_P1_rvec_areas.csv
+data/autocorr/subj1_shim/body_P1_rvec_autocorr.csv
+data/autocorr/subj1_shim/body_P1_rvec_plot.fig
+data/autocorr/subj1_shim/body_P1_wvec_areas.csv
+data/autocorr/subj1_shim/body_P1_wvec_autocorr.csv
+data/autocorr/subj1_shim/body_P1_wvec_plot.fig
+data/autocorr/subj1_shim/body_P2_rvec_areas.csv
+data/autocorr/subj1_shim/body_P2_rvec_autocorr.csv
+data/autocorr/subj1_shim/body_P2_rvec_plot.fig
+data/autocorr/subj1_shim/body_P2_wvec_areas.csv
+data/autocorr/subj1_shim/body_P2_wvec_autocorr.csv
+data/autocorr/subj1_shim/body_P2_wvec_plot.fig
+data/autocorr/subj1_shim/body_Rec_rvec_areas.csv
+data/autocorr/subj1_shim/body_Rec_rvec_autocorr.csv
+data/autocorr/subj1_shim/body_Rec_rvec_plot.fig
+data/autocorr/subj1_shim/body_Rec_wvec_areas.csv
+data/autocorr/subj1_shim/body_Rec_wvec_autocorr.csv
+data/autocorr/subj1_shim/body_Rec_wvec_plot.fig
+data/autocorr/subj1_shim/body_UP1_rvec_areas.csv
+data/autocorr/subj1_shim/body_UP1_rvec_autocorr.csv
+data/autocorr/subj1_shim/body_UP1_rvec_plot.fig
+data/autocorr/subj1_shim/body_UP1_wvec_areas.csv
+data/autocorr/subj1_shim/body_UP1_wvec_autocorr.csv
+data/autocorr/subj1_shim/body_UP1_wvec_plot.fig
+data/autocorr/subj1_shim/body_UP2_rvec_areas.csv
+data/autocorr/subj1_shim/body_UP2_rvec_autocorr.csv
+data/autocorr/subj1_shim/body_UP2_rvec_plot.fig
+data/autocorr/subj1_shim/body_UP2_wvec_areas.csv
+data/autocorr/subj1_shim/body_UP2_wvec_autocorr.csv
+data/autocorr/subj1_shim/body_UP2_wvec_plot.fig
+data/autocorr/subj1_shim/right_arm_P1_rvec_areas.csv
+data/autocorr/subj1_shim/right_arm_P1_rvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_P1_rvec_plot.fig
+data/autocorr/subj1_shim/right_arm_P1_wvec_areas.csv
+data/autocorr/subj1_shim/right_arm_P1_wvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_P1_wvec_plot.fig
+data/autocorr/subj1_shim/right_arm_P2_rvec_areas.csv
+data/autocorr/subj1_shim/right_arm_P2_rvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_P2_rvec_plot.fig
+data/autocorr/subj1_shim/right_arm_P2_wvec_areas.csv
+data/autocorr/subj1_shim/right_arm_P2_wvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_P2_wvec_plot.fig
+data/autocorr/subj1_shim/right_arm_Rec_rvec_areas.csv
+data/autocorr/subj1_shim/right_arm_Rec_rvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_Rec_rvec_plot.fig
+data/autocorr/subj1_shim/right_arm_Rec_wvec_areas.csv
+data/autocorr/subj1_shim/right_arm_Rec_wvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_Rec_wvec_plot.fig
+data/autocorr/subj1_shim/right_arm_UP1_rvec_areas.csv
+data/autocorr/subj1_shim/right_arm_UP1_rvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_UP1_rvec_plot.fig
+data/autocorr/subj1_shim/right_arm_UP1_wvec_areas.csv
+data/autocorr/subj1_shim/right_arm_UP1_wvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_UP1_wvec_plot.fig
+data/autocorr/subj1_shim/right_arm_UP2_rvec_areas.csv
+data/autocorr/subj1_shim/right_arm_UP2_rvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_UP2_rvec_plot.fig
+data/autocorr/subj1_shim/right_arm_UP2_wvec_areas.csv
+data/autocorr/subj1_shim/right_arm_UP2_wvec_autocorr.csv
+data/autocorr/subj1_shim/right_arm_UP2_wvec_plot.fig
+data/raw_mercury/subj3_missinground1/ShimmerData/subj2_Session2_body_Calibrated_SD.csv
+data/raw_mercury/subj3_missinground1/ShimmerData/subj2_Session2_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj3_missinground1/ShimmerData/subj2_Session2_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj4/ShimmerData/subj4_Session1_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj4/ShimmerData/subj4_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj4/ShimmerData/subj4_Session1_Body_Calibrated_SD.csv
+data/raw_mercury/subj6/ShimmerData/subj6_Session1_body_Calibrated_SD.csv
+data/raw_mercury/subj6/ShimmerData/subj6_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj6/ShimmerData/subj6_Session1_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/2019-02-15_16.57.16_subj8_SD_Session1_left_arm/subj8_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/2019-02-15_16.58.16_subj8_SD_Session1_head/subj8_Session1_Head_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/2019-02-15_16.59.10_subj8_SD_Session1_right_arm/subj8_Session1_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/subj8_Session1_Head_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/subj8_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj8/ShimmerData/subj8_Session1_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/2019-02-16_15.22.07_subj9_SD_Session1_head/subj9_Session1_head_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/2019-02-16_15.22.07_subj9_SD_Session1_right_arm/subj9_Session1_Right_arm_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/2019-02-16_15.22.32_subj9_SD_Session1_left_arm/subj9_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/subj9_Session1_head_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/subj9_Session1_Left_Arm_Calibrated_SD.csv
+data/raw_mercury/subj9/ShimmerData/subj9_Session1_Right_arm_Calibrated_SD.csv
+data/shimdata_test/subj2/2019-02-01_15.38.21_subj2_SD_Session1_left_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.42.08_subj2_SD_Session1_right_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.43.38_subj2_SD_Session1_body.zip
+data/shimdata_test/subj2/2019-02-01_15.38.21_subj2_SD_Session1_left_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.42.08_subj2_SD_Session1_right_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.43.38_subj2_SD_Session1_body.zip
+data/shimdata_test/subj2/2019-02-01_15.38.21_subj2_SD_Session1_left_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.42.08_subj2_SD_Session1_right_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.43.38_subj2_SD_Session1_body.zip
+data/shimdata_test/subj2/2019-02-01_15.38.21_subj2_SD_Session1_left_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.42.08_subj2_SD_Session1_right_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.43.38_subj2_SD_Session1_body.zip
+data/shimmer/subj9/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj9/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj9/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj9/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj9/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj9/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj9/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj9/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj9/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj9/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj9/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj9/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj9/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj9/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj9/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj9/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj9/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj9/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj9/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj9/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj9/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj9/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj9/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj9/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj9/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj9/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj9/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj9/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj9/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj9/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj9/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj9/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj9/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj9/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj9/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj9/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj9/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj9/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj9/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj9/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj9/Vector/head_UP2_wvec.fig
+data/shimmer/subj9/Vector/head_UP2_wvec.csv
+data/shimmer/subj9/Vector/head_UP2_rvec.fig
+data/shimmer/subj9/Vector/head_UP2_rvec.csv
+data/shimmer/subj9/Vector/head_UP1_wvec.fig
+data/shimmer/subj9/Vector/head_UP1_wvec.csv
+data/shimmer/subj9/Vector/head_UP1_rvec.fig
+data/shimmer/subj9/Vector/head_UP1_rvec.csv
+data/shimmer/subj9/Vector/head_REC_wvec.fig
+data/shimmer/subj9/Vector/head_REC_wvec.csv
+data/shimmer/subj9/Vector/head_REC_rvec.fig
+data/shimmer/subj9/Vector/head_REC_rvec.csv
+data/shimmer/subj9/Vector/head_P2_wvec.fig
+data/shimmer/subj9/Vector/head_P2_wvec.csv
+data/shimmer/subj9/Vector/head_P2_rvec.fig
+data/shimmer/subj9/Vector/head_P2_rvec.csv
+data/shimmer/subj9/Vector/head_P1_wvec.fig
+data/shimmer/subj9/Vector/head_P1_wvec.csv
+data/shimmer/subj9/Vector/head_P1_rvec.fig
+data/shimmer/subj9/Vector/head_P1_rvec.csv
+data/shimmer/subj9/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj9/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj9/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj9/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj9/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj9/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj9/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj9/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj9/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj9/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj9/ShimmerSplit/head_UP2.csv
+data/shimmer/subj9/ShimmerSplit/head_UP1.csv
+data/shimmer/subj9/ShimmerSplit/head_REC.csv
+data/shimmer/subj9/ShimmerSplit/head_P2.csv
+data/shimmer/subj9/ShimmerSplit/head_P1.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_REC_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_REC_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_REC_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_REC_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj9/Resampled for XCorr/head_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj9/Resampled for XCorr/head_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj9/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj9/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj9/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj9/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj9/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj9/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj9/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj9/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj9/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj9/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj9/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj9/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj9/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj9/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj9/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj9/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj9/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj9/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj9/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj9/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj9/Otherplots/head_UP2_lin.fig
+data/shimmer/subj9/Otherplots/head_UP2_ang.fig
+data/shimmer/subj9/Otherplots/head_UP1_lin.fig
+data/shimmer/subj9/Otherplots/head_UP1_ang.fig
+data/shimmer/subj9/Otherplots/head_REC_lin.fig
+data/shimmer/subj9/Otherplots/head_REC_ang.fig
+data/shimmer/subj9/Otherplots/head_P2_lin.fig
+data/shimmer/subj9/Otherplots/head_P2_ang.fig
+data/shimmer/subj9/Otherplots/head_P1_lin.fig
+data/shimmer/subj9/Otherplots/head_P1_ang.fig
+data/shimmer/subj8/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj8/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj8/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj8/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj8/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj8/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj8/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj8/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj8/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj8/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj8/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj8/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj8/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj8/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj8/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj8/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj8/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj8/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj8/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj8/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj8/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj8/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj8/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj8/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj8/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj8/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj8/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj8/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj8/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj8/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj8/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj8/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj8/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj8/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj8/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj8/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj8/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj8/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj8/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj8/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj8/Vector/head_UP2_wvec.fig
+data/shimmer/subj8/Vector/head_UP2_wvec.csv
+data/shimmer/subj8/Vector/head_UP2_rvec.fig
+data/shimmer/subj8/Vector/head_UP2_rvec.csv
+data/shimmer/subj8/Vector/head_UP1_wvec.fig
+data/shimmer/subj8/Vector/head_UP1_wvec.csv
+data/shimmer/subj8/Vector/head_UP1_rvec.fig
+data/shimmer/subj8/Vector/head_UP1_rvec.csv
+data/shimmer/subj8/Vector/head_REC_wvec.fig
+data/shimmer/subj8/Vector/head_REC_wvec.csv
+data/shimmer/subj8/Vector/head_REC_rvec.fig
+data/shimmer/subj8/Vector/head_REC_rvec.csv
+data/shimmer/subj8/Vector/head_P2_wvec.fig
+data/shimmer/subj8/Vector/head_P2_wvec.csv
+data/shimmer/subj8/Vector/head_P2_rvec.fig
+data/shimmer/subj8/Vector/head_P2_rvec.csv
+data/shimmer/subj8/Vector/head_P1_wvec.fig
+data/shimmer/subj8/Vector/head_P1_wvec.csv
+data/shimmer/subj8/Vector/head_P1_rvec.fig
+data/shimmer/subj8/Vector/head_P1_rvec.csv
+data/shimmer/subj8/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj8/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj8/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj8/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj8/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj8/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj8/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj8/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj8/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj8/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj8/ShimmerSplit/head_UP2.csv
+data/shimmer/subj8/ShimmerSplit/head_UP1.csv
+data/shimmer/subj8/ShimmerSplit/head_REC.csv
+data/shimmer/subj8/ShimmerSplit/head_P2.csv
+data/shimmer/subj8/ShimmerSplit/head_P1.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_REC_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_REC_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_REC_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_REC_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj8/Resampled for XCorr/head_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj8/Resampled for XCorr/head_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj8/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj8/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj8/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj8/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj8/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj8/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj8/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj8/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj8/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj8/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj8/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj8/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj8/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj8/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj8/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj8/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj8/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj8/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj8/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj8/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj8/Otherplots/head_UP2_lin.fig
+data/shimmer/subj8/Otherplots/head_UP2_ang.fig
+data/shimmer/subj8/Otherplots/head_UP1_lin.fig
+data/shimmer/subj8/Otherplots/head_UP1_ang.fig
+data/shimmer/subj8/Otherplots/head_REC_lin.fig
+data/shimmer/subj8/Otherplots/head_REC_ang.fig
+data/shimmer/subj8/Otherplots/head_P2_lin.fig
+data/shimmer/subj8/Otherplots/head_P2_ang.fig
+data/shimmer/subj8/Otherplots/head_P1_lin.fig
+data/shimmer/subj8/Otherplots/head_P1_ang.fig
+data/shimmer/subj7/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj7/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj7/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj7/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj7/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj7/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj7/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj7/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj7/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj7/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj7/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj7/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj7/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj7/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj7/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj7/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj7/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj7/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj7/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj7/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj7/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj7/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj7/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj7/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj7/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj7/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj7/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj7/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj7/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj7/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj7/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj7/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj7/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj7/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj7/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj7/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj7/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj7/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj7/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj7/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj7/Vector/head_UP2_wvec.fig
+data/shimmer/subj7/Vector/head_UP2_wvec.csv
+data/shimmer/subj7/Vector/head_UP2_rvec.fig
+data/shimmer/subj7/Vector/head_UP2_rvec.csv
+data/shimmer/subj7/Vector/head_UP1_wvec.fig
+data/shimmer/subj7/Vector/head_UP1_wvec.csv
+data/shimmer/subj7/Vector/head_UP1_rvec.fig
+data/shimmer/subj7/Vector/head_UP1_rvec.csv
+data/shimmer/subj7/Vector/head_REC_wvec.fig
+data/shimmer/subj7/Vector/head_REC_wvec.csv
+data/shimmer/subj7/Vector/head_REC_rvec.fig
+data/shimmer/subj7/Vector/head_REC_rvec.csv
+data/shimmer/subj7/Vector/head_P2_wvec.fig
+data/shimmer/subj7/Vector/head_P2_wvec.csv
+data/shimmer/subj7/Vector/head_P2_rvec.fig
+data/shimmer/subj7/Vector/head_P2_rvec.csv
+data/shimmer/subj7/Vector/head_P1_wvec.fig
+data/shimmer/subj7/Vector/head_P1_wvec.csv
+data/shimmer/subj7/Vector/head_P1_rvec.fig
+data/shimmer/subj7/Vector/head_P1_rvec.csv
+data/shimmer/subj7/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj7/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj7/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj7/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj7/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj7/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj7/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj7/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj7/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj7/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj7/ShimmerSplit/head_UP2.csv
+data/shimmer/subj7/ShimmerSplit/head_UP1.csv
+data/shimmer/subj7/ShimmerSplit/head_REC.csv
+data/shimmer/subj7/ShimmerSplit/head_P2.csv
+data/shimmer/subj7/ShimmerSplit/head_P1.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_REC_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_REC_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_REC_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_REC_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj7/Resampled for XCorr/head_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj7/Resampled for XCorr/head_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj7/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj7/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj7/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj7/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj7/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj7/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj7/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj7/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj7/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj7/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj7/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj7/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj7/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj7/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj7/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj7/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj7/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj7/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj7/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj7/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj7/Otherplots/head_UP2_lin.fig
+data/shimmer/subj7/Otherplots/head_UP2_ang.fig
+data/shimmer/subj7/Otherplots/head_UP1_lin.fig
+data/shimmer/subj7/Otherplots/head_UP1_ang.fig
+data/shimmer/subj7/Otherplots/head_REC_lin.fig
+data/shimmer/subj7/Otherplots/head_REC_ang.fig
+data/shimmer/subj7/Otherplots/head_P2_lin.fig
+data/shimmer/subj7/Otherplots/head_P2_ang.fig
+data/shimmer/subj7/Otherplots/head_P1_lin.fig
+data/shimmer/subj7/Otherplots/head_P1_ang.fig
+data/shimmer/subj6/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj6/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj6/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj6/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj6/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj6/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj6/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj6/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj6/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj6/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj6/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj6/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj6/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj6/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj6/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj6/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj6/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj6/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj6/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj6/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj6/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj6/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj6/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj6/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj6/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj6/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj6/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj6/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj6/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj6/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj6/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj6/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj6/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj6/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj6/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj6/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj6/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj6/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj6/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj6/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj6/Vector/body_UP2_wvec.fig
+data/shimmer/subj6/Vector/body_UP2_wvec.csv
+data/shimmer/subj6/Vector/body_UP2_rvec.fig
+data/shimmer/subj6/Vector/body_UP2_rvec.csv
+data/shimmer/subj6/Vector/body_UP1_wvec.fig
+data/shimmer/subj6/Vector/body_UP1_wvec.csv
+data/shimmer/subj6/Vector/body_UP1_rvec.fig
+data/shimmer/subj6/Vector/body_UP1_rvec.csv
+data/shimmer/subj6/Vector/body_Rec_wvec.fig
+data/shimmer/subj6/Vector/body_Rec_wvec.csv
+data/shimmer/subj6/Vector/body_Rec_rvec.fig
+data/shimmer/subj6/Vector/body_Rec_rvec.csv
+data/shimmer/subj6/Vector/body_P2_wvec.fig
+data/shimmer/subj6/Vector/body_P2_wvec.csv
+data/shimmer/subj6/Vector/body_P2_rvec.fig
+data/shimmer/subj6/Vector/body_P2_rvec.csv
+data/shimmer/subj6/Vector/body_P1_wvec.fig
+data/shimmer/subj6/Vector/body_P1_wvec.csv
+data/shimmer/subj6/Vector/body_P1_rvec.fig
+data/shimmer/subj6/Vector/body_P1_rvec.csv
+data/shimmer/subj6/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj6/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj6/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj6/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj6/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj6/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj6/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj6/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj6/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj6/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj6/ShimmerSplit/body_UP2.csv
+data/shimmer/subj6/ShimmerSplit/body_UP1.csv
+data/shimmer/subj6/ShimmerSplit/body_Rec.csv
+data/shimmer/subj6/ShimmerSplit/body_P2.csv
+data/shimmer/subj6/ShimmerSplit/body_P1.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj6/Resampled for XCorr/body_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj6/Resampled for XCorr/body_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj6/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj6/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj6/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj6/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj6/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj6/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj6/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj6/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj6/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj6/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj6/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj6/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj6/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj6/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj6/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj6/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj6/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj6/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj6/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj6/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj6/Otherplots/body_UP2_lin.fig
+data/shimmer/subj6/Otherplots/body_UP2_ang.fig
+data/shimmer/subj6/Otherplots/body_UP1_lin.fig
+data/shimmer/subj6/Otherplots/body_UP1_ang.fig
+data/shimmer/subj6/Otherplots/body_Rec_lin.fig
+data/shimmer/subj6/Otherplots/body_Rec_ang.fig
+data/shimmer/subj6/Otherplots/body_P2_lin.fig
+data/shimmer/subj6/Otherplots/body_P2_ang.fig
+data/shimmer/subj6/Otherplots/body_P1_lin.fig
+data/shimmer/subj6/Otherplots/body_P1_ang.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_UP2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_UP2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_UP2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_UP2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_UP1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_UP1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_UP1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_UP1_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_Rec_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_Rec_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_Rec_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_Rec_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_P2_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_P2_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_P2_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_P2_rvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_P1_wvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_P1_wvec.csv
+data/shimmer/subj5_missingkeystroke/Vector/body_P1_rvec.fig
+data/shimmer/subj5_missingkeystroke/Vector/body_P1_rvec.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/body_UP2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/body_UP1.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/body_Rec.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/body_P2.csv
+data/shimmer/subj5_missingkeystroke/ShimmerSplit/body_P1.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj5_missingkeystroke/Resampled for XCorr/body_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_UP2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_UP2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_UP1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_UP1_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_Rec_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_Rec_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_P2_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_P2_ang.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_P1_lin.fig
+data/shimmer/subj5_missingkeystroke/Otherplots/body_P1_ang.fig
+data/shimmer/subj4/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj4/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj4/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj4/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj4/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj4/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj4/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj4/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj4/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj4/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj4/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj4/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj4/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj4/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj4/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj4/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj4/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj4/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj4/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj4/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj4/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj4/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj4/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj4/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj4/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj4/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj4/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj4/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj4/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj4/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj4/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj4/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj4/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj4/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj4/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj4/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj4/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj4/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj4/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj4/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj4/Vector/body_UP2_wvec.fig
+data/shimmer/subj4/Vector/body_UP2_wvec.csv
+data/shimmer/subj4/Vector/body_UP2_rvec.fig
+data/shimmer/subj4/Vector/body_UP2_rvec.csv
+data/shimmer/subj4/Vector/body_UP1_wvec.fig
+data/shimmer/subj4/Vector/body_UP1_wvec.csv
+data/shimmer/subj4/Vector/body_UP1_rvec.fig
+data/shimmer/subj4/Vector/body_UP1_rvec.csv
+data/shimmer/subj4/Vector/body_Rec_wvec.fig
+data/shimmer/subj4/Vector/body_Rec_wvec.csv
+data/shimmer/subj4/Vector/body_Rec_rvec.fig
+data/shimmer/subj4/Vector/body_Rec_rvec.csv
+data/shimmer/subj4/Vector/body_P2_wvec.fig
+data/shimmer/subj4/Vector/body_P2_wvec.csv
+data/shimmer/subj4/Vector/body_P2_rvec.fig
+data/shimmer/subj4/Vector/body_P2_rvec.csv
+data/shimmer/subj4/Vector/body_P1_wvec.fig
+data/shimmer/subj4/Vector/body_P1_wvec.csv
+data/shimmer/subj4/Vector/body_P1_rvec.fig
+data/shimmer/subj4/Vector/body_P1_rvec.csv
+data/shimmer/subj4/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj4/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj4/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj4/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj4/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj4/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj4/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj4/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj4/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj4/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj4/ShimmerSplit/body_UP2.csv
+data/shimmer/subj4/ShimmerSplit/body_UP1.csv
+data/shimmer/subj4/ShimmerSplit/body_Rec.csv
+data/shimmer/subj4/ShimmerSplit/body_P2.csv
+data/shimmer/subj4/ShimmerSplit/body_P1.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj4/Resampled for XCorr/body_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj4/Resampled for XCorr/body_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj4/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj4/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj4/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj4/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj4/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj4/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj4/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj4/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj4/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj4/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj4/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj4/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj4/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj4/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj4/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj4/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj4/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj4/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj4/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj4/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj4/Otherplots/body_UP2_lin.fig
+data/shimmer/subj4/Otherplots/body_UP2_ang.fig
+data/shimmer/subj4/Otherplots/body_UP1_lin.fig
+data/shimmer/subj4/Otherplots/body_UP1_ang.fig
+data/shimmer/subj4/Otherplots/body_Rec_lin.fig
+data/shimmer/subj4/Otherplots/body_Rec_ang.fig
+data/shimmer/subj4/Otherplots/body_P2_lin.fig
+data/shimmer/subj4/Otherplots/body_P2_ang.fig
+data/shimmer/subj4/Otherplots/body_P1_lin.fig
+data/shimmer/subj4/Otherplots/body_P1_ang.fig
+data/shimmer/subj3_missinground1/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/body_UP2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/body_UP1.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/body_Rec.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/body_P2.csv
+data/shimmer/subj3_missinground1/ShimmerSplit/body_P1.csv
+data/shimmer/subj2/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj2/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj2/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj2/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj2/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj2/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj2/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj2/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj2/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj2/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj2/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj2/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj2/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj2/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj2/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj2/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj2/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj2/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj2/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj2/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj2/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj2/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj2/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj2/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj2/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj2/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj2/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj2/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj2/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj2/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj2/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj2/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj2/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj2/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj2/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj2/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj2/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj2/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj2/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj2/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj2/Vector/body_UP2_wvec.fig
+data/shimmer/subj2/Vector/body_UP2_wvec.csv
+data/shimmer/subj2/Vector/body_UP2_rvec.fig
+data/shimmer/subj2/Vector/body_UP2_rvec.csv
+data/shimmer/subj2/Vector/body_UP1_wvec.fig
+data/shimmer/subj2/Vector/body_UP1_wvec.csv
+data/shimmer/subj2/Vector/body_UP1_rvec.fig
+data/shimmer/subj2/Vector/body_UP1_rvec.csv
+data/shimmer/subj2/Vector/body_Rec_wvec.fig
+data/shimmer/subj2/Vector/body_Rec_wvec.csv
+data/shimmer/subj2/Vector/body_Rec_rvec.fig
+data/shimmer/subj2/Vector/body_Rec_rvec.csv
+data/shimmer/subj2/Vector/body_P2_wvec.fig
+data/shimmer/subj2/Vector/body_P2_wvec.csv
+data/shimmer/subj2/Vector/body_P2_rvec.fig
+data/shimmer/subj2/Vector/body_P2_rvec.csv
+data/shimmer/subj2/Vector/body_P1_wvec.fig
+data/shimmer/subj2/Vector/body_P1_wvec.csv
+data/shimmer/subj2/Vector/body_P1_rvec.fig
+data/shimmer/subj2/Vector/body_P1_rvec.csv
+data/shimmer/subj2/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj2/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj2/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj2/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj2/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj2/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj2/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj2/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj2/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj2/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj2/ShimmerSplit/body_UP2.csv
+data/shimmer/subj2/ShimmerSplit/body_UP1.csv
+data/shimmer/subj2/ShimmerSplit/body_Rec.csv
+data/shimmer/subj2/ShimmerSplit/body_P2.csv
+data/shimmer/subj2/ShimmerSplit/body_P1.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj2/Resampled for XCorr/body_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj2/Resampled for XCorr/body_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj2/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj2/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj2/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj2/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj2/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj2/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj2/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj2/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj2/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj2/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj2/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj2/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj2/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj2/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj2/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj2/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj2/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj2/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj2/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj2/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj2/Otherplots/body_UP2_lin.fig
+data/shimmer/subj2/Otherplots/body_UP2_ang.fig
+data/shimmer/subj2/Otherplots/body_UP1_lin.fig
+data/shimmer/subj2/Otherplots/body_UP1_ang.fig
+data/shimmer/subj2/Otherplots/body_Rec_lin.fig
+data/shimmer/subj2/Otherplots/body_Rec_ang.fig
+data/shimmer/subj2/Otherplots/body_P2_lin.fig
+data/shimmer/subj2/Otherplots/body_P2_ang.fig
+data/shimmer/subj2/Otherplots/body_P1_lin.fig
+data/shimmer/subj2/Otherplots/body_P1_ang.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_UP1_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_Rec_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_Rec_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_Rec_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_Rec_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/left_arm_P1_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_UP2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_UP2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_UP2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_UP2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_UP1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_UP1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_UP1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_UP1_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_REC_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_REC_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_REC_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_REC_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_P2_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_P2_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_P2_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_P2_rvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_P1_wvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_P1_wvec.csv
+data/shimmer/subj10_missingkeystroke/Vector/head_P1_rvec.fig
+data/shimmer/subj10_missingkeystroke/Vector/head_P1_rvec.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/left_arm_UP2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/left_arm_UP1.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/left_arm_Rec.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/left_arm_P2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/left_arm_P1.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/head_UP2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/head_UP1.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/head_REC.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/head_P2.csv
+data/shimmer/subj10_missingkeystroke/ShimmerSplit/head_P1.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/left_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_REC_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_REC_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_REC_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_REC_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj10_missingkeystroke/Resampled for XCorr/head_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_UP2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_UP2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_UP1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_UP1_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_Rec_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_Rec_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_P2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_P2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_P1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/left_arm_P1_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_UP2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_UP2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_UP1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_UP1_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_REC_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_REC_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_P2_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_P2_ang.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_P1_lin.fig
+data/shimmer/subj10_missingkeystroke/Otherplots/head_P1_ang.fig
+data/shimmer/subj1/Vector/right_arm_UP2_wvec.fig
+data/shimmer/subj1/Vector/right_arm_UP2_wvec.csv
+data/shimmer/subj1/Vector/right_arm_UP2_rvec.fig
+data/shimmer/subj1/Vector/right_arm_UP2_rvec.csv
+data/shimmer/subj1/Vector/right_arm_UP1_wvec.fig
+data/shimmer/subj1/Vector/right_arm_UP1_wvec.csv
+data/shimmer/subj1/Vector/right_arm_UP1_rvec.fig
+data/shimmer/subj1/Vector/right_arm_UP1_rvec.csv
+data/shimmer/subj1/Vector/right_arm_Rec_wvec.fig
+data/shimmer/subj1/Vector/right_arm_Rec_wvec.csv
+data/shimmer/subj1/Vector/right_arm_Rec_rvec.fig
+data/shimmer/subj1/Vector/right_arm_Rec_rvec.csv
+data/shimmer/subj1/Vector/right_arm_P2_wvec.fig
+data/shimmer/subj1/Vector/right_arm_P2_wvec.csv
+data/shimmer/subj1/Vector/right_arm_P2_rvec.fig
+data/shimmer/subj1/Vector/right_arm_P2_rvec.csv
+data/shimmer/subj1/Vector/right_arm_P1_wvec.fig
+data/shimmer/subj1/Vector/right_arm_P1_wvec.csv
+data/shimmer/subj1/Vector/right_arm_P1_rvec.fig
+data/shimmer/subj1/Vector/right_arm_P1_rvec.csv
+data/shimmer/subj1/Vector/body_UP2_wvec.fig
+data/shimmer/subj1/Vector/body_UP2_wvec.csv
+data/shimmer/subj1/Vector/body_UP2_rvec.fig
+data/shimmer/subj1/Vector/body_UP2_rvec.csv
+data/shimmer/subj1/Vector/body_UP1_wvec.fig
+data/shimmer/subj1/Vector/body_UP1_wvec.csv
+data/shimmer/subj1/Vector/body_UP1_rvec.fig
+data/shimmer/subj1/Vector/body_UP1_rvec.csv
+data/shimmer/subj1/Vector/body_Rec_wvec.fig
+data/shimmer/subj1/Vector/body_Rec_wvec.csv
+data/shimmer/subj1/Vector/body_Rec_rvec.fig
+data/shimmer/subj1/Vector/body_Rec_rvec.csv
+data/shimmer/subj1/Vector/body_P2_wvec.fig
+data/shimmer/subj1/Vector/body_P2_wvec.csv
+data/shimmer/subj1/Vector/body_P2_rvec.fig
+data/shimmer/subj1/Vector/body_P2_rvec.csv
+data/shimmer/subj1/Vector/body_P1_wvec.fig
+data/shimmer/subj1/Vector/body_P1_wvec.csv
+data/shimmer/subj1/Vector/body_P1_rvec.fig
+data/shimmer/subj1/Vector/body_P1_rvec.csv
+data/shimmer/subj1/ShimmerSplit/right_arm_UP2.csv
+data/shimmer/subj1/ShimmerSplit/right_arm_UP1.csv
+data/shimmer/subj1/ShimmerSplit/right_arm_Rec.csv
+data/shimmer/subj1/ShimmerSplit/right_arm_P2.csv
+data/shimmer/subj1/ShimmerSplit/right_arm_P1.csv
+data/shimmer/subj1/ShimmerSplit/body_UP2.csv
+data/shimmer/subj1/ShimmerSplit/body_UP1.csv
+data/shimmer/subj1/ShimmerSplit/body_Rec.csv
+data/shimmer/subj1/ShimmerSplit/body_P2.csv
+data/shimmer/subj1/ShimmerSplit/body_P1.csv
+data/shimmer/subj1/ShimEpochAnalysis/body_epochdata.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/right_arm_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_UP2_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_UP2_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_UP1_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_UP1_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_Rec_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_Rec_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_P2_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_P2_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_P2_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_P2_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_P1_wvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_P1_wvec_smoothedandresampled.csv
+data/shimmer/subj1/Resampled for XCorr/body_P1_rvec_smoothedandresampled.fig
+data/shimmer/subj1/Resampled for XCorr/body_P1_rvec_smoothedandresampled.csv
+data/shimmer/subj1/Otherplots/right_arm_UP2_lin.fig
+data/shimmer/subj1/Otherplots/right_arm_UP2_ang.fig
+data/shimmer/subj1/Otherplots/right_arm_UP1_lin.fig
+data/shimmer/subj1/Otherplots/right_arm_UP1_ang.fig
+data/shimmer/subj1/Otherplots/right_arm_Rec_lin.fig
+data/shimmer/subj1/Otherplots/right_arm_Rec_ang.fig
+data/shimmer/subj1/Otherplots/right_arm_P2_lin.fig
+data/shimmer/subj1/Otherplots/right_arm_P2_ang.fig
+data/shimmer/subj1/Otherplots/right_arm_P1_lin.fig
+data/shimmer/subj1/Otherplots/right_arm_P1_ang.fig
+data/shimmer/subj1/Otherplots/body_UP2_lin.fig
+data/shimmer/subj1/Otherplots/body_UP2_ang.fig
+data/shimmer/subj1/Otherplots/body_UP1_lin.fig
+data/shimmer/subj1/Otherplots/body_UP1_ang.fig
+data/shimmer/subj1/Otherplots/body_Rec_lin.fig
+data/shimmer/subj1/Otherplots/body_Rec_ang.fig
+data/shimmer/subj1/Otherplots/body_P2_lin.fig
+data/shimmer/subj1/Otherplots/body_P2_ang.fig
+data/shimmer/subj1/Otherplots/body_P1_lin.fig
+data/shimmer/subj1/Otherplots/body_P1_ang.fig
+data/shimdata_test/subj2/2019-02-01_15.38.21_subj2_SD_Session1_left_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.42.08_subj2_SD_Session1_right_arm.zip
+data/shimdata_test/subj2/2019-02-02_10.43.38_subj2_SD_Session1_body.zip
