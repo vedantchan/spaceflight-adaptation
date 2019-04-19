@@ -103,103 +103,87 @@ for i = 1:10
     meanEDA = [meanEDA,subjmeanEDA];
     
     subjHREDAz = trialdata(106:109,subjname);
-    hredaz = [hredaz,subjHREDAz];
+    hredaz = [hredaz,subjHREDAZ];
     
     subjHRTEMPz = trialdata(112:116,subjname);
-    hrtempz = [hrtempz,subjHRTEMPz];
+    hrtempz = [hrtempz,subjHRTEMPZ];
     
-    subjTEMPEDAz = trialdata(118:122,subjname);
-    tempedaz = [tempedaz,subjTEMPEDAz];
+    subjTEMPEDA = trialdata(118:122,subjname);
+    tempedaz = [tempedaz,subjTEMPEDA];
     
     
 end
 mkdir('plots/epoch/')
 %% Plot avgs
 
-% makeoverlayplot(meanHR,"Mean HR")
-% savefig('plots/epoch/meanHR-overlay.fig')
-% 
-% makeoverlayplot(meanTEMP,"Mean TEMP")
-% savefig('plots/epoch/meanTEMP-overlay.fig')
-% 
-% makenormplot(meanEDA,"Mean EDA")
-% savefig('plots/epoch/meanEDA-normalized.fig')
-% 
-% 
-% %% Correlate avgs
-% 
-% makesubjectcorrplot(meanHR,"Mean HR")
-% savefig('plots/epoch/meanHR-subjcorr.fig')
-% 
-% makesubjectcorrplot(meanTEMP,"Mean TEMP")
-% savefig('plots/epoch/meanTEMP-subjcorr.fig')
-% 
-% makesubjectcorrplot(meanEDA,"Mean EDA")
-% savefig('plots/epoch/meanEDA-subjcorr.fig')
-% 
-% 
-% makeepochcorrplot(meanHR,"Mean HR")
-% savefig('plots/epoch/meanHR-epochcorr.fig')
-% 
-% makeepochcorrplot(meanTEMP,"Mean TEMP")
-% savefig('plots/epoch/meanTEMP-epochcorr.fig')
-% 
-% makeepochcorrplot(meanEDA,"Mean EDA")
-% savefig('plots/epoch/meanEDA-epochcorr.fig')
-% 
-% %% Make data plots
-% makesubplot(van,"VAN");
-% savefig('plots/epoch/VAN-subplot.fig')
-% makeoverlayplot(van,"VAN");
-% savefig('plots/epoch/VAN-overlay.fig')
-% makenormplot(van,"VAN");
-% savefig('plots/epoch/VAN-norm.fig')
-% 
-% makesubplot(vas,"VAS");
-% savefig('plots/epoch/VAS-subplot.fig')
-% makeoverlayplot(vas,"VAS");
-% savefig('plots/epoch/VAS-overlay.fig')
-% makenormplot(vas,"VAS");
-% savefig('plots/epoch/VAS-norm.fig')
-% 
-% makesubplot(puzzle,"Puzzle");
-% savefig('plots/epoch/Puzzle-subplot.fig')
-% makeoverlayplot(puzzle,"Puzzle Solve Time");
-% savefig('plots/epoch/Puzzle-overlay.fig')
-% makenormplot(puzzle,"Puzzle Solve Time");
-% savefig('plots/epoch/Puzzle-norm.fig')
-% 
-% 
-% %% Make Correlation plots
-% 
-% makesubjectcorrplot(van,'VAN')
-% savefig('plots/epoch/VAN-subjectcorr.fig')
-% makeepochcorrplot(van,'VAN')
-% savefig('plots/epoch/VAN-epochcorr.fig')
-% 
-% makesubjectcorrplot(vas,'VAS')
-% savefig('plots/epoch/VAS-subjectcorr.fig')
-% makeepochcorrplot(vas,'VAS')
-% savefig('plots/epoch/VAS-epochcorr.fig')
-% 
-% makesubjectcorrplot(puzzle,'Puzzle')
-% makeepochcorrplot(puzzle,'Puzzle')
+makeoverlayplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-overlay.fig')
 
-%% Z Score
+makeoverlayplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-overlay.fig')
 
-makesubplot(tempedaz,'Temp-EDA Z')
-makesubplot(hredaz,'HR-EDA Z')
-makesubplot(hrtempz,'HR-TEMP Z')
-
-makesubjectcorrplot(tempedaz,'Temp-EDA Z')
-makesubjectcorrplot(hredaz,'HR-EDA Z')
-makesubjectcorrplot(hrtempz,'HR-TEMP Z')
-
-makeepochcorrplot(tempedaz,'Temp-EDA Z')
-makeepochcorrplot(hredaz,'HR-EDA Z')
-makeepochcorrplot(hrtempz,'HR-TEMP Z')
+makenormplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-normalized.fig')
 
 
+%% Correlate avgs
+
+makesubjectcorrplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-subjcorr.fig')
+
+makesubjectcorrplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-subjcorr.fig')
+
+makesubjectcorrplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-subjcorr.fig')
+
+
+makeepochcorrplot(meanHR,"Mean HR")
+savefig('plots/epoch/meanHR-epochcorr.fig')
+
+makeepochcorrplot(meanTEMP,"Mean TEMP")
+savefig('plots/epoch/meanTEMP-epochcorr.fig')
+
+makeepochcorrplot(meanEDA,"Mean EDA")
+savefig('plots/epoch/meanEDA-epochcorr.fig')
+
+%% Make data plots
+makesubplot(van,"VAN");
+savefig('plots/epoch/VAN-subplot.fig')
+makeoverlayplot(van,"VAN");
+savefig('plots/epoch/VAN-overlay.fig')
+makenormplot(van,"VAN");
+savefig('plots/epoch/VAN-norm.fig')
+
+makesubplot(vas,"VAS");
+savefig('plots/epoch/VAS-subplot.fig')
+makeoverlayplot(vas,"VAS");
+savefig('plots/epoch/VAS-overlay.fig')
+makenormplot(vas,"VAS");
+savefig('plots/epoch/VAS-norm.fig')
+
+makesubplot(puzzle,"Puzzle");
+savefig('plots/epoch/Puzzle-subplot.fig')
+makeoverlayplot(puzzle,"Puzzle Solve Time");
+savefig('plots/epoch/Puzzle-overlay.fig')
+makenormplot(puzzle,"Puzzle Solve Time");
+savefig('plots/epoch/Puzzle-norm.fig')
+
+
+%% Make Correlation plots
+
+makesubjectcorrplot(van,'VAN')
+savefig('plots/epoch/VAN-subjectcorr.fig')
+makeepochcorrplot(van,'VAN')
+savefig('plots/epoch/VAN-epochcorr.fig')
+
+makesubjectcorrplot(vas,'VAS')
+savefig('plots/epoch/VAS-subjectcorr.fig')
+makeepochcorrplot(vas,'VAS')
+savefig('plots/epoch/VAS-epochcorr.fig')
+
+makesubjectcorrplot(puzzle,'Puzzle')
+makeepochcorrplot(puzzle,'Puzzle')
 %% plotting functions
 
 function [] = makesubplot(inputtable,name)

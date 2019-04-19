@@ -17,6 +17,7 @@ stdcorrdims = [];
 
 for i = 1:length(file)
     signal = load(file{i});
+    signal = signal(:,2);
     
     if contains(file{i},'HR')
         measure = 'HR-';
