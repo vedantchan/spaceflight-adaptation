@@ -2,7 +2,7 @@ clear; close all;
 origin = pwd;
 addpath('.')
 
-paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed/*.csv');
+paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed/*.csv','output','cell');
 
 for j = 1:length(paths)
     path = paths{j};
