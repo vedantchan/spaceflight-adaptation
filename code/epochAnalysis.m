@@ -221,7 +221,7 @@ sgtitle(name)
 end
 
 function [] = makenormplot(inputtable,name)
- ;
+
 figure()
 
 for i = 1:10
@@ -248,7 +248,6 @@ ylim([-0.25 1.25])
 end
 
 function [] = makeoverlayplot(inputtable,name)
- ;
 figure()
 
 for i = 1:10
@@ -274,7 +273,6 @@ end
 
 function[] = makesubjectcorrplot(inputtable,name) 
 
- ;
 figure()
 array = table2array(inputtable);
 imagesc(corrcoef(array))
