@@ -1,7 +1,4 @@
-%KeyStroke analysis
-
-% have a separate code that will layer all the avg mistakes/avg speed/etc (any of the singular value data) of 
-% each participant over each other
+%% 4/24/19; KeyStroke analysis
 
 % 3/1/19: DONE
 % 3/6/19: not done; added mistake percent
@@ -13,7 +10,7 @@ uiwait(msgbox("Select your SPLIT data (one subject)"))
 
 try
 %load in the data
-[file, path] = uigetfile('*.txt','multiselect','on');   
+[file, path] = uigetfile('*.txt', 'multiselect', 'on');   
 catch 
     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
@@ -37,6 +34,7 @@ for i = 1:length(file)
     finish = max(MINS);
 
     [numkeystrokespermin, binedge, binindex] = histcounts(MINS, start:finish);
+    plot(numkeystrokespermin)
     
     average = mean(numkeystrokespermin); % 200 something makes sense
     

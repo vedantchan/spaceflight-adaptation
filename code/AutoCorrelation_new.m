@@ -1,4 +1,4 @@
-%% 3/23/19
+%% Autocorrelation, 3/23/19
 
 % This script will autocorrelate any data specified. Time lag will be the
 % entire time interval of the data set. 

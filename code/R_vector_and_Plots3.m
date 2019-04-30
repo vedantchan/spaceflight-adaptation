@@ -1,3 +1,4 @@
+%% 3/24/19, Shimmer Vectorization
 % r vectorization
 % Description: gives you magnitude of resultant angular velocity and linear acceleration
 % vector

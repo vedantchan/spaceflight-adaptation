@@ -1,4 +1,4 @@
-%Cross Corr
+%% Cross Corr for ANY Data; 3/1/19
 % only for E4 at the moment (10/5)
 % need to write for shimmer (10/6)
 %10/6: DONE :)

@@ -1,5 +1,4 @@
-% 3/24/19
-% Simple shimmer epoch analysis
+%% 3/24/19, Simple shimmer epoch analysis, acceleration
 
 % calculates from R vectors the RMS, peak to peak, etc. for each epoch,
 % for each vector, for each subject
@@ -11,6 +10,7 @@
 %****should resample raw data
 
 %3/31/19: stuck on looping through files
+% 4/29/19: done
 
 clear; close all;
 
@@ -40,14 +40,7 @@ P2 = zeros(1,22)';
 REC = zeros(1,22)';
 
 %storage path: shimmer/subj#/epochanalysis/[bodypart].csv
-%left to do: run through both split folders and vector folder; gather 20
-%data points from each for each epoch; 
-% store in table with epoch name going across, data type going down; each
-% file is named with one body part
-
-%maybe just recalculate vector? >> yes
 % might be interesting to plot the findpeaks data
-% filtering ....
 
 for subjCount = 1:length(subjlist)
     epochfolder = [shimPath '/'  subjlist{subjCount} '/'  mainfolder '/'];
@@ -58,6 +51,8 @@ for subjCount = 1:length(subjlist)
     %vectorfiles = dir(fullfile(vectorpath,'*.csv'));
     
     for file = 1:length(splitfiles)
+        
+ %% body analysis
         if contains(splitfiles(file).name,'body','IgnoreCase',true) %TEST FOR EMPTY
             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -70,20 +65,8 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
-%                 
-%                 %displacement; assume x0 = 0, v0 = 0
-%                 %how to detrend ??
-%                 dispx = (1/2).*x.*(time.^2);
-%                 dispy = (1/2).*y.*(time.^2);
-%                 dispz = (1/2).*z.*(time.^2);
-%                 disprt = (1/2)*(rT.*(time.^2));
+                time = 1:length(rT);
+                time = time';
                 
                 % linear measures
                 UP1(1) = rms(x);
@@ -98,16 +81,21 @@ for subjCount = 1:length(subjlist)
                 UP1(18) = min(rT);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
-                wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
+
+                % for old data:
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                     wx = data(:,5).*time; 
+                    wy = data(:,6).*time;
+                    wz = data(:,7).*time;
+                   wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
                  UP1(5) = rms(wx);
@@ -121,13 +109,12 @@ for subjCount = 1:length(subjlist)
                 UP1(19) = max(wT);
                 UP1(20) = min(wT);
                 
-                % (rough) variance >> does this make sense to calculate?
-                
+                % (rough) variance >> does this make sense to calculate?               
                 UP1(21) = var(rT);
                 UP1(22) = var(wT);
                 
             elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
-                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
@@ -137,20 +124,8 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
-%                 
-%                 %displacement; assume x0 = 0, v0 = 0
-%                 %how to detrend ??
-%                 dispx = (1/2).*x.*(time.^2);
-%                 dispy = (1/2).*y.*(time.^2);
-%                 dispz = (1/2).*z.*(time.^2);
-%                 disprt = (1/2)*(rT.*(time.^2));
+                time = 1:length(rT);
+                time = time';
                 
                 % linear measures
                 UP2(1) = rms(x);
@@ -165,16 +140,21 @@ for subjCount = 1:length(subjlist)
                 UP2(18) = min(rT);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
-                wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
+
+                % for old data:
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                     wx = data(:,5).*time; 
+                    wy = data(:,6).*time;
+                    wz = data(:,7).*time;
+                   wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
                  UP2(5) = rms(wx);
@@ -188,8 +168,7 @@ for subjCount = 1:length(subjlist)
                 UP2(19) = max(wT);
                 UP2(20) = min(wT);
                 
-                % (rough) variance >> does this make sense to calculate?
-                
+                % (rough) variance >> does this make sense to calculate?               
                 UP2(21) = var(rT);
                 UP2(22) = var(wT);
             elseif contains(splitfiles(file).name,'P1','IgnoreCase',true)
@@ -203,20 +182,8 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
-%                 
-%                 %displacement; assume x0 = 0, v0 = 0
-%                 %how to detrend ??
-%                 dispx = (1/2).*x.*(time.^2);
-%                 dispy = (1/2).*y.*(time.^2);
-%                 dispz = (1/2).*z.*(time.^2);
-%                 disprt = (1/2)*(rT.*(time.^2));
+                time = 1:length(rT);
+                time = time';
                 
                 % linear measures
                 P1(1) = rms(x);
@@ -231,36 +198,39 @@ for subjCount = 1:length(subjlist)
                 P1(18) = min(rT);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
-                wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
+
+                % for old data:
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                     wx = data(:,5).*time; 
+                    wy = data(:,6).*time;
+                    wz = data(:,7).*time;
+                   wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
-                P1(5) = rms(wx);
-                P1(6) = rms(wy);
-                P1(7) = rms(wz);
-                P1(8) = sqrt((P1(5).^2) + (P1(6).^2) + (P1(7).^2));    
-                P1(13) = peak2peak(wx);
-                P1(14) = peak2peak(wy);
-                P1(15) = peak2peak(wz);
-                P1(16) = peak2peak(wT);
+                 P1(5) = rms(wx);
+                 P1(6) = rms(wy);
+                 P1(7) = rms(wz);
+                 P1(8) = sqrt((P1(5).^2) + (P1(6).^2) + (P1(7).^2));    
+                 P1(13) = peak2peak(wx);
+                 P1(14) = peak2peak(wy);
+                 P1(15) = peak2peak(wz);
+                 P1(16) = peak2peak(wT);
                 P1(19) = max(wT);
                 P1(20) = min(wT);
                 
-                % (rough) variance >> does this make sense to calculate?
-                
+                % (rough) variance >> does this make sense to calculate?               
                 P1(21) = var(rT);
                 P1(22) = var(wT);
             elseif contains(splitfiles(file).name,'P2','IgnoreCase',true)
                          data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
-               
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
@@ -269,26 +239,14 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
-%                 
-%                 %displacement; assume x0 = 0, v0 = 0
-%                 %how to detrend ??
-%                 dispx = (1/2).*x.*(time.^2);
-%                 dispy = (1/2).*y.*(time.^2);
-%                 dispz = (1/2).*z.*(time.^2);
-%                 disprt = (1/2)*(rT.*(time.^2));
+                time = 1:length(rT);
+                time = time';
                 
                 % linear measures
                 P2(1) = rms(x);
                 P2(2) = rms(y);
                 P2(3) = rms(z);
-                P2(4) = sqrt((P2(1).^2) + (P2(2).^2) + (P2(3).^2));    %CHECK
+                P2(4) = sqrt((P2(1).^2) + P2(2).^2) + (P2(3).^2));    %CHECK
                 P2(9) = peak2peak(x);
                 P2(10) = peak2peak(y);
                 P2(11) = peak2peak(z);
@@ -297,16 +255,21 @@ for subjCount = 1:length(subjlist)
                 P2(18) = min(rT);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
-                wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
+
+                % for old data:
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                     wx = data(:,5).*time; 
+                    wy = data(:,6).*time;
+                    wz = data(:,7).*time;
+                   wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
                  P2(5) = rms(wx);
@@ -320,12 +283,11 @@ for subjCount = 1:length(subjlist)
                 P2(19) = max(wT);
                 P2(20) = min(wT);
                 
-                % (rough) variance >> does this make sense to calculate?
-                
+                % (rough) variance >> does this make sense to calculate?               
                 P2(21) = var(rT);
                 P2(22) = var(wT);
             elseif contains(splitfiles(file).name,'Rec','IgnoreCase',true)
-                                       data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
@@ -335,26 +297,14 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
-%                 
-%                 %displacement; assume x0 = 0, v0 = 0
-%                 %how to detrend ??
-%                 dispx = (1/2).*x.*(time.^2);
-%                 dispy = (1/2).*y.*(time.^2);
-%                 dispz = (1/2).*z.*(time.^2);
-%                 disprt = (1/2)*(rT.*(time.^2));
+                time = 1:length(rT);
+                time = time';
                 
                 % linear measures
                 REC(1) = rms(x);
                 REC(2) = rms(y);
                 REC(3) = rms(z);
-                REC(4) = sqrt((REC(1).^2) + (REC(2).^2) + (REC(3).^2));    %CHECK
+                REC(4) = sqrt((REC(1).^2) + REC(2).^2) + (REC(3).^2));    %CHECK
                 REC(9) = peak2peak(x);
                 REC(10) = peak2peak(y);
                 REC(11) = peak2peak(z);
@@ -363,16 +313,21 @@ for subjCount = 1:length(subjlist)
                 REC(18) = min(rT);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
-                wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
+
+                % for old data:
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                     wx = data(:,5).*time; 
+                    wy = data(:,6).*time;
+                    wz = data(:,7).*time;
+                   wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
                  REC(5) = rms(wx);
@@ -386,15 +341,15 @@ for subjCount = 1:length(subjlist)
                 REC(19) = max(wT);
                 REC(20) = min(wT);
                 
-                % (rough) variance >> does this make sense to calculate?
-                
+                % (rough) variance >> does this make sense to calculate?               
                 REC(21) = var(rT);
                 REC(22) = var(wT);
             end
             
             T = table(datatype, UP1, UP2, P1, P2, REC);
             writetable(T,strcat(epochfolder, 'body_epochdata.csv'));
-            
+
+%% head analysis
         elseif contains(splitfiles(file).name,'head','IgnoreCase',true)
             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));

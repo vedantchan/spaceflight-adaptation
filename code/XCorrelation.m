@@ -1,4 +1,4 @@
-%Cross Corr
+%% Cross Corr old, 10/6/18
 % only for E4 at the moment (10/5)
 % need to write for shimmer (10/6)
 %10/6: DONE :)

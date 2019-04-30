@@ -1,6 +1,5 @@
-% VanTan analysis
+%% VanTan analysis, 2/28/19
 % done per subject (so one run per subject)
-
 
 clear; close all;
 
@@ -11,6 +10,14 @@ catch
     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
 end    
+
+uiwait(msgbox('Select destination folder (should be vantan_[trial])'));
+vantan = uigetdir;
+answer = inputdlg('Enter folder name, e.g. subj1','Folder Name'); 
+writepath = [vantan '/' answer];
+mkdir(writepath)
+
+
 
 averagevan = [];
 averagetan = [];
@@ -33,15 +40,8 @@ for i = 1:length(file)
 end
 
 Tvan = table(namevan,averagevan);
-Ttan = table(nametan,averagetan);
+%Ttan = table(nametan,averagetan);
 
-uiwait(msgbox('Select destination folder (should be vantan/subjID)'));
-writepath = uigetdir;
-writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
+
+%writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
 writetable(Tvan,strcat(writepath,'/Average Vertical Alignments.csv'));
-% also do one for torsional
-
-
-
-
-

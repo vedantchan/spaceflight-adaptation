@@ -92,22 +92,22 @@ for subjectCount = 1:length(subjects)
              data = importdata(strcat(outPath,file(i).name));
              lendata = length(data.data);
 
-             split_ind = uint64(round(lendata/14))*3;
+             split_ind = uint64(round(lendata/153))*32;
 
              %split into perturbed and unperturbed
-              unpert1 = data.data(1:split_ind,:);
+              unpert1 = data.data(1:(split_ind),:);
 %               plot(unpert1)
 %               saveas(gcf,strcat(subjectSplit, '/','body_UP1','.fig'));
-              unpert2= data.data(split_ind:split_ind*2,:);
+              unpert2= data.data((split_ind):(split_ind)*2,:);
 %               plot(unpert2)
 %               saveas(gcf,strcat(subjectSplit, '/','body_UP2','.fig'));
-              pert1 = data.data(split_ind*2:split_ind*3,:);
+              pert1 = data.data((split_ind)*2:(split_ind)*3,:);
 %               plot(pert1)
 %               saveas(gcf,strcat(subjectSplit, '/','body_P1','.fig'));
-              pert2 = data.data(split_ind*3:split_ind*4,:);
+              pert2 = data.data((split_ind)*3:(split_ind)*4,:);
 %               plot(pert2)
 %               saveas(gcf,strcat(subjectSplit, '/','body_P2','.fig'));
-              recover = data.data(split_ind*4:end,:);
+              recover = data.data((split_ind)*4:end,:);
 %               plot(recover)
 %               saveas(gcf,strcat(subjectSplit, '/','body_Rec','.fig'));
 
@@ -123,7 +123,7 @@ for subjectCount = 1:length(subjects)
                 %data = importdata(strcat(outPath,file));
 
                lendata = length(data.data);
-               split_ind = uint64(round(lendata/14))*3;
+             split_ind = uint64(round(lendata/153))*32;
 
               %split into perturbed and unperturbed
               unpert1 = data.data(1:split_ind,:);
@@ -154,7 +154,7 @@ for subjectCount = 1:length(subjects)
                 %data = importdata(strcat(outPath,file));
 
                lendata = length(data.data);
-               split_ind = uint64(round(lendata/14))*3;
+             split_ind = uint64(round(lendata/153))*32;
 
                             %split into perturbed and unperturbed
               unpert1 = data.data(1:split_ind,:);
@@ -184,7 +184,7 @@ for subjectCount = 1:length(subjects)
                 %data = importdata(strcat(outPath,file));
 
                lendata = length(data.data);
-               split_ind = uint64(round(lendata/14))*3;
+             split_ind = uint64(round(lendata/153))*32;
 
                  %split into perturbed and unperturbed
               unpert1 = data.data(1:split_ind,:);

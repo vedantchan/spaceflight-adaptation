@@ -1,4 +1,4 @@
-%% Smoothing
+%% Smoothing, 3/2/19
 % DONE 
 clear all,
 close all;

@@ -62,22 +62,22 @@ for subjectCount = 1:length(subjects)
             data = importdata(strcat(outPath,file{i}),delim,header);
              lendata = length(data.data);
             
-            split_ind = uint64(round(lendata/11))*3;
+            split_ind = uint64(round(lendata/153));
             
              %split 
-             unpert1 = data.data(1:split_ind,:);
+             unpert1 = data.data(1:(split_ind)*32,:);
              plot(unpert1)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_UP1','.fig'));
-             unpert2= data.data(split_ind:split_ind*2,:);
+             unpert2= data.data((split_ind)*32:(split_ind)*32*2,:);
              plot(unpert2)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_UP2','.fig'));
-             pert1 = data.data(split_ind*2:split_ind*3,:);
+             pert1 = data.data((split_ind)*32*2:(split_ind)*32*3,:);
              plot(pert1)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P1','.fig'));
-             pert2 = data.data(split_ind*3:split_ind*4,:);
+             pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
              plot(pert2)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P2','.fig'));
-             recover = data.data(split_ind*4:end,:);
+             recover = data.data((split_ind)*32*4:end,:);
              plot(recover)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_Rec','.fig'));
              
