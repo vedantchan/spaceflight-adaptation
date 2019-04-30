@@ -1,16 +1,20 @@
 %% 3/21/19, Filter shimmer
 % resample/smooth/filter shimmer 
 
+% takes the split shimmer data and applies Kalman filter
+
 clear; close all;
 
-uiwait(msgbox('Select your shimmer vector folder'))
+uiwait(msgbox('Select your raw folder'))
 trialsPath = uigetdir;
 
 %store files
-files = dir(fullfile(trialsPath, '*.csv')); 
+files = dir(fullfile(trialsPath, 'ShimmerSplit', '*.csv')); 
 cd(trialsPath(1:end-6)) % now working in subject folder
 
-mkdir('Resampled for XCorr')
+filtfold = 'filtered_shim';
+mkdir(filtfold);
+
 
 for i = 1:length(files)
     data = importdata(strcat(files(i).folder,'/',files(i).name));

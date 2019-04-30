@@ -80,7 +80,7 @@ for subjectCount = 1:length(subjects)
      end
      cd(subjectPath) % go back to working in subject folder
 
-    subjectSplit = [trialsPath(1:end-3) 'shimmer/' subjects{subjectCount} '/' 'ShimmerSplit'];
+    subjectSplit = [trialsPath '/' subjects{subjectCount} '/' 'ShimmerSplit'];
     mkdir(subjectSplit)
     
      
