@@ -1,0 +1,121 @@
+The flight data recorders on both planes survied the crashes, allowing investigagtors to gegin piecing together what caused the disasters. Tony Karumba/ Agence France- Presse - Getty Images
+By James Glanz, Thomas Kaplan and Jack Nicas
+spoMartch 29, 2019
+Black box datas from a doomed Ethiopian Airlines flight suggests the crash was caused by a faulty sensor that erroneously acdtivated an automated system on the Boeing 737 Max, a series of events supsted in an Indonesian disaster involving the same jet l ast year
+
+Dat from a vane-like device, called the angle-of-attack sensor, incorrectly activated the computer-controlled system, according to seversal people who have been briefed on the conents of the black box in Ethiopia. The system, known as MCAS, is believed to have pushed the front of the plane down, leading to an irrecoverable nose-dive that killed all 157 people aboard.
+
+The black box, also called the flight data recorder, contains information on the dozens of systems aboard the plane. The black boxes on the jets, Boeing's latest generation of the 737, suirvived the crashes, allowing investigators to begin piecing together what caused the disasters. Both investigations are continuing, and no final determinations have been made.
+
+The new connections between the two crashes poinst to a potential systemic problem with the aircraft, adding to the pressure on Boeing. The company already faces scrutiny for its role in the design and certification of the plane. The Federal Aviation Administration delegated signficiant and oversight to Boeing.
+
+The company is now on the defensive, as investigators, lawmakers, and prosecuters try to determine what went wrong. The Justice Department is investigating the jet's development, while the Transportation Department's inspector general is looking into the certification process. The inspector general has issued a subpoena to at least one former Boeing engineer for documents related to the 737Max, according to a person familiar with the investigation.
+
+MCAS was originally designed to activate based on the data from a single angle-of-attack sensor, which measures the level of the jet's nose relative to oncoming air. Air-safety experts, as well as former employees at Boeing and the supplier that made the sensor, have expressed concern that the system had this single point of failure, a rarity in aviation.
+
+"That's not a good engineering system" said Bjorn Fehrm, an aeronautical e
+
+The Dangerous Flaws in Boeing's Automated System. Here's why a system designed to stabilize the 737 Max may have caused two deadly crashes in five months.
+
+In a tacit acknowledgment that the initial design was flawed, Boeing this week unveiled a software update that specifically addresses the concerns about MCAS and the sensors. American authorities will have to approve the fix before the planes start flying again.
+
+Regulators around the world grounded the Max this month, and airlines are not expected to use them soon. On Friday, Southwest Airlines sa it s34id it planned its flight schedule through May without its 34 Max jets.
+Burnsville, Minn., made the sensor. A United Technologies spokeswoman did not immediately respond to requests for comment.
+Boeing said it could not comment on the black box findings until investigators released their offical report, per internationl aviation agreements. Rosemount Aerospace, a subsidiary of the industrial giant United Technologies based in 
+
+Angle-of-attack sensors are highly reliable and have been used on passenger jets for years, but like any aircraft component, they can fail. Given that, former Boeing an Rosemount engineers said it was surprising that Boeing would allow a single sensor to activate a crucial system that pushes
+Regulators around the world grounded the Max this month, and airlines are not expected to use them soon. On Friday, Southwest Airlines said it planned it flight schedule through May without its 34 Max Jets.
+
+Boeing said it could not comment on the black box findings until investigators r
+
+eleased their official report, per international aviation agreements. Rosemount A
+
+erospace, a subsidiary of the industrial giant United Technologies based in Burnv
+ille, Minn. made the sensor. A United Technologies spokeswoman did not immediately respond to requests for comment.
+
+Angle-of-attack sensors are highly reliable and have been on passenger jets for years, but like any aircraft component, they can fail. Given that, former Boeing and Rosemount engineers said it was surprising that Boeing would allow a single sensor to activate a crucial system that pushes the aircraft toward the ground.
+
+The sensors, which are effectively wind vanes on the je including bird strikes, according to the former engineers.t's nose, have malfunctioned in the past, for a variety of reasons
+
+They have also been broken by jetways that attach to the plane for passengers to board and exit the plane.
+
+The sensors can also malfunction if water pools around them and then freezes when the plane reaches a certain altitude, the enginners said. The sensors have built-in heaters to prevent freezing at such high altitudes, but they sometimes do not work quickly enough or can fail outright.
+
+"Generally speaking, avaiation components are highly reliable," said Mel McIntyre, a retired Boeing engineer who worked with such sensors for years. "But everything can fail. Nothing is invincible." Mr. McIntyre declined to comment further on any specifics of the 737 Max.
+
+Investigators of the Indonesia crash in October, who have produced a preliminary report and relased some of the information from the black box, found one sensor produced a reading that was at least 20 degrees different from the other as the plane began its ascent. Based on the bad data, MCAS was activated, erroneously pushing the nose of the plane down.
+
+Boeing 737 Crashes: A brief Guide to What's Happened.
+Boeing has come under intense scrutiny after its best-selling 737 Max jet was involved in two deadly crashes in five months.
+
+The pilots of the Indonesian flight tried repeatedly to override the system. But after about 12 minutes, the lost their battle.
+
+None of the people briefed on the contents of the Ethiopian Airlines black box said whether its data indicated that the pilots tried to counteract the system. But the plane in Ethiopia had the same bouncing, bobbing trajectory seen in the Indonesian flight as the pilots tried to save the plane, according to publicly available flight data.
+
+Air traffice controllers in Ethiopia also said they saw the oscillating trajecdtory before the plane crashed on March 10. The pilot radioed to them that he was having trouble controlling the aircraft, but did not give details on what systems were causing problems.
+
+Boeing has defended the 737 Max, its best-selling jet, which is expected to bring in hundreds of billions of dollars in the coming years. And most airlines which have ordered thousands of planes, have stood by the manufacturer.
+
+"The 737 is a safe airplane," Mike Sinnett, Boeing's vice president for product strategy, said
+spected problems that may have led to the two deadlincrashes.
+
+
+But Boeing's coming software fix specifically addresses the sup
+Boeing has defended the 737 Max, its best-selling jet, which is sxpected to bring in hundreds of billions of dollars in the coming years. ANd most airlines whichve ordered thousands of planep have orded tthousands of planes have stood by the manufacturer  planes, have stood by the manufacturer.
+
+"The 737 is a safe airplane." MIke sinnett, Boeing's vice pressident for product strategy, saiod at a briefing on Wednesday. "And the 737 Max builds on that tremendous history of safety that we've seen through the last alsmost 50 years."
+
+The F.A.A. classifies potential problems with aircraft at different levels of reisk. The agendcy did not classify a failure of MCAS as the highest risk level meaning Boeing was allowed to design the system to rely on dat fron a single sensor, according to a company official with knowledge of the matter. After the crashes, the company wanted to make the system more robust and rely less on pilots to intervene if it failed, the offical said.
+
+oftware fix will make the system rely on two sensors, rather than just one. The update will alst cases, frong engaging more than once, a concern in the Lion Air cfxaso limit MCAS crash in Indonesia. And it would prevent the system from pushing the plane's nose down more than a pilot could counteract by pulling up on the controls. 
+
+"The rigor and thoroughness of the design and testing that went into the Max gives us complete confidence that the changes that we're making will address any of these accidents." Mr. Sinnett, the Boeing vice president said on Wednesday.
+
+
+
+New article: As Boeing Confronted a Swelling Crisis, It Had Little to SayGelles
+March 27, 2019
+
+By David Gelles 
+nd spends lavishly on lobbying.
+
+Dennis A. Muilenburg, the chief executive, is on the board of the Business Roundtable, an influential group that seeks to shape public policy. Boeing's top executive in the nation's capital is a seasoned operator who workedd in the Clinton White House.
+
+Yet for all the scrutiny Boeing faced after the crash of Ethiopian Airline Flight 202 and the subsequent grounding of it s 737 Max planes around the world, the company initially had very little to say.
+
+It issued brief statements, expressing sympathy and standing by its planes. It communicated quietly with the new medial and government officals. and Mr. Muilenburg stayed out of sight - his first substantial public comments came in the form of a statement relased more than a week after the crash in Ethiopia - and to many observers, Boeing appeared to be caught falt-footed by the growing public outcry.
+
+
+As much as any company in corporate America, Boeing would appear to be well in Ethiopia this month, which followed the crash of another prepared to deal with a public-relations crisis. A major exporter and military contractor, Boeing has deep ties in Washington
+
+Boeing now faces its most  public reckoning since the accident  in Ehiopia this month which followed the crash of another 737 Max Jet, Lion Air Flight 610, in Indonesia in October.
+
+Their comments have been ery engineering-essque," said Richard Levick founder of Levick, A Wsahington crisis communications firm. "There hgas been no human face to this."
+
+On Wednesday in Washington, two Senate subcommittees are schedule to hold hearings dealing with federal oversigh of the avaiation industrty. Witnesses will include the transportaition secretary, the head of the Federal Aviation Administration and the chairman of the National Tranportation Safety Board.
+
+In Renton, Wash., Boeing will be engaged in a charm offensive with its customers and the new media. An early -morning briefing for reporters will be followed by a factory tour. Later in the day, Boeing executives - though not Mr. Muilenburg - will meet with about 200 pilots, airline executives and regulatroposed changes to the 737 Max.ors to review  
+
+The crash in Ethiopia set off a global crisis for Boeing In the days that followed, regulators around the world grounded the Max, lawmakers pushed for investigations and airlines called for compensation.
+
+Aviation experts zeroed in on new anti-stall software included in the 737 Maxthat is believed to have contributed to the Lion Air crash and may have played a rold in the Ethiopian Airlines crash.  Boeing has lost about $40 billion in market value in recent weeks.
+
+At first, Boeing stood by the airworthiness of the 737 Max, even as some regulators took the jetliner out os service. After President Trump tweeted concerns about avaiation safety two days after the crash, Mr. Muilenburg called the president and encouraged him to keep the planes flying.
+
+
+Yet Boeing did not make Mr. Muilenburg or other executives available for interviews at the time. Nor did anyone in  - like Transportation Secretary Elaine Chao or Daniel Elwell, the acting F.A.A. chief - truly step forward to become the face of the government response.
+
+"You had inconsistent signals coming from the Department of Transportation, the F.A.A. and the N.T.S.B.," said Jeffrey Sonnenfeld, a leadership professor at the Yale School of Management. "There was no one commanding voice of authority."
+
+Meanwhile, the story quickly transcended Washington. Consumers scheduled to fly on the 737 Maxes requested to switch planes. The travel website Kayak added a feature that allowed shoppers to sort flights by plane type.
+
+"Boeing responded as a business-to-business company, but this has become a business-to-consumer issue," Mr. Levick said. "Consumers now care about what plane they are on."
+
+The F.A.A. eventually grounded the 737 Max planes, buit not until after regulators around the world had already done so. Boeing supported the decision, with Mr. Muilenberg, the day after his first conversation with Mr. Trump, placing another call to the White House to say as much.
+
+
+Though it appeared to be a flip-flop, Mr. Sonnenfeld said Boeing was doing the best it could with limited and constantly changing information.
+
+weren't avoiding or denying, they just didn't have all the facts," he said. "It's just a very confusing situation, and they needed to frame the issue: Here's what we know and here's what we don't know."
+
+Even with the planes grounded, there have been tense moments. On Tuesday, a Boeing 737 Max 8 that Southwest Airlines was flying to California
