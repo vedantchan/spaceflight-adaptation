@@ -17,8 +17,6 @@ answer = inputdlg('Enter folder name, e.g. subj1','Folder Name');
 writepath = [vantan '/' answer];
 mkdir(writepath)
 
-
-
 averagevan = [];
 averagetan = [];
 namevan = {};

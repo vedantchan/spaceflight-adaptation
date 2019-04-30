@@ -3,7 +3,7 @@
 
 clear all; close;
 % 3/5/19: writes to a split folder within the raw/subj# folder
-
+%4/30/19: need to get rid of zip file thing or add a non-zipfile thing
 %% NOTES
 
 % 3/6/19
