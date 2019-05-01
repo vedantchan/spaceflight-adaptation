@@ -13,8 +13,9 @@ cd(trialsPath);
 string = ls;
 list = strsplit(string);
 subjects = list(~cellfun('isempty',list));
+subjects = sort(subjects);
 
-for subjectCount = 1:length(subjects)
+for subjectCount = 10:length(subjects)
      %load in the data
      %[file, path] = uigetfile('*.csv');   
      %[file, path] = uigetfile('*.csv', 'Multiselect','on');

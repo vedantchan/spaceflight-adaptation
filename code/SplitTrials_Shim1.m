@@ -4,6 +4,7 @@
 clear all; close;
 % 3/5/19: writes to a split folder within the raw/subj# folder
 %4/30/19: need to get rid of zip file thing or add a non-zipfile thing
+% 5/1/19: write to split folder outside of raw
 %% NOTES
 
 % 3/6/19
@@ -50,11 +51,15 @@ string = ls;
 list = strsplit(string);
 subjects = list(~cellfun('isempty',list));
 
+
 %shimmer has one col of data, so no dot indexing
 
 % must copy file as group, make sure file is zipped
 %files are within folder, which is within the previously zipped folder (2
 %folder layers within subj# before file)
+
+answer = inputdlg('Enter destination directory');
+mainfolder = answer{1};
 
 for subjectCount = 1:length(subjects)
      cd(trialsPath) % helps keeps things organized as you loop through subsequent subject folders
@@ -80,8 +85,11 @@ for subjectCount = 1:length(subjects)
      end
      cd(subjectPath) % go back to working in subject folder
 
-    subjectSplit = [trialsPath '/' subjects{subjectCount} '/' 'ShimmerSplit'];
+    %subjectSplit = [trialsPath '/' subjects{subjectCount} '/' 'ShimmerSplit'];
+    
+    subjectSplit = [mainfolder '/' subjects{subjectCount}];
     mkdir(subjectSplit)
+    
     
      
 %% shimmer split
