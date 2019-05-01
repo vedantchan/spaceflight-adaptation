@@ -15,7 +15,7 @@ uiwait(msgbox('Select destination folder (should be vantan_[trial])'));
 van = uigetdir;
 answer = inputdlg('Enter folder name, e.g. subj1','Folder Name'); 
 writepath = [van '/' answer];
-mkdir ../data/van_gemini subj11
+mkdir ../ra
 averagevan = [];
 averagetan = [];
 namevan = {};
@@ -41,4 +41,4 @@ Tvan = table(namevan,averagevan);
 
 
 %writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
-writetable(Tvan,strcat(writepath,'/Average Vertical Alignments.csv'));
+writetable(Tvan,strcat([van '/' answer],'/Average Vertical Alignments.csv'));
