@@ -10,6 +10,7 @@
 %****should resample raw data
 
 %3/31/19: stuck on looping through files
+% 4/29/19: done
 
 clear; close all;
 
@@ -21,8 +22,8 @@ mainfolder = 'ShimEpochAnalysis_acceleration';
 % bodyfolder = 'Body';
 % rarmfolder = 'Right Arm';
 % larmfolder = 'Left Arm';
-%mkdir(mainfolder)
-% mkdir(headfolder)
+mkdir(mainfolder)
+% mkdir(headfolder) 
 % mkdir(bodyfolder)
 % mkdir(rarmfolder)
 % mkdir(larmfolder)
@@ -50,6 +51,8 @@ for subjCount = 1:length(subjlist)
     %vectorfiles = dir(fullfile(vectorpath,'*.csv'));
     
     for file = 1:length(splitfiles)
+        
+ %% body analysis
         if contains(splitfiles(file).name,'body','IgnoreCase',true) %TEST FOR EMPTY
             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -345,7 +348,8 @@ for subjCount = 1:length(subjlist)
             
             T = table(datatype, UP1, UP2, P1, P2, REC);
             writetable(T,strcat(epochfolder, 'body_epochdata.csv'));
-            
+
+%% head analysis
         elseif contains(splitfiles(file).name,'head','IgnoreCase',true)
             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));

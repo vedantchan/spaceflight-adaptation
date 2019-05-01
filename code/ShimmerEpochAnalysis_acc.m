@@ -22,8 +22,8 @@ mainfolder = 'ShimEpochAnalysis_acceleration';
 % bodyfolder = 'Body';
 % rarmfolder = 'Right Arm';
 % larmfolder = 'Left Arm';
-%mkdir(mainfolder)
-% mkdir(headfolder)
+mkdir(mainfolder)
+% mkdir(headfolder) 
 % mkdir(bodyfolder)
 % mkdir(rarmfolder)
 % mkdir(larmfolder)

@@ -14,8 +14,17 @@ end
 uiwait(msgbox('Select destination folder (should be vantan_[trial])'));
 van = uigetdir;
 answer = inputdlg('Enter folder name, e.g. subj1','Folder Name'); 
-writepath = [van '/' answer];
-mkdir ../ra
+
+%writepath = [van '/' answer];          % subtle thing here, answer is a variable of
+%type "cell" (you can look at your workspace to see what that is);
+%basically it's a different kind of object than a simple string. More
+%importantly it CONTAINS the string that you're looking for (the actual
+%thing that the person types). See below 
+
+
+%mkdir ../data/van_gemini subj11 
+% you can make a directory this way, but an easier/more robust way is just to use the variables you have already; writepath IS the path you need to write in, so just make writepath 
+mkdir(writepath)
 averagevan = [];
 averagetan = [];
 namevan = {};
@@ -41,4 +50,4 @@ Tvan = table(namevan,averagevan);
 
 
 %writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
-writetable(Tvan,strcat([van '/' answer],'/Average Vertical Alignments.csv'));
+writetable(Tvan,strcat(writepath,'/Average Vertical Alignments.csv'));
