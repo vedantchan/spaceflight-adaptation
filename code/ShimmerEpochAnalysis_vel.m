@@ -8,10 +8,14 @@
 
 clear; close all;
 
-uiwait(msgbox('Select your shimmer folder'))
+uiwait(msgbox('Select your shimmer split folder'))
 shimPath = uigetdir;
 cd(shimPath);
-mainfolder = 'ShimEpochAnalysis_velocity';
+
+uiwait(msgbox('Select your destination folder'));
+destination = uigetdir;
+mainfolder = 'Velocity';
+
 % headfolder = 'Head';
 % bodyfolder = 'Body';
 % rarmfolder = 'Right Arm';
@@ -34,10 +38,10 @@ P2 = zeros(1,22)';
 REC = zeros(1,22)';
 
 for subjCount = 1:length(subjlist)
-    epochfolder = [shimPath '/'  subjlist{subjCount} '/'  mainfolder '/'];
-    mkdir(epochfolder)
-    splitpath = [shimPath '/' subjlist{subjCount} '/' 'ShimmerSplit'];
-    splitfiles = dir(fullfile(splitpath, '*.csv')); 
+    epochfolder = [destination '/' mainfolder  '/'  subjlist{subjCount} '/']; 
+    mkdir(epochfolder) %maybe need {1}
+    splitpath = [shimPath '/' subjlist{subjCount} ];
+    splitfiles = dir(fullfile(splitpath, '*.csv')); %maybe need {1}
     
     for file = 1:length(splitfiles)
         if contains(splitfiles(file).name,'body','IgnoreCase',true) %TEST FOR EMPTY
@@ -47,12 +51,13 @@ for subjCount = 1:length(subjlist)
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y= data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-                time = 1:length(rT);
+                
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
@@ -80,15 +85,19 @@ for subjCount = 1:length(subjlist)
                 UP1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -109,23 +118,23 @@ for subjCount = 1:length(subjlist)
                 UP1(22) = var(wT);
                 
             elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
-                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                   data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
-                velrt = sqrt((x.^2) + (y.^2) + (z.^2));
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
+                rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-time = 1:length(velrt) * 1/100.21;
+                
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
                 vely = detrend(y.*time);
                 velz = detrend(z.*time);
-                velrt = rT.*time;
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -147,15 +156,18 @@ time = 1:length(velrt) * 1/100.21;
                 UP2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -180,18 +192,18 @@ time = 1:length(velrt) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-time = 1:length(rT) * 1/100.21;
+               
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
                 vely = detrend(y.*time);
                 velz = detrend(z.*time);
-                velrt = rT.*time;
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -213,15 +225,18 @@ time = 1:length(rT) * 1/100.21;
                 P1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -246,18 +261,16 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
-                
-time = 1:length(rT) * 1/100.21;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
                 vely = detrend(y.*time);
                 velz = detrend(z.*time);
-                velrt = rT.*time;
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -279,15 +292,19 @@ time = 1:length(rT) * 1/100.21;
                 P2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -312,18 +329,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-                time = 1:length(rT) * 1/100.21;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
                 vely = detrend(y.*time);
                 velz = detrend(z.*time);
-                velrt = rT.*time;
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -346,15 +362,18 @@ time = 1:length(rT) * 1/100.21;
                 
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -385,18 +404,18 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -406,27 +425,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP1(1) = rms(x);
-                UP1(2) = rms(y);
-                UP1(3) = rms(z);
+                UP1(1) = rms(velx);
+                UP1(2) = rms(vely);
+                UP1(3) = rms(velz);
                 UP1(4) = sqrt((UP1(1).^2) + (UP1(2).^2) + (UP1(3).^2));    %CHECK
-                UP1(9) = peak2peak(x);
-                UP1(10) = peak2peak(y);
-                UP1(11) = peak2peak(z);
-                UP1(12) = peak2peak(rT);
-                UP1(17) = max(rT);
-                UP1(18) = min(rT);
+                UP1(9) = peak2peak(velx);
+                UP1(10) = peak2peak(vely);
+                UP1(11) = peak2peak(velz);
+                UP1(12) = peak2peak(velrt);
+                UP1(17) = max(velrt);
+                UP1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -443,27 +466,25 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP1(21) = var(rT);
+                UP1(21) = var(velrt);
                 UP1(22) = var(wT);
                 
             elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
-                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                   data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
-                
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                               
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -473,27 +494,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP2(1) = rms(x);
-                UP2(2) = rms(y);
-                UP2(3) = rms(z);
+                UP2(1) = rms(velx);
+                UP2(2) = rms(vely);
+                UP2(3) = rms(velz);
                 UP2(4) = sqrt((UP2(1).^2) + (UP2(2).^2) + (UP2(3).^2));    %CHECK
-                UP2(9) = peak2peak(x);
-                UP2(10) = peak2peak(y);
-                UP2(11) = peak2peak(z);
-                UP2(12) = peak2peak(rT);
-                UP2(17) = max(rT);
-                UP2(18) = min(rT);
+                UP2(9) = peak2peak(velx);
+                UP2(10) = peak2peak(vely);
+                UP2(11) = peak2peak(velz);
+                UP2(12) = peak2peak(velrt);
+                UP2(17) = max(velrt);
+                UP2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -510,7 +534,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP2(21) = var(rT);
+                UP2(21) = var(velrt);
                 UP2(22) = var(wT);
             elseif contains(splitfiles(file).name,'P1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -518,18 +542,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -539,27 +562,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P1(1) = rms(x);
-                P1(2) = rms(y);
-                P1(3) = rms(z);
+                P1(1) = rms(velx);
+                P1(2) = rms(vely);
+                P1(3) = rms(velz);
                 P1(4) = sqrt((P1(1).^2) + (P1(2).^2) + (P1(3).^2));    %CHECK
-                P1(9) = peak2peak(x);
-                P1(10) = peak2peak(y);
-                P1(11) = peak2peak(z);
-                P1(12) = peak2peak(rT);
-                P1(17) = max(rT);
-                P1(18) = min(rT);
+                P1(9) = peak2peak(velx);
+                P1(10) = peak2peak(vely);
+                P1(11) = peak2peak(velz);
+                P1(12) = peak2peak(velrt);
+                P1(17) = max(velrt);
+                P1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -576,7 +602,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P1(21) = var(rT);
+                P1(21) = var(velrt);
                 P1(22) = var(wT);
             elseif contains(splitfiles(file).name,'P2','IgnoreCase',true)
                          data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -584,18 +610,18 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -605,27 +631,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P2(1) = rms(x);
-                P2(2) = rms(y);
-                P2(3) = rms(z);
+                P2(1) = rms(velx);
+                P2(2) = rms(vely);
+                P2(3) = rms(velz);
                 P2(4) = sqrt((P2(1).^2) + (P2(2).^2) + (P2(3).^2));    %CHECK
-                P2(9) = peak2peak(x);
-                P2(10) = peak2peak(y);
-                P2(11) = peak2peak(z);
-                P2(12) = peak2peak(rT);
-                P2(17) = max(rT);
-                P2(18) = min(rT);
+                P2(9) = peak2peak(velx);
+                P2(10) = peak2peak(vely);
+                P2(11) = peak2peak(velz);
+                P2(12) = peak2peak(velrt);
+                P2(17) = max(velrt);
+                P2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -642,7 +672,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P2(21) = var(rT);
+                P2(21) = var(velrt);
                 P2(22) = var(wT);
             elseif contains(splitfiles(file).name,'Rec','IgnoreCase',true)
                                        data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -650,18 +680,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -671,27 +700,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                REC(1) = rms(x);
-                REC(2) = rms(y);
-                REC(3) = rms(z);
+                REC(1) = rms(velx);
+                REC(2) = rms(vely);
+                REC(3) = rms(velz);
                 REC(4) = sqrt((REC(1).^2) + (REC(2).^2) + (REC(3).^2));    %CHECK
-                REC(9) = peak2peak(x);
-                REC(10) = peak2peak(y);
-                REC(11) = peak2peak(z);
-                REC(12) = peak2peak(rT);
-                REC(17) = max(rT);
-                REC(18) = min(rT);
+                REC(9) = peak2peak(velx);
+                REC(10) = peak2peak(vely);
+                REC(11) = peak2peak(velz);
+                REC(12) = peak2peak(velrt);
+                REC(17) = max(velrt);
+                REC(18) = min(velrt);
+                
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -708,12 +741,13 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                REC(21) = var(rT);
+                REC(21) = var(velrt);
                 REC(22) = var(wT);
             end
-            
+         
             T = table(datatype, UP1, UP2, P1, P2, REC);
             writetable(T,strcat(epochfolder, 'head_epochdata.csv'));
+       
         elseif contains(splitfiles(file).name,'right_arm','IgnoreCase',true)
             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -721,18 +755,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -742,27 +775,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP1(1) = rms(x);
-                UP1(2) = rms(y);
-                UP1(3) = rms(z);
+                UP1(1) = rms(velx);
+                UP1(2) = rms(vely);
+                UP1(3) = rms(velz);
                 UP1(4) = sqrt((UP1(1).^2) + (UP1(2).^2) + (UP1(3).^2));    %CHECK
-                UP1(9) = peak2peak(x);
-                UP1(10) = peak2peak(y);
-                UP1(11) = peak2peak(z);
-                UP1(12) = peak2peak(rT);
-                UP1(17) = max(rT);
-                UP1(18) = min(rT);
+                UP1(9) = peak2peak(velx);
+                UP1(10) = peak2peak(vely);
+                UP1(11) = peak2peak(velz);
+                UP1(12) = peak2peak(velrt);
+                UP1(17) = max(velrt);
+                UP1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -779,27 +816,26 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP1(21) = var(rT);
+                UP1(21) = var(velrt);
                 UP1(22) = var(wT);
                 
             elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
-                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                   data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -809,27 +845,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP2(1) = rms(x);
-                UP2(2) = rms(y);
-                UP2(3) = rms(z);
+                UP2(1) = rms(velx);
+                UP2(2) = rms(vely);
+                UP2(3) = rms(velz);
                 UP2(4) = sqrt((UP2(1).^2) + (UP2(2).^2) + (UP2(3).^2));    %CHECK
-                UP2(9) = peak2peak(x);
-                UP2(10) = peak2peak(y);
-                UP2(11) = peak2peak(z);
-                UP2(12) = peak2peak(rT);
-                UP2(17) = max(rT);
-                UP2(18) = min(rT);
+                UP2(9) = peak2peak(velx);
+                UP2(10) = peak2peak(vely);
+                UP2(11) = peak2peak(velz);
+                UP2(12) = peak2peak(velrt);
+                UP2(17) = max(velrt);
+                UP2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -846,7 +885,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP2(21) = var(rT);
+                UP2(21) = var(velrt);
                 UP2(22) = var(wT);
             elseif contains(splitfiles(file).name,'P1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -854,18 +893,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -875,27 +913,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P1(1) = rms(x);
-                P1(2) = rms(y);
-                P1(3) = rms(z);
+                P1(1) = rms(velx);
+                P1(2) = rms(vely);
+                P1(3) = rms(velz);
                 P1(4) = sqrt((P1(1).^2) + (P1(2).^2) + (P1(3).^2));    %CHECK
-                P1(9) = peak2peak(x);
-                P1(10) = peak2peak(y);
-                P1(11) = peak2peak(z);
-                P1(12) = peak2peak(rT);
-                P1(17) = max(rT);
-                P1(18) = min(rT);
+                P1(9) = peak2peak(velx);
+                P1(10) = peak2peak(vely);
+                P1(11) = peak2peak(velz);
+                P1(12) = peak2peak(velrt);
+                P1(17) = max(velrt);
+                P1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -912,7 +953,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P1(21) = var(rT);
+                P1(21) = var(velrt);
                 P1(22) = var(wT);
             elseif contains(splitfiles(file).name,'P2','IgnoreCase',true)
                          data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -920,18 +961,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -941,27 +981,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P2(1) = rms(x);
-                P2(2) = rms(y);
-                P2(3) = rms(z);
+                P2(1) = rms(velx);
+                P2(2) = rms(vely);
+                P2(3) = rms(velz);
                 P2(4) = sqrt((P2(1).^2) + (P2(2).^2) + (P2(3).^2));    %CHECK
-                P2(9) = peak2peak(x);
-                P2(10) = peak2peak(y);
-                P2(11) = peak2peak(z);
-                P2(12) = peak2peak(rT);
-                P2(17) = max(rT);
-                P2(18) = min(rT);
+                P2(9) = peak2peak(velx);
+                P2(10) = peak2peak(vely);
+                P2(11) = peak2peak(velz);
+                P2(12) = peak2peak(velrt);
+                P2(17) = max(velrt);
+                P2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -978,7 +1022,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P2(21) = var(rT);
+                P2(21) = var(velrt);
                 P2(22) = var(wT);
             elseif contains(splitfiles(file).name,'Rec','IgnoreCase',true)
                                        data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -986,18 +1030,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2)*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1007,27 +1050,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                REC(1) = rms(x);
-                REC(2) = rms(y);
-                REC(3) = rms(z);
+                REC(1) = rms(velx);
+                REC(2) = rms(vely);
+                REC(3) = rms(velz);
                 REC(4) = sqrt((REC(1).^2) + (REC(2).^2) + (REC(3).^2));    %CHECK
-                REC(9) = peak2peak(x);
-                REC(10) = peak2peak(y);
-                REC(11) = peak2peak(z);
-                REC(12) = peak2peak(rT);
-                REC(17) = max(rT);
-                REC(18) = min(rT);
+                REC(9) = peak2peak(velx);
+                REC(10) = peak2peak(vely);
+                REC(11) = peak2peak(velz);
+                REC(12) = peak2peak(velrt);
+                REC(17) = max(velrt);
+                REC(18) = min(velrt);
+                
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1044,31 +1091,31 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                REC(21) = var(rT);
+                REC(21) = var(velrt);
                 REC(22) = var(wT);
             end
-            
+ 
             T = table(datatype, UP1, UP2, P1, P2, REC);
             writetable(T,strcat(epochfolder, 'right_arm_epochdata.csv'));
+        
         elseif contains(splitfiles(file).name,'left_arm','IgnoreCase',true)
-            if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
+             if contains(splitfiles(file).name,'UP1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1078,27 +1125,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP1(1) = rms(x);
-                UP1(2) = rms(y);
-                UP1(3) = rms(z);
+                UP1(1) = rms(velx);
+                UP1(2) = rms(vely);
+                UP1(3) = rms(velz);
                 UP1(4) = sqrt((UP1(1).^2) + (UP1(2).^2) + (UP1(3).^2));    %CHECK
-                UP1(9) = peak2peak(x);
-                UP1(10) = peak2peak(y);
-                UP1(11) = peak2peak(z);
-                UP1(12) = peak2peak(rT);
-                UP1(17) = max(rT);
-                UP1(18) = min(rT);
+                UP1(9) = peak2peak(velx);
+                UP1(10) = peak2peak(vely);
+                UP1(11) = peak2peak(velz);
+                UP1(12) = peak2peak(velrt);
+                UP1(17) = max(velrt);
+                UP1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1115,27 +1166,26 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP1(21) = var(rT);
+                UP1(21) = var(velrt);
                 UP1(22) = var(wT);
                 
             elseif contains(splitfiles(file).name,'UP2','IgnoreCase',true)
-                                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
+                   data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
                
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1145,27 +1195,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                UP2(1) = rms(x);
-                UP2(2) = rms(y);
-                UP2(3) = rms(z);
+                UP2(1) = rms(velx);
+                UP2(2) = rms(vely);
+                UP2(3) = rms(velz);
                 UP2(4) = sqrt((UP2(1).^2) + (UP2(2).^2) + (UP2(3).^2));    %CHECK
-                UP2(9) = peak2peak(x);
-                UP2(10) = peak2peak(y);
-                UP2(11) = peak2peak(z);
-                UP2(12) = peak2peak(rT);
-                UP2(17) = max(rT);
-                UP2(18) = min(rT);
+                UP2(9) = peak2peak(velx);
+                UP2(10) = peak2peak(vely);
+                UP2(11) = peak2peak(velz);
+                UP2(12) = peak2peak(velrt);
+                UP2(17) = max(velrt);
+                UP2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1182,7 +1235,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                UP2(21) = var(rT);
+                UP2(21) = var(velrt);
                 UP2(22) = var(wT);
             elseif contains(splitfiles(file).name,'P1','IgnoreCase',true)
                 data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -1190,18 +1243,16 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
-                
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+               
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1211,27 +1262,30 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P1(1) = rms(x);
-                P1(2) = rms(y);
-                P1(3) = rms(z);
+                P1(1) = rms(velx);
+                P1(2) = rms(vely);
+                P1(3) = rms(velz);
                 P1(4) = sqrt((P1(1).^2) + (P1(2).^2) + (P1(3).^2));    %CHECK
-                P1(9) = peak2peak(x);
-                P1(10) = peak2peak(y);
-                P1(11) = peak2peak(z);
-                P1(12) = peak2peak(rT);
-                P1(17) = max(rT);
-                P1(18) = min(rT);
+                P1(9) = peak2peak(velx);
+                P1(10) = peak2peak(vely);
+                P1(11) = peak2peak(velz);
+                P1(12) = peak2peak(velrt);
+                P1(17) = max(velrt);
+                P1(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1248,7 +1302,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P1(21) = var(rT);
+                P1(21) = var(velrt);
                 P1(22) = var(wT);
             elseif contains(splitfiles(file).name,'P2','IgnoreCase',true)
                          data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -1256,18 +1310,17 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+              
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1277,27 +1330,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                P2(1) = rms(x);
-                P2(2) = rms(y);
-                P2(3) = rms(z);
+                P2(1) = rms(velx);
+                P2(2) = rms(vely);
+                P2(3) = rms(velz);
                 P2(4) = sqrt((P2(1).^2) + (P2(2).^2) + (P2(3).^2));    %CHECK
-                P2(9) = peak2peak(x);
-                P2(10) = peak2peak(y);
-                P2(11) = peak2peak(z);
-                P2(12) = peak2peak(rT);
-                P2(17) = max(rT);
-                P2(18) = min(rT);
+                P2(9) = peak2peak(velx);
+                P2(10) = peak2peak(vely);
+                P2(11) = peak2peak(velz);
+                P2(12) = peak2peak(velrt);
+                P2(17) = max(velrt);
+                P2(18) = min(velrt);
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1314,7 +1371,7 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                P2(21) = var(rT);
+                P2(21) = var(velrt);
                 P2(22) = var(wT);
             elseif contains(splitfiles(file).name,'Rec','IgnoreCase',true)
                                        data = importdata(strcat(splitfiles(file).folder,'/',splitfiles(file).name));
@@ -1322,18 +1379,16 @@ time = 1:length(rT) * 1/100.21;
                 % RMS r
                 % https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3882286/
                 % acceleration data
-                x = data(:,2);
-                y= data(:,3);
-                z = data(:,4);
+                time = (1:length(data))*(1/51.2); time = time'; x = data(1:length(time),2);
+                y = data(1:length(time),3);
+                z = data(1:length(time),4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
-%                 
-%                 %velocity; assume v0 = 0
-%                 velx = detrend(x.*time);
-%                 vely = detrend(y.*time);
-%                 velz = detrend(z.*time);
-%                 velrt = rT.*time;
+                % velocity; assume v0 = 0
+                velx = detrend(x.*time);
+                vely = detrend(y.*time);
+                velz = detrend(z.*time);
+                velrt = detrend(rT.*time);
 %                 
 %                 %displacement; assume x0 = 0, v0 = 0
 %                 %how to detrend ??
@@ -1343,27 +1398,31 @@ time = 1:length(rT) * 1/100.21;
 %                 disprt = (1/2)*(rT.*(time.^2));
                 
                 % linear measures
-                REC(1) = rms(x);
-                REC(2) = rms(y);
-                REC(3) = rms(z);
+                REC(1) = rms(velx);
+                REC(2) = rms(vely);
+                REC(3) = rms(velz);
                 REC(4) = sqrt((REC(1).^2) + (REC(2).^2) + (REC(3).^2));    %CHECK
-                REC(9) = peak2peak(x);
-                REC(10) = peak2peak(y);
-                REC(11) = peak2peak(z);
-                REC(12) = peak2peak(rT);
-                REC(17) = max(rT);
-                REC(18) = min(rT);
+                REC(9) = peak2peak(velx);
+                REC(10) = peak2peak(vely);
+                REC(11) = peak2peak(velz);
+                REC(12) = peak2peak(velrt);
+                REC(17) = max(velrt);
+                REC(18) = min(velrt);
+                
                 
                 % RMS w
-                if data(1,8) > 100 % test for battery 
-                    wx = data(:,9); 
-                    wy = data(:,10);
-                    wz = data(:,11);
-                else
-                   wx = data(:,8);
-                   wy = data(:,9);
-                    wz = data(:,10);                      
-                end
+%                 if data(1,8) > 100 % test for battery 
+%                     wx = data(:,9); 
+%                     wy = data(:,10);
+%                     wz = data(:,11);
+%                 else
+%                    wx = data(:,8);
+%                    wy = data(:,9);
+%                     wz = data(:,10);                      
+%                 end
+                 wx = data(:,5); 
+                 wy = data(:,6);
+                 wz = data(:,7);
                 wT = sqrt((wx.^2) + (wy.^2) + (wz.^2));
                 
                 % rotational measures
@@ -1380,10 +1439,9 @@ time = 1:length(rT) * 1/100.21;
                 
                 % (rough) variance >> does this make sense to calculate?
                 
-                REC(21) = var(rT);
+                REC(21) = var(velrt);
                 REC(22) = var(wT);
-            end
-            
+             end
             T = table(datatype, UP1, UP2, P1, P2, REC);
             writetable(T,strcat(epochfolder, 'left_arm_epochdata.csv'));
         end

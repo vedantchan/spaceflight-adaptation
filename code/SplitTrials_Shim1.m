@@ -58,8 +58,8 @@ subjects = list(~cellfun('isempty',list));
 %files are within folder, which is within the previously zipped folder (2
 %folder layers within subj# before file)
 
-answer = inputdlg('Enter destination directory');
-mainfolder = answer{1};
+uiwait(msgbox('Select your destination folder'));
+mainfolder = uigetdir;
 
 for subjectCount = 1:length(subjects)
      cd(trialsPath) % helps keeps things organized as you loop through subsequent subject folders

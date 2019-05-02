@@ -31,7 +31,7 @@ for i = 1:length(files)
     rvec = sqrt((x.^2) + (y.^2) + (z.^2));    
     plot(data(:,1), rvec)
     title('Rvector')
-    xlabel('Time in ticks (100.21Hz/sec)') 
+    xlabel('Time in ticks (51.2Hz/sec)') 
     ylabel('lin acceleration (m/(s^2))') 
     xlim([min(data(:,1)) max(data(:,1))])
     saveas(gcf,['Vector' '/' files(i).name(1:end-4) '_rvec.fig']);
@@ -51,7 +51,7 @@ for i = 1:length(files)
     wvec = sqrt((wx.^2) + (wy.^2) + (wz.^2));    
     plot(data(:,1), wvec)
     title('Wvector')
-    xlabel('Time in ticks (100.21Hz/sec)') 
+    xlabel('Time in ticks (51.2Hz/sec)') 
     ylabel('Angular velocity (deg/s)') 
     xlim([min(data(:,1)) max(data(:,1))])
     saveas(gcf,['Vector' '/' files(i).name(1:end-4) '_wvec.fig']);
@@ -62,7 +62,7 @@ for i = 1:length(files)
     plot(data(:,1), y, 'r'); hold on;
     plot(data(:,1), z); hold off;
     title('Accelerometer LN vs Time')
-    xlabel('Time in ticks (100.21Hz/sec)') 
+    xlabel('Time in ticks (51.2Hz/sec)') 
     ylabel('Acceleration (m/(s^2))') 
     legend('x-plane','y-plane','z-plane')
     xlim([min(data(:,1)) max(data(:,1))])
@@ -72,7 +72,7 @@ for i = 1:length(files)
     plot(data(:,1), wy, 'r'); hold on;
     plot(data(:,1), wz); hold off;
     title('Angular velocity vs Time')
-    xlabel('Time in ticks (100.21Hz/sec)')
+    xlabel('Time in ticks (51.2Hz/sec)')
     ylabel('Angular velocity (deg/sec)') 
     legend('x-plane','y-plane','z-plane')
     xlim([min(data(:,1)) max(data(:,1))]);
