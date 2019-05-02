@@ -6,6 +6,8 @@
 
 % run on entire shimmer folder
 
+% 5/2/19: values are too high (detrend seems to shift everything up)
+
 clear; close all;
 
 uiwait(msgbox('Select your shimmer split folder'))
