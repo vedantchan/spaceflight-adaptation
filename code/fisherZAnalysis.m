@@ -2,7 +2,7 @@ clear; close all;
 origin = pwd;
 addpath('.')
 
-paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed/*.csv','output','cell');
+paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed_gemini/*.csv','output','cell');
 
 for j = 1:length(paths)
     path = paths{j};
@@ -18,8 +18,8 @@ for j = 1:length(paths)
     file2 = cell(5);
     c1 = 1;
     c2 = 1;
-    param1 = 'HR'
-    param2 = 'TEMP'
+    param1 = 'TEMP'
+    param2 = 'EDA'
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
