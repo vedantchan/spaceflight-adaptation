@@ -27,11 +27,12 @@ for subjCount = 1:length(subjects)
         data = importdata(strcat(files(f).folder,'/',files(f).name));
          
 %         reg low pass
-%         fs = 51.2;
-%         fpass = 5; %1/5 = 0.2 = fastest time a person moves apparently: https://academic.oup.com/biomedgerontology/article/56/9/M584/691511
-%         filtered = lowpass(data.data(:,2:end),5,51.2);        
-        g = gausswin(10)/sum(gausswin(10));
-        filtered = filter(g,1,data(:,:));      
+        fs = 51.2;
+        fpass = 5; %1/5 = 0.2 = fastest time a person moves apparently: https://academic.oup.com/biomedgerontology/article/56/9/M584/691511
+        filtered = lowpass(data.data(:,2:end),5,51.2);    
+%       gaussian
+%         g = gausswin(10)/sum(gausswin(10));
+%         filtered = filter(g,1,data(:,:));      
         dlmwrite(strcat(subjdest{1}, '/' ,files(f).name(1:end-4),'_cleaned.csv'),filtered)
         
     end
