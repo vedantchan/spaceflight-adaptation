@@ -77,8 +77,8 @@ hredaz = [];
 hrtempz = [];
 tempedaz = [];
 
-for i = 1:10
-   
+for i = 1:30
+
     subjname = strcat('Subj',num2str(i));
     
     subjectvas = trialdata(3:7,subjname);

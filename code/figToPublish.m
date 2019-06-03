@@ -4,7 +4,9 @@ origin = pwd;
 [file,filepath] = uigetfile('*.fig','multiselect','on');
 addpath('.');
 %%
-
+if class(file) == 'char'
+    file = {file};
+end
 cd(filepath)
 mkdir('png')
 mkdir('pdf')
