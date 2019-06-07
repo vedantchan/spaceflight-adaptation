@@ -196,28 +196,27 @@ end
 mkdir('plots/grandepoch/')
 
 
-% grand = {vas,van,puzzle,memory,meanHR,meanTEMP,meanEDA,hredaz,hrtempz,tempedaz,keyspeed,keyerror,rmsbody,rmsright,rmsleft,rmshead,p2pbody,p2pright,p2pleft,p2phead};
-% grandnames = {'vas','van','puzzle','memory','meanHR','meanTEMP','meanEDA','hredaz','hrtempz','tempedaz','keyspeed','keyerror','rmsbody','rmsright','rmsleft','rmshead','p2pbody','p2pright','p2pleft','p2phead'};
-% 
-% shimmer = {rmsbody,rmsright,rmsleft,rmshead,p2pbody,p2pright,p2pleft,p2phead};
-% shimmernames = {'rmsbody','rmsright','rmsleft','rmshead','p2pbody','p2pright','p2pleft','p2phead'};
-makecorr
+grand = {vas,van,puzzle,memory,meanHR,meanTEMP,meanEDA,hredaz,hrtempz,tempedaz,keyspeed,keyerror,rmsbody,rmsright,rmsleft,rmshead,p2pbody,p2pright,p2pleft,p2phead};
+grandnames = {'vas','van','puzzle','memory','meanHR','meanTEMP','meanEDA','hredaz','hrtempz','tempedaz','keyspeed','keyerror','rmsbody','rmsright','rmsleft','rmshead','p2pbody','p2pright','p2pleft','p2phead'};
 
-%% Plot avgs
+shimmer = {rmsbody,rmsright,rmsleft,rmshead,p2pbody,p2pright,p2pleft,p2phead};
+shimmernames = {'rmsbody','rmsright','rmsleft','rmshead','p2pbody','p2pright','p2pleft','p2phead'};
 
-% for j = 1:size(grand,2)
-%     makenormplot(grand{j},grandnames{j})
-%     savefig(strcat('plots/grandepoch/normalized-',grandnames{j}))
-%     close;
-%     
-%     makeoverlayplot(grand{j},grandnames{j})
-%     savefig(strcat('plots/grandepoch/overlayed-',grandnames{j}))
-%     close;
-%     
-%     makesubplot(grand{j},grandnames{j})
-%     savefig(strcat('plots/grandepoch/subplot-',grandnames{j}))
-%     close;
-% end
+% Plot avgs
+
+for j = 1:size(grand,2)
+    makenormplot(grand{j},grandnames{j})
+    savefig(strcat('plots/grandepoch/normalized-',grandnames{j}))
+    close;
+    
+    makeoverlayplot(grand{j},grandnames{j})
+    savefig(strcat('plots/grandepoch/overlayed-',grandnames{j}))
+    close;
+    
+    makesubplot(grand{j},grandnames{j})
+    savefig(strcat('plots/grandepoch/subplot-',grandnames{j}))
+    close;
+end
 
 
 subjectmeasures = cell(30,1);
