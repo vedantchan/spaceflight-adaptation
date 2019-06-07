@@ -21,7 +21,7 @@ movehere = [movehere '/'];
 
 %% analyze!
 
-for subjectCount = 1:length(subjects)
+for subjectCount = 10:length(subjects)
      splitDir = strcat(trialsPath,subjects(subjectCount),'/','EmpaticaSplit/')
      path = splitDir{1};
      cd(strcat(trialsPath,subjects{subjectCount}));
