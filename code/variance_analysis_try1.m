@@ -23,7 +23,7 @@ current = pwd;
 
 % pulling from hr data, subj23
 
-subj_pwd = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/raw_apollo/subj23/EmpaticaSplit';
+subj_pwd = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/smoothed_apollo/subj23';
 
 hrfiles = dir(fullfile(subj_pwd,'HR.csv*.csv'));
 hrsortedfiles = {{strcat(hrfiles(1).folder,'/HR.csv_E4_UP1.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_UP2.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_P1.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_P2.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_REC.csv')}};

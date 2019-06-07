@@ -14,3 +14,4 @@ list = strsplit(string);
 subjects = list(~cellfun('isempty',list));
 
 
+

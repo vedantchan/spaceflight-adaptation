@@ -63,12 +63,5 @@ for datacount = 1:5     % loop through all epochs
     cellofnew{datacount} = tempnewarr;
 end
 
-% spit out variance vector
-% newdata1 = cellofnew{1}';
-% newdata2 = cellofnew{2}';
-% newdata3 = cellofnew{3}';
-% newdata4 = cellofnew{4}';
-% newdata5 = cellofnew{5}';
-
 cellofvars = cellofnew;
 
