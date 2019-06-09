@@ -1,5 +1,8 @@
 function [fisherZ,surrzs] = fisherz(signal1,signal2,makeplot)
 
+if nargin<3
+    makeplot = 0;
+end
 
 if length(signal2)>length(signal1)
     signal1 = resample(signal1,length(signal2),length(signal1));
