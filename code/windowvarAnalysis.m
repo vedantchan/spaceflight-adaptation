@@ -26,28 +26,28 @@ for subjcount = 1:length(subjects)
     currentsubj = [trialsPath '/' subjects{subjcount} ];
     % cd(currentsubj);
     
-    hrfiles = dir(fullfile(currentsubj,'TEMP.csv*.csv'));
-    hrsortedfiles = {{strcat(hrfiles(1).folder,'/TEMP.csv_E4_UP1_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/TEMP.csv_E4_UP2_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/TEMP.csv_E4_P1_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/TEMP.csv_E4_P2_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/TEMP.csv_E4_Rec_smoothedandresampled.csv')}};
+    hrfiles = dir(fullfile(currentsubj,'HR.csv*.csv'));
+    hrsortedfiles = {{strcat(hrfiles(1).folder,'/HR.csv_E4_UP1_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_UP2_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_P1_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_P2_smoothedandresampled.csv')} {strcat(hrfiles(1).folder,'/HR.csv_E4_Rec_smoothedandresampled.csv')}};
 
     windowpercent = 0.0051;
 
     cellofnew = windowvar(hrsortedfiles,windowpercent);
     
-    dlmwrite(strcat(currentsubj, '/', 'TEMPvar_', 'UP1.csv'), cellofnew{1});
-    dlmwrite(strcat(currentsubj, '/', 'TEMPvar_', 'UP2.csv'), cellofnew{2});
-    dlmwrite(strcat(currentsubj, '/', 'TEMPvar_', 'P1.csv'), cellofnew{3});
-    dlmwrite(strcat(currentsubj, '/', 'TEMPvar_', 'P2.csv'), cellofnew{4});
-    dlmwrite(strcat(currentsubj, '/', 'TEMPvar_', 'Rec.csv'), cellofnew{5});
+    dlmwrite(strcat(currentsubj, '/', 'HRvar_', 'UP1.csv'), cellofnew{1});
+    dlmwrite(strcat(currentsubj, '/', 'HRvar_', 'UP2.csv'), cellofnew{2});
+    dlmwrite(strcat(currentsubj, '/', 'HRvar_', 'P1.csv'), cellofnew{3});
+    dlmwrite(strcat(currentsubj, '/', 'HRvar_', 'P2.csv'), cellofnew{4});
+    dlmwrite(strcat(currentsubj, '/', 'HRvar_', 'Rec.csv'), cellofnew{5});
     
     % write into a separate variance folder 
    varsubj = [variancefolder '/' subjects{subjcount}];
     mkdir(varsubj);
     
-    dlmwrite(strcat(varsubj, '/', 'TEMPvar_', 'UP1.csv'), cellofnew{1});
-    dlmwrite(strcat(varsubj, '/', 'TEMPvar_', 'UP2.csv'), cellofnew{2});
-    dlmwrite(strcat(varsubj, '/', 'TEMPvar_', 'P1.csv'), cellofnew{3});
-    dlmwrite(strcat(varsubj, '/', 'TEMPvar_', 'P2.csv'), cellofnew{4});
-    dlmwrite(strcat(varsubj, '/', 'TEMPvar_', 'Rec.csv'), cellofnew{5});
+    dlmwrite(strcat(varsubj, '/', 'HRvar_', 'UP1.csv'), cellofnew{1});
+    dlmwrite(strcat(varsubj, '/', 'HRvar_', 'UP2.csv'), cellofnew{2});
+    dlmwrite(strcat(varsubj, '/', 'HRvar_', 'P1.csv'), cellofnew{3});
+    dlmwrite(strcat(varsubj, '/', 'HRvar_', 'P2.csv'), cellofnew{4});
+    dlmwrite(strcat(varsubj, '/', 'HRvar_', 'Rec.csv'), cellofnew{5});
     
     figure
     subplot(5,1,1)
@@ -67,7 +67,7 @@ for subjcount = 1:length(subjects)
     plot(cellofnew{5}(10:end-10));
     ylim([0 2.5])
     
-    saveas(gcf,strcat(varsubj, '/', 'TEMPvarplot.fig'));
+    saveas(gcf,strcat(varsubj, '/', 'HRvarplot.fig'));
 end
 
 
