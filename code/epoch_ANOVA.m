@@ -174,7 +174,7 @@ end
 
 %% One Way ANOVA
 
-table = p2pbody;
+table = tempedaz; % Select which measure to perform ANOVA on
 
 array = table2array(table).';
 newtable = array2table(array);
@@ -188,20 +188,20 @@ data = table2array(table);
 %% TWO WAY ANOVA
 % we split the subjects into our colloquial sets. 
 
-table = removevars(table,11:30);
-
-table = movevars(table,'Subj3','Before','Subj1');
-table = movevars(table,'Subj6','Before','Subj3');
-table = movevars(table,'Subj8','Before','Subj6');
-table = movevars(table,'Subj1','After','Subj10');
-table = movevars(table,'Subj2','After','Subj1');
-table = movevars(table,'Subj5','Before','Subj7');
-table = movevars(table,'Subj4','Before','Subj2');
-array = table2array(table).';
-newtable = array2table(array);
-newtable.Properties.RowNames = table.Properties.VariableNames;
-table = newtable;
-table.Properties.VariableNames = {'UP1','UP2','P1','P2','REC'};
-data = table2array(table);
-
-[p,tbl,stats] = anova2(data,5);
+% table = removevars(table,11:30);
+% 
+% table = movevars(table,'Subj3','Before','Subj1');
+% table = movevars(table,'Subj6','Before','Subj3');
+% table = movevars(table,'Subj8','Before','Subj6');
+% table = movevars(table,'Subj1','After','Subj10');
+% table = movevars(table,'Subj2','After','Subj1');
+% table = movevars(table,'Subj5','Before','Subj7');
+% table = movevars(table,'Subj4','Before','Subj2');
+% array = table2array(table).';
+% newtable = array2table(array);
+% newtable.Properties.RowNames = table.Properties.VariableNames;
+% table = newtable;
+% table.Properties.VariableNames = {'UP1','UP2','P1','P2','REC'};
+% data = table2array(table);
+% 
+% [p,tbl,stats] = anova2(data,5);
