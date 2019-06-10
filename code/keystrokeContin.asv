@@ -19,16 +19,14 @@ clear; close all;
 %subj23folder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/Splitdata/subj23';
 subj23folder =     'C:\Users\Spaceexplorers\Documents\GitHub\spaceflight-adaptation\data\keystroke\Splitdata\subj23';
 cd(subj23folder)
-% list=ls('*.txt');
-% list= strsplit(list);
-list = ls('*.txt');
+list=ls('*.txt');
+list= strsplit(list);
 
 
 for i = 1:length(list)
     
    
-    %KEYS = importdata(list{i});
-    KEYS = importdata(list(i,:));
+    KEYS = importdata(list{i});
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.S'); 
 
