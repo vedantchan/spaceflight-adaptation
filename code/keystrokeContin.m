@@ -1,12 +1,22 @@
+%% 6/10/19 Keystroke Intervals
+% Calculates:
+% - key intervals (time between key strokes)
+% - %phase comparison (w/ parsed out assignment time)
+% - interpolated key speed
+
 %% 4/24/19; KeyStroke analysis
 
 % 3/1/19: DONE
 % 3/6/19: not done; added mistake percent
 
 % 6/9/19: working on it again 
-% - adding/revising key interval (continuous time b/w key strokes), comparing avg time between key strokes in
-% unperturbed to avg time b/w key strokes in perturbed (or b/w epochs),
-% 
+% ideas:
+% - adding/revising key interval (continuous time b/w key strokes)
+% - comparing avg time between key strokes in unperturbed to avg time b/w key strokes in perturbed (or b/w epochs) 
+% >> need to parse out assignment times
+% hold time for keys or flight time ( specifically Flight time is the time
+% duration in between releasing a key and pressing the next key)
+% ultimate: words per minute
 
 clear; close all;
 
@@ -123,7 +133,7 @@ for i = 1:length(file)
     saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistakerate.fig')); %already specifies the round type
     
     %plot mistakes over typing frequency
-    plot(1:length(indicines),mistakepercent);
+    plot(1:length(indicies),mistakepercent);
     title('Mistake Percentage per minute');
     saveas(gcf, strcat(datafolder,'/',file{i}(1:end-4), '_mistakepercent.fig')); 
 

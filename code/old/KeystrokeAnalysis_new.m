@@ -8,7 +8,7 @@
 % - adding/revising key interval (continuous time b/w key strokes)
 % - comparing avg time between key strokes in unperturbed to avg time b/w key strokes in perturbed (or b/w epochs) 
 % >> need to parse out assignment times
-% hold time for keys or flight time ( specifically time
+% hold time for keys or flight time ( specifically Flight time is the time
 % duration in between releasing a key and pressing the next key)
 % ultimate: words per minute
 
