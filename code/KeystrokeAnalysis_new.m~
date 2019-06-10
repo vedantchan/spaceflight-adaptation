@@ -4,13 +4,9 @@
 % 3/6/19: not done; added mistake percent
 
 % 6/9/19: working on it again 
-% ideas:
-% - adding/revising key interval (continuous time b/w key strokes)
-% - comparing avg time between key strokes in unperturbed to avg time b/w key strokes in perturbed (or b/w epochs) 
-% >> need to parse out assignment times
-% hold time for keys or flight time ( specifically time
-% duration in between releasing a key and pressing the next key)
-% ultimate: words per minute
+% - adding/revising key interval (continuous time b/w key strokes), comparing avg time between key strokes in
+% unperturbed to avg time b/w key strokes in perturbed (or b/w epochs),
+% 
 
 clear; close all;
 
