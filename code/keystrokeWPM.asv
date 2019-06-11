@@ -1,7 +1,6 @@
 %% 6/10/19 Calculates WPM
 % takes in one text file (split data)
 % https://www.speedtypingonline.com/typing-equations 
-% avg person types ~30-40 wpm (look up)
 
 function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,subjnum,switchtimesheet)
     
@@ -30,7 +29,7 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     % wpm
     wpm = (totalkeys/5)/totalmins;
     
-    % wpm with corrections 
+    % wpm with corrections >> this has problems?
     backkey = find(contains(KEYS,'BackÂ'));
     wpm_corrected = ((totalkeys/5) - length(backkey))/totalmins;
     

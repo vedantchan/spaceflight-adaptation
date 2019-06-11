@@ -27,7 +27,7 @@ function [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjdatafile
     avgmistakes = (totalmistakes/(finish-start));
     
     %mistake percent
-    totalkeystrokes = length(KEYS(2:en));
+    totalkeystrokes = length(KEYS(2:end));
     percentmistake = totalmistakes/totalkeystrokes;
     
     

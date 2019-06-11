@@ -1,6 +1,7 @@
 %% 6/10/19: Keystroke gen analysis, multifunction
  % function takes in a textfile, the subject number, and specified switch time sheet (the
     % file itself)
+% 6/11/19: WORKS; need to implement epoch data
     
 function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, subjnum, switchtimesheet)
    
@@ -11,8 +12,8 @@ function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, sub
     switchtimes = rmmissing(switchtimesheet.data); %gets rid of NANs
 
     %cd(subj23folder)
-%     list=ls(fullfile(subjdatafold,'*.txt'));
-%     list= strsplit(list);
+%     filelist=ls(fullfile(subjdatafold,'*.txt'));
+%     filelist= strsplit(list);
     %list = ls('*.txt');
 
     subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(subjnum)])));
