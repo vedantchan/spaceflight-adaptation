@@ -6,6 +6,7 @@ close;
 subjfolders = uipickfiles;
 switchtimesheet = importdata('/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/switchtimes.csv');
 
+
 folder = newEpochAnalysis;
 answer = inputdlg('What is your starting subject number?');
 
@@ -19,7 +20,7 @@ for subjcount = answer{1}:length(subjfolders)+answer{1}
     [wpm,wpm_corrected,accuracy] = keystrokeWPM(subjfolder(answer{1} - (answer{1}-1)),switchtimesheet);
     
     %keysMistake
-    [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjfolder(answer{1} - (answer{1}-1))
+    
     
 end
 

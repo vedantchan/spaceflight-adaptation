@@ -83,8 +83,7 @@ for i = 1:1
         % - if more than two characters are the same and are both hold (i.e.
         % hold DOWN for a long time), then find when the next time it is that that
         % character comes UP
-        
-       
+  
 end
 
 cd(current)
