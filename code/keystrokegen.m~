@@ -1,8 +1,9 @@
 %% 6/10/19: Keystroke gen analysis, multifunction
- % function takes in a textfile, the subject number, and specified switch time sheet (the
+ % function takes in a subject folder with split data (so one subject
+    % folder), the subject number, and specified switch time sheet (the
     % file itself)
     
-function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, subjnum, switchtimesheet)
+function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafold, subjnum, switchtimesheet)
    
     
     % subj23folder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/Splitdata/subj23';
@@ -17,7 +18,7 @@ function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, sub
 
     subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(subjnum)])));
 
-        KEYS = importdata(subjdatafile);
+        KEYS = importdata(list{i});
         %KEYS = importdata(list(i,:));
         EXkeys = extractBetween(KEYS(2:end), 11, 22);
         EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.SSS'); 
@@ -30,6 +31,7 @@ function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, sub
         %% key speed
 
         [keypermin, binedge, binindex] = histcounts(MINS, start:finish);
+    
     
         %% intervals
 
@@ -63,3 +65,7 @@ function [keypermin, cleanedintervals, keyhold] = keystrokegen(subjdatafile, sub
             % - if more than two characters are the same and are both hold (i.e.
             % hold DOWN for a long time), then find when the next time it is that that
             % character comes UP
+
+
+
+    

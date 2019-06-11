@@ -1,8 +1,8 @@
 % 6/10/19: Keystroke mistake analysis
 
-function [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjdatafold)
+function [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjdatafile)
 
-    KEYS = importdata(subjdatafold);
+    KEYS = importdata(subjdatafile);
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.S'); 
     TIMES_sec = EXkeys.Hour*3600+EXkeys.Minute*60+EXkeys.Second; %seconds past midnight

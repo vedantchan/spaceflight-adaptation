@@ -1,10 +1,10 @@
 %% 6/10/19 Calculates WPM
-% takes in one subject data folder (with all 5 split data)
+% takes in one text file (split data)
 % https://www.speedtypingonline.com/typing-equations 
 
-function [wpm,wpm_corrected,accuracy] = keystrokeWPM(subjdatafold,switchtimesheet)
+function [wpm,wpm_corrected,accuracy] = keystrokeWPM(subjdatafile,switchtimesheet)
     
-    KEYS = importdata(subjdatafold);
+    KEYS = importdata(subjdatafile);
     %KEYS = importdata(list(i,:));
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.SSS'); 
@@ -28,7 +28,7 @@ function [wpm,wpm_corrected,accuracy] = keystrokeWPM(subjdatafold,switchtimeshee
     totalkeys = length(newkeys);
     
     % wpm
-    wpm = (totalkeys/5)/totalmins;
+    wpm = [wpm (totalkeys/5)/totalmins];
     
     % wpm with corrections >> this has problems?
     backkey = find(contains(KEYS,'BackÂ'));
@@ -37,6 +37,7 @@ function [wpm,wpm_corrected,accuracy] = keystrokeWPM(subjdatafold,switchtimeshee
     % accuracy
     accuracy = (length(KEYS) - length(backkey))*100;
     
+
     
     
 
