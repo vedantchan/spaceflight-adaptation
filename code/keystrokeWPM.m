@@ -4,6 +4,7 @@
 % avg person types ~30-40 wpm (look up)
 
 %6/11/19: penalty for shifts, need to fix
+% 6/12/19: DONE
 
 function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,subjnum,switchtimesheet)
     
@@ -13,7 +14,7 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     TIMES_sec2 = EXkeys.Hour*3600+EXkeys.Minute*60+EXkeys.Second;
 
     switchtimes = rmmissing(switchtimesheet.data); %gets rid of NANs
-    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' subjnum])));
+    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(subjnum)])));
     
     intervals2 = diff(TIMES_sec2);
     ind2 = find(intervals2 > min(subjcol)); %weird number for UP
@@ -27,8 +28,8 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     
     % no backspace, no shift, no enter,  things that don't make a mark?
     wpmnewkeys = KEYS;
-    shiftkeys = find(contains(wpmnewkeys,'RShiftKeyÂ') | contains(wpmnewkeys,'LShiftKeyÂ'));
-    wpmnewkeys(shiftkeys) = [];
+    %shiftkeys = find(contains(wpmnewkeys,'RShiftKeyÂ') | contains(wpmnewkeys,'LShiftKeyÂ'));
+    %wpmnewkeys(shiftkeys) = [];
     backkeys = find(contains(wpmnewkeys,'BackÂ'));
     wpmnewkeys(backkeys) = [];   
     arrowkeys = find(contains(wpmnewkeys,'RightÂ') | contains(wpmnewkeys,'DownÂ') | contains(wpmnewkeys,'UpÂ')| contains(wpmnewkeys,'LeftÂ'));
@@ -61,18 +62,17 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
      % chars. but that is a lot of penalization. hm.
 
      wpmcnewkeys = KEYS;
-     shiftkeys = find(contains(wpmcnewkeys,'RShiftKeyÂ') | contains(wpmcnewkeys,'LShiftKeyÂ'));
-     wpmcnewkeys(shiftkeys) = [];
+     %shiftkeys = find(contains(wpmcnewkeys,'RShiftKeyÂ') | contains(wpmcnewkeys,'LShiftKeyÂ'));
+     %wpmcnewkeys(shiftkeys) = [];
      backkeys = find(contains(wpmcnewkeys,'BackÂ'));
      wpmcnewkeys(backkeys) = [];
      arrowkeys = find(contains(wpmcnewkeys,'RightÂ') | contains(wpmcnewkeys,'DownÂ') | contains(wpmcnewkeys,'UpÂ')| contains(wpmcnewkeys,'LeftÂ'));
-     wpmcnewkeys(arrowkeys) = [];
-     wrongkey2 = find(contains(wpmcnewkeys,'OemtildeÂ') | contains(wpmcnewkeys,'OemplusÂ') | contains(wpmcnewkeys,'EscapeÂ') | contains(wpmcnewkeys,'VolumeMuteÂ') | contains(wpmcnewkeys,'VolumeDownÂ') | contains(wpmcnewkeys,'VolumeUpÂ') | contains(wpmcnewkeys,'F5Â') | contains(wpmcnewkeys,'LWinÂ') | contains(wpmcnewkeys,'PrintScreenÂ') | contains(wpmcnewkeys,'InsertÂ') | contains(wpmcnewkeys,'DeleteÂ') | contains(wpmcnewkeys,'MediaPlayPauseÂ') | contains(wpmcnewkeys,'MediaPreviousTrackÂ') | contains(wpmcnewkeys,'MediaNextTrackÂ') | contains(wpmcnewkeys,'NumLockÂ') | contains(wpmcnewkeys,'Oem5Â') | contains(wpmcnewkeys,'LMenuÂ') | contains(wpmcnewkeys,'LControlKeyÂ') | contains(wpmcnewkeys,'RControlKeyÂ') | contains(wpmcnewkeys,'RMenuÂ') | contains(wpmcnewkeys,'DivideÂ') | contains(wpmcnewkeys,'MultiplyÂ') | contains(wpmcnewkeys,'SubtractÂ') | contains(wpmcnewkeys,'HomeÂ') | contains(wpmcnewkeys,'AddÂ') | contains(wpmcnewkeys,'ClearÂ') | contains(wpmcnewkeys,'EndÂ') | contains(wpmcnewkeys,'NextÂ')  | contains(wpmcnewkeys,'NoneÂ'));
-     wpmcnewkeys(wrongkey2) = []; % penalizes for uncorrected mistakes
-    wrongarrow = [];
+     
+   
+     wrongarrow = [];
     if length(arrowkeys) > 3
         for numarrow = 1:length(arrowkeys)-1
-            if arrowkeys(numarrow+1) ~= arrowkeys(numarrow)+1 && (contains(wpmcnewkeys(arrowkeys(numarrow)+1),'BackÂ') == 0)
+            if arrowkeys(numarrow+1) ~= arrowkeys(numarrow) && (contains(wpmcnewkeys(arrowkeys(numarrow+1)),'BackÂ') == 0)
                 wrongarrow = [wrongarrow arrowkeys(numarrow)];
             end
         end
@@ -80,6 +80,9 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
         wrongarrow = arrowkeys;
     end
     %cleaning out all bad keys
+           wpmcnewkeys(arrowkeys) = [];
+    wrongkey2 = find(contains(wpmcnewkeys,'OemtildeÂ') | contains(wpmcnewkeys,'OemplusÂ') | contains(wpmcnewkeys,'EscapeÂ') | contains(wpmcnewkeys,'VolumeMuteÂ') | contains(wpmcnewkeys,'VolumeDownÂ') | contains(wpmcnewkeys,'VolumeUpÂ') | contains(wpmcnewkeys,'F5Â') | contains(wpmcnewkeys,'LWinÂ') | contains(wpmcnewkeys,'PrintScreenÂ') | contains(wpmcnewkeys,'InsertÂ') | contains(wpmcnewkeys,'DeleteÂ') | contains(wpmcnewkeys,'MediaPlayPauseÂ') | contains(wpmcnewkeys,'MediaPreviousTrackÂ') | contains(wpmcnewkeys,'MediaNextTrackÂ') | contains(wpmcnewkeys,'NumLockÂ') | contains(wpmcnewkeys,'Oem5Â') | contains(wpmcnewkeys,'LMenuÂ') | contains(wpmcnewkeys,'LControlKeyÂ') | contains(wpmcnewkeys,'RControlKeyÂ') | contains(wpmcnewkeys,'RMenuÂ') | contains(wpmcnewkeys,'DivideÂ') | contains(wpmcnewkeys,'MultiplyÂ') | contains(wpmcnewkeys,'SubtractÂ') | contains(wpmcnewkeys,'HomeÂ') | contains(wpmcnewkeys,'AddÂ') | contains(wpmcnewkeys,'ClearÂ') | contains(wpmcnewkeys,'EndÂ') | contains(wpmcnewkeys,'NextÂ')  | contains(wpmcnewkeys,'NoneÂ'));
+     wpmcnewkeys(wrongkey2) = []; % penalizes for uncorrected mistakes
     
     totalkeyscorr = length(wpmcnewkeys);
     
@@ -87,7 +90,7 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     wpm_corrected = ((totalkeyscorr/5) - length(backkeys) - length(wrongarrow))/(2*totalmins2); % everything wrong but all arrow keys
     
     % accuracy > not accurate for some reason, har har
-    
+    % accuracy already accounts for percent mistake (100 - percent correct)
     accuracy = ((totalkeyscorr)/(length(KEYS)))*100; %  *******penalty for shifts, need to fix
     
     % total words, corrected

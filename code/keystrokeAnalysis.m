@@ -11,10 +11,10 @@ st = uipickfiles('filterspec', '/Users/SYT/Documents/GitHub/spaceflight-adaptati
 switchtimesheet = importdata(st{1});
 answer = inputdlg('What is your starting subject number?');
 
-for subjcount = str2num(answer{1}):length(subjfolders)+str2num(answer{1})
+for subjcount = str2num(answer{1}):(length(subjfolders)-1)+str2num(answer{1})
     currentsubjfolder = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/newEpochAnalysis/subj' num2str(subjcount)];
     mkdir(currentsubjfolder)
-    filelist=ls(fullfile(subjfolders{1},'*.txt'));
+    filelist=ls(fullfile(subjfolders{(subjcount+1)-str2num(answer{1})},'*.txt'));
     filelist= strsplit(filelist);
     subjfile = epochsort(filelist);
 
@@ -33,7 +33,6 @@ for subjcount = str2num(answer{1}):length(subjfolders)+str2num(answer{1})
 %     totalmistakes = [];
 %     avgmistakes = [];
 %     percentmistake = [];
-    
     
     for filecount = 1:5
         % keysgen 
@@ -55,40 +54,58 @@ for subjcount = str2num(answer{1}):length(subjfolders)+str2num(answer{1})
         % [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjfile);   
     end
     
-    T = table(avgkeypermin, stdkeypermin, avgcleanedintervals, stdcleanedintervals, maxcleanedintervals, wpm, wpm_corrected, accuracy, totalwords);
-    writetable(T,[currentsubjfolder '/' 'keysEpochData.csv']);
+    avgkeypermin = avgkeypermin';
+    stdkeypermin = stdkeypermin';
+    avgcleanedintervals = avgcleanedintervals';
+    stdcleanedintervals = stdcleanedintervals';
+    maxcleanedintervals = maxcleanedintervals';
+    wpm = wpm';
+    wpm_corrected = wpm_corrected';
+    accuracy = accuracy';
+    totalwords = totalwords';
+    epochs = ["UP1" "UP2" "P1" "P2" "REC"]';
     
+    T = table(epochs, avgkeypermin, stdkeypermin, avgcleanedintervals, stdcleanedintervals, maxcleanedintervals, wpm, wpm_corrected, accuracy, totalwords);
+    writetable(T,[currentsubjfolder '/' 'keysEpochData_subj' num2str(subjcount) '.csv']);
+    
+    names = {'UP1'; 'UP2'; 'P1'; 'P2'; 'REC'};
+
     subplot(7,1,1)
     errorbar(avgkeypermin,stdkeypermin)
-    title('Average Key Press Per Min Across Epoch')
-    
+    title(['Average Key Press Per Min Across Epoch' ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
+
     subplot(7,1,2)
     errorbar(avgcleanedintervals,stdcleanedintervals)
-    title('Average Key Intervals Across Epoch (Clean)')
+    title(['Average Key Intervals Across Epoch (Clean)' ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
     
     subplot(7,1,3)
     plot(maxcleanedintervals)
-    title('Maximum Key Intervals')
+    title(['Maximum Key Intervals' ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
     
     subplot(7,1,4)
     plot(wpm)
-    title('Words Per Minute (Uncorrected)')
+    title(['Words Per Minute (Uncorrected)'  ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
     
     subplot(7,1,5)
     plot(wpm_corrected)
-    title('Words Per Minute (Corrected)')
+    title(['Words Per Minute (Corrected)'  ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
     
     subplot(7,1,6)
     plot(accuracy)
-    title('Typing Accuracy')
+    title(['Typing Accuracy'  ': subj' num2str(subjcount)])
+    set(gca,'xtick', [1:5],'xticklabel',names);
     
     subplot(7,1,7)
     plot(totalwords)
-    title('Total Words (Corrected)');
-    names = {'UP1'; 'UP2'; 'P1'; 'P2'; 'REC'};
+    title(['Total Words (Corrected)'  ': subj' num2str(subjcount)]);
+    set(gca,'xtick', [1:5],'xticklabel',names);
 
     saveas(gcf,[currentsubjfolder '/' 'allkeysEpochdata.fig']);
-    
     
 end
 

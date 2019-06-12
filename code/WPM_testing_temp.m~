@@ -1,19 +1,30 @@
-%% 6/10/19 Calculates WPM
-% takes in one text file (split data)
-% https://www.speedtypingonline.com/typing-equations 
-% avg person types ~30-40 wpm (look up)
+ % 6/11/19 WPM testing
+  
+ clear all;
+ 
+ subjfolders = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke');
+%switchtimesheet = importdata('/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/switchtimes.csv');
+uiwait(msgbox('Which swtich time sheet are you using?'))
+st = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke');
+switchtimesheet = importdata(st{1});
 
-%6/11/19: penalty for shifts, need to fix
+filelist=ls(fullfile(subjfolders{1},'*.txt'));
+filelist = strsplit(filelist);
+subjfile = epochsort(filelist);
 
-function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,subjnum,switchtimesheet)
-    
-    KEYS = importdata(subjdatafile);
+%subjdatafile1 = fullfile(subjfolders{1},filelist(1,1:end)); %P
+%subjdatafile2 = fullfile(subjfolders{1},filelist(4,1:end)); %UP
+
+subjdatafile1 = subjfile{1}; %P
+subjdatafile2 = subjfile{1}; %UP
+
+KEYS = importdata(subjdatafile2);
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.SSS'); 
     TIMES_sec2 = EXkeys.Hour*3600+EXkeys.Minute*60+EXkeys.Second;
 
     switchtimes = rmmissing(switchtimesheet.data); %gets rid of NANs
-    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' subjnum])));
+    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(13)])));
     
     intervals2 = diff(TIMES_sec2);
     ind2 = find(intervals2 > min(subjcol)); %weird number for UP
@@ -27,8 +38,8 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     
     % no backspace, no shift, no enter,  things that don't make a mark?
     wpmnewkeys = KEYS;
-    shiftkeys = find(contains(wpmnewkeys,'RShiftKeyÂ') | contains(wpmnewkeys,'LShiftKeyÂ'));
-    wpmnewkeys(shiftkeys) = [];
+    %shiftkeys = find(contains(wpmnewkeys,'RShiftKeyÂ') | contains(wpmnewkeys,'LShiftKeyÂ'));
+    %wpmnewkeys(shiftkeys) = [];
     backkeys = find(contains(wpmnewkeys,'BackÂ'));
     wpmnewkeys(backkeys) = [];   
     arrowkeys = find(contains(wpmnewkeys,'RightÂ') | contains(wpmnewkeys,'DownÂ') | contains(wpmnewkeys,'UpÂ')| contains(wpmnewkeys,'LeftÂ'));
@@ -61,8 +72,8 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
      % chars. but that is a lot of penalization. hm.
 
      wpmcnewkeys = KEYS;
-     shiftkeys = find(contains(wpmcnewkeys,'RShiftKeyÂ') | contains(wpmcnewkeys,'LShiftKeyÂ'));
-     wpmcnewkeys(shiftkeys) = [];
+     %shiftkeys = find(contains(wpmcnewkeys,'RShiftKeyÂ') | contains(wpmcnewkeys,'LShiftKeyÂ'));
+     %wpmcnewkeys(shiftkeys) = [];
      backkeys = find(contains(wpmcnewkeys,'BackÂ'));
      wpmcnewkeys(backkeys) = [];
      arrowkeys = find(contains(wpmcnewkeys,'RightÂ') | contains(wpmcnewkeys,'DownÂ') | contains(wpmcnewkeys,'UpÂ')| contains(wpmcnewkeys,'LeftÂ'));
@@ -72,7 +83,7 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     wrongarrow = [];
     if length(arrowkeys) > 3
         for numarrow = 1:length(arrowkeys)-1
-            if arrowkeys(numarrow+1) ~= arrowkeys(numarrow)+1 && (contains(wpmcnewkeys(arrowkeys(numarrow)+1),'BackÂ') == 0)
+            if (arrowkeys(numarrow+1) ~= arrowkeys(numarrow)+1) && (contains(wpmcnewkeys(arrowkeys(numarrow)+1),'BackÂ') == 0)
                 wrongarrow = [wrongarrow arrowkeys(numarrow)];
             end
         end
@@ -88,15 +99,9 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     
     % accuracy > not accurate for some reason, har har
     % accuracy already accounts for percent mistake (100 - percent correct)
-  
     accuracy = ((totalkeyscorr)/(length(KEYS)))*100; %  *******penalty for shifts, need to fix
     
     % total words, corrected
     %wpmcnewkeys(shiftkeys) = [];
     totalwords = totalkeyscorr/5;
-    return 
-end
-    
-    
-
     

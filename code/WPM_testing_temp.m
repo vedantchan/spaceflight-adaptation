@@ -1,5 +1,6 @@
  % 6/11/19 WPM testing
- 
+  
+ clear all;
  
  subjfolders = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke');
 %switchtimesheet = importdata('/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/keystroke/switchtimes.csv');
@@ -9,20 +10,21 @@ switchtimesheet = importdata(st{1});
 
 filelist=ls(fullfile(subjfolders{1},'*.txt'));
 filelist = strsplit(filelist);
+subjfile = epochsort(filelist);
 
 %subjdatafile1 = fullfile(subjfolders{1},filelist(1,1:end)); %P
 %subjdatafile2 = fullfile(subjfolders{1},filelist(4,1:end)); %UP
 
-subjdatafile1 = filelist{1}; %P
-subjdatafile2 = filelist{4}; %UP
+subjdatafile1 = subjfile{1}; %P
+subjdatafile2 = subjfile{4}; %UP
 
-KEYS = importdata(subjdatafile1);
+KEYS = importdata(subjdatafile2);
     EXkeys = extractBetween(KEYS(2:end), 11, 22);
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.SSS'); 
     TIMES_sec2 = EXkeys.Hour*3600+EXkeys.Minute*60+EXkeys.Second;
 
     switchtimes = rmmissing(switchtimesheet.data); %gets rid of NANs
-    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' 24])));
+    subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(30)])));
     
     intervals2 = diff(TIMES_sec2);
     ind2 = find(intervals2 > min(subjcol)); %weird number for UP
@@ -32,20 +34,19 @@ KEYS = importdata(subjdatafile1);
     totalmins2 = sum(cleanedintervals2)/60; %missing some... probably from accidentally deleting when stopped typing >> should check for "done" somehow..
 
     %% wpm, no corrections
+    % order matters!!
     
     % no backspace, no shift, no enter,  things that don't make a mark?
-    shiftkeys = find(contains(KEYS,'RShiftKeyÂ') | contains(KEYS,'LShiftKeyÂ'));
-   	backkeys = find(contains(KEYS,'BackÂ'));
-    arrowkeys = find(contains(KEYS,'RightÂ') | contains(KEYS,'DownÂ') | contains(KEYS,'UpÂ')| contains(KEYS,'LeftÂ'));
-    wrongkey1 = find(contains(KEYS,'EscapeÂ') | contains(KEYS,'VolumeMuteÂ') | contains(KEYS,'VolumeDownÂ') | contains(KEYS,'VolumeUpÂ') | contains(KEYS,'F5Â') | contains(KEYS,'LWinÂ') | contains(KEYS,'PrintScreenÂ') | contains(KEYS,'InsertÂ') | contains(KEYS,'DeleteÂ') | contains(KEYS,'MediaPlayPauseÂ') | contains(KEYS,'MediaPreviousTrackÂ') | contains(KEYS,'MediaNextTrackÂ') | contains(KEYS,'NumLockÂ') | contains(KEYS,'LMenuÂ') | contains(KEYS,'LControlKeyÂ') | contains(KEYS,'RControlKeyÂ') | contains(KEYS,'RMenuÂ')  | contains(KEYS,'HomeÂ') | contains(KEYS,'ClearÂ') | contains(KEYS,'EndÂ') | contains(KEYS,'NextÂ')  | contains(KEYS,'NoneÂ'));
-% need to check^ 
-
     wpmnewkeys = KEYS;
-    wpmnewkeys(shiftkeys) = [];
-    wpmnewkeys(backkeys) = [];
+    %shiftkeys = find(contains(wpmnewkeys,'RShiftKeyÂ') | contains(wpmnewkeys,'LShiftKeyÂ'));
+    %wpmnewkeys(shiftkeys) = [];
+    backkeys = find(contains(wpmnewkeys,'BackÂ'));
+    wpmnewkeys(backkeys) = [];   
+    arrowkeys = find(contains(wpmnewkeys,'RightÂ') | contains(wpmnewkeys,'DownÂ') | contains(wpmnewkeys,'UpÂ')| contains(wpmnewkeys,'LeftÂ'));
     wpmnewkeys(arrowkeys) = [];
+    wrongkey1 = find(contains(wpmnewkeys,'EscapeÂ') | contains(wpmnewkeys,'VolumeMuteÂ') | contains(wpmnewkeys,'VolumeDownÂ') | contains(wpmnewkeys,'VolumeUpÂ') | contains(wpmnewkeys,'F5Â') | contains(wpmnewkeys,'LWinÂ') | contains(wpmnewkeys,'PrintScreenÂ') | contains(wpmnewkeys,'InsertÂ') | contains(wpmnewkeys,'DeleteÂ') | contains(wpmnewkeys,'MediaPlayPauseÂ') | contains(wpmnewkeys,'MediaPreviousTrackÂ') | contains(wpmnewkeys,'MediaNextTrackÂ') | contains(wpmnewkeys,'NumLockÂ') | contains(wpmnewkeys,'LMenuÂ') | contains(wpmnewkeys,'LControlKeyÂ') | contains(wpmnewkeys,'RControlKeyÂ') | contains(wpmnewkeys,'RMenuÂ')  | contains(wpmnewkeys,'HomeÂ') | contains(wpmnewkeys,'ClearÂ') | contains(wpmnewkeys,'EndÂ') | contains(wpmnewkeys,'NextÂ')  | contains(wpmnewkeys,'NoneÂ'));
     wpmnewkeys(wrongkey1) = [];
-    
+    % need to check^ 
     totalkeys = length(wpmnewkeys); % this has the notwpmkeys removed and arrow keys removed ONLY
     
     wpm = (totalkeys/10)/totalmins2; % maybe useful because shows activity on keyboard, irregardless of correct or wrong words
@@ -70,33 +71,38 @@ KEYS = importdata(subjdatafile1);
      % no backspace), so makes sense to penalize for backspace AND wrong
      % chars. but that is a lot of penalization. hm.
 
-    wrongkey2 = find(contains(KEYS,'OemtildeÂ') | contains(KEYS,'OemplusÂ') | contains(KEYS,'EscapeÂ') | contains(KEYS,'VolumeMuteÂ') | contains(KEYS,'VolumeDownÂ') | contains(KEYS,'VolumeUpÂ') | contains(KEYS,'F5Â') | contains(KEYS,'LWinÂ') | contains(KEYS,'PrintScreenÂ') | contains(KEYS,'InsertÂ') | contains(KEYS,'DeleteÂ') | contains(KEYS,'MediaPlayPauseÂ') | contains(KEYS,'MediaPreviousTrackÂ') | contains(KEYS,'MediaNextTrackÂ') | contains(KEYS,'NumLockÂ') | contains(KEYS,'Oem5Â') | contains(KEYS,'LMenuÂ') | contains(KEYS,'LControlKeyÂ') | contains(KEYS,'RControlKeyÂ') | contains(KEYS,'RMenuÂ') | contains(KEYS,'DivideÂ') | contains(KEYS,'MultiplyÂ') | contains(KEYS,'SubtractÂ') | contains(KEYS,'HomeÂ') | contains(KEYS,'AddÂ') | contains(KEYS,'ClearÂ') | contains(KEYS,'EndÂ') | contains(KEYS,'NextÂ')  | contains(KEYS,'NoneÂ'));
-    wrongarrow = [];
+     wpmcnewkeys = KEYS;
+     %shiftkeys = find(contains(wpmcnewkeys,'RShiftKeyÂ') | contains(wpmcnewkeys,'LShiftKeyÂ'));
+     %wpmcnewkeys(shiftkeys) = [];
+     backkeys = find(contains(wpmcnewkeys,'BackÂ'));
+     wpmcnewkeys(backkeys) = [];
+     arrowkeys = find(contains(wpmcnewkeys,'RightÂ') | contains(wpmcnewkeys,'DownÂ') | contains(wpmcnewkeys,'UpÂ')| contains(wpmcnewkeys,'LeftÂ'));    
+     wrongarrow = [];
     if length(arrowkeys) > 3
         for numarrow = 1:length(arrowkeys)-1
-            if arrowkeys(numarrow+1) ~= arrowkeys(numarrow)+1 && (contains(KEYS(arrowkeys(numarrow)+1),'BackÂ') == 0)
+            if (arrowkeys(numarrow+1) ~= arrowkeys(numarrow)) && (contains(wpmcnewkeys(arrowkeys(numarrow+1)),'BackÂ') == 0)
                 wrongarrow = [wrongarrow arrowkeys(numarrow)];
             end
         end
     else
         wrongarrow = arrowkeys;
     end
+    
+    wpmcnewkeys(arrowkeys) = [];
     %cleaning out all bad keys
-    % ORDER MATTERS??
-    wpmckeys = KEYS;
-    wpmckeys(shiftkeys) = [];
-    wpmckeys(backkeys) = [];
-    wpmckeys(arrowkeys) = [];
-    wpmckeys(wrongkey2) = []; % penalizes for uncorrected mistakes
-    totalkeyscorr = length(wpmckeys);
+     wrongkey2 = find(contains(wpmcnewkeys,'OemtildeÂ') | contains(wpmcnewkeys,'OemplusÂ') | contains(wpmcnewkeys,'EscapeÂ') | contains(wpmcnewkeys,'VolumeMuteÂ') | contains(wpmcnewkeys,'VolumeDownÂ') | contains(wpmcnewkeys,'VolumeUpÂ') | contains(wpmcnewkeys,'F5Â') | contains(wpmcnewkeys,'LWinÂ') | contains(wpmcnewkeys,'PrintScreenÂ') | contains(wpmcnewkeys,'InsertÂ') | contains(wpmcnewkeys,'DeleteÂ') | contains(wpmcnewkeys,'MediaPlayPauseÂ') | contains(wpmcnewkeys,'MediaPreviousTrackÂ') | contains(wpmcnewkeys,'MediaNextTrackÂ') | contains(wpmcnewkeys,'NumLockÂ') | contains(wpmcnewkeys,'Oem5Â') | contains(wpmcnewkeys,'LMenuÂ') | contains(wpmcnewkeys,'LControlKeyÂ') | contains(wpmcnewkeys,'RControlKeyÂ') | contains(wpmcnewkeys,'RMenuÂ') | contains(wpmcnewkeys,'DivideÂ') | contains(wpmcnewkeys,'MultiplyÂ') | contains(wpmcnewkeys,'SubtractÂ') | contains(wpmcnewkeys,'HomeÂ') | contains(wpmcnewkeys,'AddÂ') | contains(wpmcnewkeys,'ClearÂ') | contains(wpmcnewkeys,'EndÂ') | contains(wpmcnewkeys,'NextÂ')  | contains(wpmcnewkeys,'NoneÂ'));
+     wpmcnewkeys(wrongkey2) = []; % penalizes for uncorrected mistakes
+
+    totalkeyscorr = length(wpmcnewkeys);
     
     %penalized for backspace or arrow (penalization is like a weight)
     wpm_corrected = ((totalkeyscorr/5) - length(backkeys) - length(wrongarrow))/(2*totalmins2); % everything wrong but all arrow keys
     
     % accuracy > not accurate for some reason, har har
-    accuracy = ((totalkeyscorr)/(length(KEYS)))*100; % no penalty for shifts
+    % accuracy already accounts for percent mistake (100 - percent correct)
+    accuracy = ((totalkeyscorr)/(length(KEYS)))*100; %  *******penalty for shifts, need to fix
     
     % total words, corrected
-    %wpmckeys(shiftkeys) = [];
+    %wpmcnewkeys(shiftkeys) = [];
     totalwords = totalkeyscorr/5;
     
