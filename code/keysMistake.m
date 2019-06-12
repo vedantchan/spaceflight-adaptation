@@ -1,4 +1,5 @@
 % 6/10/19: Keystroke mistake analysis
+% 6/11/19: needs to be made better
 
 function [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjdatafile)
 
@@ -29,5 +30,8 @@ function [totalmistakes, avgmistakes, percentmistake] = keysMistake(subjdatafile
     %mistake percent
     totalkeystrokes = length(KEYS(2:end));
     percentmistake = totalmistakes/totalkeystrokes;
+    
+    return
+end
     
     
