@@ -67,6 +67,7 @@ files = (ls([subjfold '\' '*.zip']));
             end
                        
              %% split
+             
              % the data is split into 1 hr of running\gym activity, 1 hr
              % showering\other activity (basically 0 activity), then the
              % rest is split into even 3 sections, where the first
@@ -76,15 +77,15 @@ files = (ls([subjfold '\' '*.zip']));
              splitind = uint64(round(length(resmpdata(7200:end,:)))/3);
              
              
-             unpert1 = resmpdata(1:4100,:);
+             unpert1 = resmpdata(1:4800,:);
              plot(unpert1)
              title([files(filecount,1:end-4) '_' dfile(j).name '_UP1'])
              saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP1','.fig'));
-             unpert2= resmpdata(4100:7200,:);
+             unpert2= resmpdata(4800:7200,:);
              plot(unpert2)
              title([files(filecount,1:end-4) '_' dfile(j).name '_UP2'])
              saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP2','.fig'));
-             pert1 = resmpdata(7200:7500+splitind,:);
+             pert1 = resmpdata(7200:7200+splitind,:);
              plot(pert1)
              title([files(filecount,1:end-4) '_' dfile(j).name '_P1'])
              saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_P1','.fig'));
