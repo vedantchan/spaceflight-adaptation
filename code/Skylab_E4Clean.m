@@ -12,7 +12,8 @@ files = (ls([subjfold '\' '*.zip']));
 
 % zip out into the same subject folder, and put the split stuff into a separate folder, which is still inside subject folder
 
- for filecount = 1:3
+% change filecount manually! 
+ for filecount = 1:5
      
      outPath = [subjfold '\' 'EmpaticaData\' files(filecount,1:end-4) '\'];
      zipPath = [subjfold '\' files(filecount,1:end)];
