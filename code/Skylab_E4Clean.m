@@ -12,7 +12,7 @@ files = (ls([subjfold '\' '*.zip']));
 
 % zip out into the same subject folder, and put the split stuff into a separate folder, which is still inside subject folder
 
-% change filecount manually! 
+% **change filecount manually! **
  for filecount = 1:5
      
      outPath = [subjfold '\' 'EmpaticaData\' files(filecount,1:end-4) '\'];
@@ -20,7 +20,14 @@ files = (ls([subjfold '\' '*.zip']));
     
      unzip(zipPath,outPath);
     
-    dfile = dir(fullfile(outPath,'*.csv'));            
+   unsorteddfile = dir(fullfile(outPath,'*.csv')); 
+   dfile = {};
+   dfile{1} = unsorteddfile(1).name;
+   dfile{2} = unsorteddfile(2).name;
+   dfile{3} = unsorteddfile(3).name;
+   dfile{4} = unsorteddfile(4).name;
+   dfile{5} = unsorteddfile(6).name;
+
     %for mac maybe
     %     fstring = ls([outPath '\*.csv']);
     %flist = strsplit(fstring);
@@ -52,18 +59,18 @@ files = (ls([subjfold '\' '*.zip']));
          for j = 1:length(dfile)
             header = 2; % this means start at line 2
             delim = ',';
-            data = importdata(strcat(outPath,dfile(j).name),delim,header);
+            data = importdata(strcat(outPath,dfile{j}),delim,header);
             lendata = length(data.data);
             
-            if contains(dfile(j).name,'HR')
+            if contains(dfile{j},'HR')
                 resmpdata = data.data;
-            elseif contains(dfile(j).name,'TEMP')
+            elseif contains(dfile{j},'TEMP')
                 resmpdata = resample(data.data,1,4);
-            elseif contains(dfile(j).name,'EDA')
+            elseif contains(dfile{j},'EDA')
                 resmpdata = resample(data.data,1,4);
-            elseif contains(dfile(j).name,'BVP')
+            elseif contains(dfile{j},'BVP')
                 resmpdata = resample(data.data,1,4);
-            elseif contains(dfile(j).name,'ACC')
+            elseif contains(dfile{j},'ACC')
                 resmpdata = resample(data.data,1,32);
             end
                        
@@ -80,30 +87,30 @@ files = (ls([subjfold '\' '*.zip']));
              
              unpert1 = resmpdata(1:4800,:);
              plot(unpert1)
-             title([files(filecount,1:end-4) '_' dfile(j).name '_UP1'])
-             saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP1','.fig'));
+             title([files(filecount,1:end-4) '_' dfile{j} '_UP1'])
+             saveas(gcf,strcat(subjectSplit, '\',dfile{j},'_','E4_UP1','.fig'));
              unpert2= resmpdata(4800:7200,:);
              plot(unpert2)
-             title([files(filecount,1:end-4) '_' dfile(j).name '_UP2'])
-             saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP2','.fig'));
+             title([files(filecount,1:end-4) '_' dfile{j} '_UP2'])
+             saveas(gcf,strcat(subjectSplit, '\',dfile{j},'_','E4_UP2','.fig'));
              pert1 = resmpdata(7200:7200+splitind,:);
              plot(pert1)
-             title([files(filecount,1:end-4) '_' dfile(j).name '_P1'])
-             saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_P1','.fig'));
+             title([files(filecount,1:end-4) '_' dfile{j} '_P1'])
+             saveas(gcf,strcat(subjectSplit, '\',dfile{j},'_','E4_P1','.fig'));
              pert2 = resmpdata(7200+splitind:7200+splitind*2,:);
              plot(pert2)
-             title([files(filecount,1:end-4) '_' dfile(j).name '_P2'])
-             saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_P2','.fig'));
+             title([files(filecount,1:end-4) '_' dfile{j} '_P2'])
+             saveas(gcf,strcat(subjectSplit, '\',dfile{j},'_','E4_P2','.fig'));
              recover = resmpdata(7200+splitind*2:end,:);
              plot(recover)
-             title([files(filecount,1:end-4) '_' dfile(j).name '_Rec'])
-             saveas(gcf,strcat(subjectSplit, '\',dfile(j).name,'_','E4_Rec','.fig'));
+             title([files(filecount,1:end-4) '_' dfile{j} '_Rec'])
+             saveas(gcf,strcat(subjectSplit, '\',dfile{j},'_','E4_Rec','.fig'));
              
-            dlmwrite(strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP1','.csv'), unpert1,',');
-            dlmwrite(strcat(subjectSplit, '\',dfile(j).name,'_','E4_UP2','.csv'), unpert2,',');
-            dlmwrite(strcat(subjectSplit,'\',dfile(j).name,'_','E4_P1','.csv'), pert1,',');
-            dlmwrite(strcat(subjectSplit,'\',dfile(j).name,'_','E4_P2','.csv'), pert2,',');
-            dlmwrite(strcat(subjectSplit,'\',dfile(j).name,'_','E4_Rec','.csv'), recover,',');
+            dlmwrite(strcat(subjectSplit, '\',dfile{j},'_','E4_UP1','.csv'), unpert1,',');
+            dlmwrite(strcat(subjectSplit, '\',dfile{j},'_','E4_UP2','.csv'), unpert2,',');
+            dlmwrite(strcat(subjectSplit,'\',dfile{j},'_','E4_P1','.csv'), pert1,',');
+            dlmwrite(strcat(subjectSplit,'\',dfile{j},'_','E4_P2','.csv'), pert2,',');
+            dlmwrite(strcat(subjectSplit,'\',dfile{j},'_','E4_Rec','.csv'), recover,',');
             
          end
 end
