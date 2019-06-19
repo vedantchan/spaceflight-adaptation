@@ -13,6 +13,7 @@ function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,sub
     EXkeys = datetime(EXkeys, 'inputformat', 'HH:mm:ss.SSS'); 
     TIMES_sec2 = EXkeys.Hour*3600+EXkeys.Minute*60+EXkeys.Second;
 
+    % switchtimesheet is imported in the Analysis code
     switchtimes = rmmissing(switchtimesheet.data); %gets rid of NANs
     subjcol = switchtimes(:,find(contains(switchtimesheet.textdata,['Subj' num2str(subjnum)])));
     

@@ -32,32 +32,29 @@ van = uigetdir;
 
 %mkdir(writepath)
 
+averagevan = [];
+averagetan = [];
+namevan = {};
+nametan = {};
 for subj = 1:length(subjects)
-    currentsubjdata = ls([subjects{subj} '/VAN/*.txt']);
-    averagevan = [];
-    averagetan = [];
-    namevan = {};
-    nametan = {};
-    for d = 1:min(size(currentsubjdata))
-        data = importdata([subjects{subj} '/VAN/' currentsubjdata(d,1:end)]);
-        headers = string(data.textdata(4,:));
-        %take data from anything past the first two data points
-        %thestuffwecareabout = data.data(3:end,3);
-        if contains(currentsubjdata(d,1:end),'VAN')
-            averagevan = [averagevan; mean(abs(data.data(3:end,3)))];
-            namevan = [namevan; currentsubjdata(d,1:end)];
-
-        else if contains(currentsubjdata(d,1:end),'TAN')
-            averagetan = [averagetan; mean(abs(data.data(3:end,4)))];
-            nametan = [nametan; currentsubjdata(d,1:end)];
-            end
+    data = importdata(strcat(path,file{i}));
+    headers = string(data.textdata(4,:));
+    %take data from anything past the first two data points
+    %thestuffwecareabout = data.data(3:end,3);
+    if contains(file{i},'VAN')
+        averagevan = [averagevan; mean(abs(data.data(3:end,3)))];
+        namevan = [namevan; file{i}];
+        
+    else if contains(file{i},'TAN')
+        averagetan = [averagetan; mean(abs(data.data(3:end,4)))];
+        nametan = [nametan; file{i}];
         end
     end
-    Tvan = table(namevan,averagevan);
-    %Ttan = table(nametan,averagetan);
-    mkdir(strcat(van, '/', currentsubjdata(d,1:6)))
-    %writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
-    writetable(Tvan,strcat(van, '/', currentsubjdata(d,1:6),'/Average Vertical Alignments.csv'));
-
 end
 
+Tvan = table(namevan,averagevan);
+%Ttan = table(nametan,averagetan);
+
+
+%writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
+writetable(Tvan,strcat(writepath,'/Average Vertical Alignments.csv'));
