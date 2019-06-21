@@ -1,123 +1,134 @@
 
+clear all;
+close;
 
-ha1 = openfig('XCorrelation/betterK3_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+ha1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._UP1.fig','reuse');
 axa1 = gca;
-ha2 = openfig('XCorrelation/betterK3_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+ha2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axa2 = gca;
-ha3 = openfig('XCorrelation/betterK3_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+ha3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axa3 = gca;
-ha4 = openfig('XCorrelation/betterK3_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+ha4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axa4 = gca;
-ha5 = openfig('XCorrelation/betterK3_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+ha5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axa5 = gca;
 
-hb1 = openfig('XCorrelation/betterEM_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+hb1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._UP1.fig','reuse');
 axb1 = gca;
-hb2 = openfig('XCorrelation/betterEM_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+hb2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axb2 = gca;
-hb3 = openfig('XCorrelation/betterEM_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+hb3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axb3 = gca;
-hb4 = openfig('XCorrelation/betterEM_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+hb4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axb4 = gca;
-hb5 = openfig('XCorrelation/betterEM_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+hb5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061019_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axb5 = gca;
 
-hc1 = openfig('XCorrelation/betterKC_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+hc1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061119_syt/HR.cs_v_TEMP._UP1.fig','reuse');
 axc1 = gca;
-hc2 = openfig('XCorrelation/betterKC_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+hc2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061119_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axc2 = gca;
-hc3 = openfig('XCorrelation/betterKC_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+hc3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061119_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axc3 = gca;
-hc4 = openfig('XCorrelation/betterKC_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+hc4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061119_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axc4 = gca;
-hc5 = openfig('XCorrelation/betterKC_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+hc5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061119_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axc5 = gca;
 
-hd1 = openfig('XCorrelation/betterB1_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+hd1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061219_syt/HR.cs_v_TEMP._UP1.fig','reuse');
 axd1 = gca;
-hd2 = openfig('XCorrelation/betterB1_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+hd2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061219_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axd2 = gca;
-hd3 = openfig('XCorrelation/betterB1_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+hd3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061219_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axd3 = gca;
-hd4 = openfig('XCorrelation/betterB1_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+hd4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061219_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axd4 = gca;
-hd5 = openfig('XCorrelation/betterB1_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+hd5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061219_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axd5 = gca;
 
-he1 = openfig('XCorrelation/betterMC2_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+he1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061319_syt/HR.cs_v_TEMP._UP1.fig','reuse');
 axe1 = gca;
-he2 = openfig('XCorrelation/betterMC2_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+he2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061319_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axe2 = gca;
-he3 = openfig('XCorrelation/betterMC2_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+he3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061319_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axe3 = gca;
-he4 = openfig('XCorrelation/betterMC2_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+he4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061319_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axe4 = gca;
-he5 = openfig('XCorrelation/betterMC2_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+he5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061319_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axe5 = gca;
 
-hf1 = openfig('XCorrelation/betterAA_xcor_all/UP1runs/HR_sm_v_TEMP__UP1.fig','reuse');
+hf1 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061419_syt//HR.cs_v_TEMP._UP1.fig','reuse');
 axf1 = gca;
-hf2 = openfig('XCorrelation/betterAA_xcor_all/UP2runs/HR_sm_v_TEMP__UP2.fig','reuse');
+hf2 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061419_syt/HR.cs_v_TEMP._UP2.fig','reuse');
 axf2 = gca;
-hf3 = openfig('XCorrelation/betterAA_xcor_all/P1runs/HR_sm_v_TEMP__P1.fig','reuse');
+hf3 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061419_syt/HR.cs_v_TEMP._P1.fig','reuse');
 axf3 = gca;
-hf4 = openfig('XCorrelation/betterAA_xcor_all/P2runs/HR_sm_v_TEMP__P2.fig','reuse');
+hf4 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061419_syt/HR.cs_v_TEMP._P2.fig','reuse');
 axf4 = gca;
-hf5 = openfig('XCorrelation/betterAA_xcor_all/Recruns/HR_sm_v_TEMP__Rec.fig','reuse');
+hf5 = openfig('C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data/xcorr_skylab/061419_syt/HR.cs_v_TEMP._Rec.fig','reuse');
 axf5 = gca;
 
 
 h = figure;
 
 sa1 = subplot(6,5,1);
-xlim([-2000 2000])
+title('HR')
+% xlim([-2000 2000])
 sa2 = subplot(6,5,2);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sa3 = subplot(6,5,3);
-xlim([-2000 2000])
+title('v')
+% xlim([-2000 2000])
 sa4 = subplot(6,5,4);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sa5 = subplot(6,5,5);
-xlim([-2000 2000])
+title('TEMP')
+% xlim([-2000 2000])
 sb1 = subplot(6,5,6);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sb2 = subplot(6,5,7);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sb3 = subplot(6,5,8);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sb4 = subplot(6,5,9);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sb5 = subplot(6,5,10);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sc1 = subplot(6,5,11);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sc2 = subplot(6,5,12);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sc3 = subplot(6,5,13);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sc4 = subplot(6,5,14);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sc5 = subplot(6,5,15);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sd1 = subplot(6,5,16);
-xlim([-2000 2000])
+% % xlim([-2000 2000])
 sd2 = subplot(6,5,17);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sd3 = subplot(6,5,18);
-xlim([-2000 2000])
+% xlim([-2000 2000])
 sd4 = subplot(6,5,19);
-xlim([-2000 2000])
-sd5 = subplot(6,5,20);xlim([-2000 2000])
-se1 = subplot(6,5,21);xlim([-2000 2000])
-se2 = subplot(6,5,22);xlim([-2000 2000])
-se3 = subplot(6,5,23);xlim([-2000 2000])
-se4 = subplot(6,5,24);xlim([-2000 2000])
-se5 = subplot(6,5,25);xlim([-2000 2000])
-sf1 = subplot(6,5,26);xlim([-2000 2000])
-sf2 = subplot(6,5,27);xlim([-2000 2000])
-sf3 = subplot(6,5,28);xlim([-2000 2000])
-sf4 = subplot(6,5,29);xlim([-2000 2000])
-sf5 = subplot(6,5,30);xlim([-2000 2000])
+% xlim([-2000 2000])
+sd5 = subplot(6,5,20);% xlim([-2000 2000])
+se1 = subplot(6,5,21);% xlim([-2000 2000])
+se2 = subplot(6,5,22);% xlim([-2000 2000])
+se3 = subplot(6,5,23);% xlim([-2000 2000])
+se4 = subplot(6,5,24);% xlim([-2000 2000])
+se5 = subplot(6,5,25);% xlim([-2000 2000])
+sf1 = subplot(6,5,26);% xlim([-2000 2000]);
+xlabel('UP1')
+sf2 = subplot(6,5,27);% xlim([-2000 2000]);
+xlabel('UP2')
+sf3 = subplot(6,5,28);% xlim([-2000 2000]);
+xlabel('P1')
+sf4 = subplot(6,5,29);% xlim([-2000 2000]);
+xlabel('P2')
+sf5 = subplot(6,5,30);% xlim([-2000 2000]);
+xlabel('Rec')
+
 
 figa1 = get(axa1,'children');
 figa2 = get(axa2,'children');

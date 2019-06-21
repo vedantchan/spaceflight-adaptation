@@ -84,7 +84,7 @@ for run = 1:length(P1trials)-1
             % perform xcorr
             [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);
-            title([P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5)]);
+            title([P1trials{run}(1:5),'\_v\_',P1trials{run+count}(1:5) '\_P1']);
             saveas(gcf, strcat(datafolder,'/',P1trials{run}(1:5),'_v_',P1trials{run+count}(1:5),'_P1.fig'));
         
             %find area
@@ -136,7 +136,7 @@ for run = 1:length(P2trials)-1
             % perform xcorr
                 [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);
-            title([P2trials{run}(1:5),'_v_',P2trials{run+count}(1:5)]);
+            title([P2trials{run}(1:5),'\_v\_',P2trials{run+count}(1:5) '\_P2']);
             saveas(gcf, strcat(datafolder,'/',P2trials{run}(1:5),'_v_',P2trials{run+count}(1:5),'_P2.fig'));
         
             %find area
@@ -189,7 +189,7 @@ for run = 1:length(UP1trials)-1
             % perform xcorr
             [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);
-            title([UP1trials{run}(1:5),'_v_',UP1trials{run+count}(1:5)]);
+            title([UP1trials{run}(1:5),'\_v\_',UP1trials{run+count}(1:5) '\_UP1']);
             saveas(gcf, strcat(datafolder,'/',UP1trials{run}(1:5),'_v_',UP1trials{run+count}(1:5),'_UP1.fig'));
         
             %find area
@@ -240,7 +240,7 @@ for run = 1:length(UP2trials)-1
             % perform xcorr
             [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);
-            title([UP2trials{run}(1:5),'_v_',UP2trials{run+count}(1:5)]);
+            title([UP2trials{run}(1:5),'\_v\_',UP2trials{run+count}(1:5) '\_UP2']);
             saveas(gcf, strcat(datafolder,'/',UP2trials{run}(1:5),'_v_',UP2trials{run+count}(1:5),'_UP2.fig'));
            
             %find area
@@ -291,7 +291,7 @@ for run = 1:length(Rectrials)-1
             % perform xcorr
             [xcor,lag] = xcorr(data1(1:range)-mean(data1(1:range)),data2(1:range)-mean(data2(1:range)),'coeff');
             plot(lag,xcor);
-            title([Rectrials{run}(1:5),'_v_',Rectrials{run+count}(1:5)]);
+            title([Rectrials{run}(1:5),'\_v\_',Rectrials{run+count}(1:5) '\_Rec']);
             saveas(gcf, strcat(datafolder,'/',Rectrials{run}(1:5),'_v_',Rectrials{run+count}(1:5),'_Rec.fig'));
         
             %find area
