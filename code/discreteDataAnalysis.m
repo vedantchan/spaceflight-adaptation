@@ -1,4 +1,4 @@
-% 6\19\19: Discreet data analysis
+% 6/19/19: Discreet data analysis
 
 % Tasks:
 % Plot all 
@@ -6,7 +6,7 @@
 % what other analysis can be done?
 % add in keystroke stuff
 
-files = uipickfiles('filterspec','C:\Users\Spaceexplorers\Documents\GitHub\spaceflight-adaptation\data'); %output cell
+files = uipickfiles('filterspec','C:/Users/SYT/Documents/GitHub/spaceflight-adaptation/data'); %output cell
 %save figures
 uiwait(msgbox("Where do you want to store this?"))
 storage = uigetdir;
@@ -29,7 +29,7 @@ for v = 1:length(likertclean)
     plot(vanclean(1:end,v),'--b*')
     title(['VAN Data, ' likert.textdata{v}])
     set(gca,'xtick', [1:5],'xticklabel',epochs);
-    %saveas(gcf,[ storage '\' 'VAN_' likert.textdata{v} '.fig'])
+    %saveas(gcf,[ storage '/' 'VAN_' likert.textdata{v} '.fig'])
 end
 
 
@@ -46,7 +46,7 @@ for subj = 1:length(likertclean)
     hold off;
     set(gca,'xtick', [1:5],'xticklabel',epochs);
     title(['VAN, switch, stress: ' likert.textdata{subj}])
-    saveas(gcf,[ storage '\' 'VANswitchlikert_' likert.textdata{subj} '.fig'])
+    saveas(gcf,[ storage '/' 'VAN-switch-likert_' likert.textdata{subj} '.fig'])
  
 end
    
