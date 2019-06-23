@@ -1,4 +1,4 @@
-function [S,t,N2] = cross_recur(signal1,signal2,m,tau)
+function [S,t,N2] = cross_recur(signal1,signal2,m,tau,makeplots)
 
 if length(signal2)>length(signal1)
     signal1 = resample(signal1,length(signal2),length(signal1));
@@ -31,12 +31,17 @@ x2 = reshape(repmat(xe(:), 1, N2)', N2 * N2, m);
 S = sqrt(sum( (x1 - x2) .^ 2, 2 ));
 S = reshape(S, N2, N2);
 
-% imagesc(t(1:N2), t(1:N2), -S);
-% c = colorbar('Direction','reverse');
-% title(c,'Negative Distance');
-% colormap jet;
-% axis square;
-% caxis([-4,0])
-% xlabel('Samples'), ylabel('Samples');
-
+if makeplots == 1    
+    
+    plot3(xe(:,1),xe(:,2),xe(:,3),'k')
+    figure
+    imagesc(t(1:N2), t(1:N2), -S);
+    c = colorbar('Direction','reverse');
+    title(c,'Negative Distance');
+    colormap jet;
+    axis square;
+    caxis([-4,0])
+    xlabel('Samples'), ylabel('Samples');
+    set(gca,'xdir','reverse')
+end
 end

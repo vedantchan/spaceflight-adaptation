@@ -44,7 +44,7 @@ for j = 1:length(paths)
        signal1 = load(file1{i});
        signal2 = load(file2{i});
 
-       [S,t, N2] = cross_recur(signal1,signal2,4,50);
+       [S,t, N2] = cross_recur(signal1,signal2,4,50,1);
 
        Ss = [Ss; S];
        ts = [ts; t];

@@ -10,7 +10,7 @@ for j = 1:length(paths)
     prefiles = dir('*.csv');
     files = {prefiles.name};
     str = pwd;
-    idx = strfind(str,'/')
+    idx = strfind(str,'/');
     subjname = str(idx(end)+1:end);
 
 
@@ -18,8 +18,8 @@ for j = 1:length(paths)
     file2 = cell(5);
     c1 = 1;
     c2 = 1;
-    param1 = 'TEMP'
-    param2 = 'HRvar'
+    param1 = 'TEMP';
+    param2 = 'HR';
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
@@ -36,28 +36,41 @@ for j = 1:length(paths)
     file1 = epochsort(file1);
     file2 = epochsort(file2);
 
-    fisherzs = [];
-    errs = [];
+    cdims = [];
+    emdims = [];
+    taus = [];
     for i = 1:5
 
        signal1 = load(file1{i});
        signal2 = load(file2{i});
+        
+       [emdim tau] = cross_fnn(signal1,signal2,0);
+       emdims = [emdims emdim];
+       taus = [taus tau];
+    end
+    
+    m = round(mean(emdim));
+    tau = round(mean(taus));
+    if mod(m,2) == 1
+        m = m+1;
+    end
+    
+    for i = 1:5
 
-       [z,surrzs] = fisherz(signal1,signal2,0);
-
-       fisherzs = [fisherzs z];
-       errs = [errs; surrzs]
+       signal1 = load(file1{i});
+       signal2 = load(file2{i});
+        
+       cdim = shcorrdim(signal1,signal2,m,tau);
+       cdims = [cdims cdim];
     end
 
-    figure()
-    plot(fisherzs,'bo','MarkerSize',12)
+    plot(cdims,'k','LineWidth',2)
     xlim([0,6])
     xlabel('Epoch')
-    ylabel('Fisher Z Score')
+    ylabel('Correlation Dimension')
     xticks([0:6])
     xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
-    title(strcat('Fisher Z Correlation Across Epoch-',subjname,'-',param1,'-',param2))
+    title(strcat('Joint Correlation Dimension-',subjname,'-',param1,'-',param2))
     cd(origin)
-    savefig(strcat('./plots/fisherZ/',param1,'-',param2,'Fisher_Z_Correlation_Across_Epoch-',subjname))
-    csvwrite(strcat('./meta/',param1,'-',param2,'-fisherz',subjname,'.csv'),fisherzs)
+    %savefig(strcat('./plots/jointcorr/',param1,'-',param2,'-corrdim-',subjname))
 end
