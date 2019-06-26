@@ -1,7 +1,7 @@
 %% 3/21/19, Filter shimmer
 % resample/smooth/filter shimmer 
 
-% takes the split shimmer data and applies Kalman filter
+% takes the split shimmer data and applies low pass filter
 
 clear; close all;
 

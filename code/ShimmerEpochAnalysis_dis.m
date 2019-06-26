@@ -52,7 +52,7 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-                time = 1:length(rT) * 1/100.21;
+                time = 1:length(rT) * 1/51.;
                 
                 % velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -118,7 +118,7 @@ for subjCount = 1:length(subjlist)
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-time = 1:length(rT) * 1/100.21;
+time = 1:length(rT) * 1/51.2;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
@@ -184,7 +184,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-time = 1:length(rT) * 1/100.21;
+time = 1:length(rT) * 1/51.2;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
@@ -250,7 +250,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-time = 1:length(rT) * 1/100.21;
+time = 1:length(rT) * 1/51.2;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
@@ -316,7 +316,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-                time = 1:length(rT) * 1/100.21;
+                time = 1:length(rT) * 1/51.2;
                 
                 % velocity; assume v0 = 0
                 velx = detrend(x.*time);
@@ -389,7 +389,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -456,7 +456,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -522,7 +522,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -588,7 +588,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -654,7 +654,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -725,7 +725,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -792,7 +792,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -858,7 +858,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -924,7 +924,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -990,7 +990,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -1061,7 +1061,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -1128,7 +1128,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -1194,7 +1194,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -1260,7 +1260,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);
@@ -1326,7 +1326,7 @@ time = 1:length(rT) * 1/100.21;
                 z = data(:,4);
                 rT = sqrt((x.^2) + (y.^2) + (z.^2));
                 
-%                 time = 1:length(rT) * 1/100.21;
+%                 time = 1:length(rT) * 1/51.2;
 %                 
 %                 %velocity; assume v0 = 0
 %                 velx = detrend(x.*time);

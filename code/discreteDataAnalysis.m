@@ -1,4 +1,4 @@
-% 6/19/19: Discreet data analysis
+%% 6/19/19: Discreet data analysis
 
 % Tasks:
 % Plot all 
