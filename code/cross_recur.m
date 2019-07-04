@@ -33,15 +33,15 @@ S = reshape(S, N2, N2);
 
 if makeplots == 1    
     
-    plot3(xe(:,1),xe(:,2),xe(:,3),'k')
+    plot3(xe(:,1),xe(:,2),xe(:,3),'k');
     figure
-    imagesc(t(1:N2), t(1:N2), -S);
+    imagesc(t(1:N2), flip(t(1:N2)), -S);
     c = colorbar('Direction','reverse');
     title(c,'Negative Distance');
     colormap jet;
     axis square;
-    caxis([-4,0])
+    caxis([-4,0]);
     xlabel('Samples'), ylabel('Samples');
-    set(gca,'xdir','reverse')
+    set(gca,'ydir','reverse');
 end
 end

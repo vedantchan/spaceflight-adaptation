@@ -37,24 +37,16 @@ for j = 1:length(paths)
     file2 = epochsort(file2);
 
     cdims = [];
-    emdims = [];
-    taus = [];
-    for i = 1:5
 
-       signal1 = load(file1{i});
-       signal2 = load(file2{i});
-        
-       [emdim tau] = cross_fnn(signal1,signal2,0);
-       emdims = [emdims emdim];
-       taus = [taus tau];
-    end
+   signal1 = load(file1{3});
+   signal2 = load(file2{3});
+
+    [m, tau] = cross_fnn(signal1,signal2,0);
     
-    m = round(mean(emdim));
-    tau = round(mean(taus));
     if mod(m,2) == 1
         m = m+1;
     end
-    
+    'EmbDim found'
     for i = 1:5
 
        signal1 = load(file1{i});
@@ -63,7 +55,7 @@ for j = 1:length(paths)
        cdim = shcorrdim(signal1,signal2,m,tau);
        cdims = [cdims cdim];
     end
-
+    figure
     plot(cdims,'k','LineWidth',2)
     xlim([0,6])
     xlabel('Epoch')
@@ -71,6 +63,7 @@ for j = 1:length(paths)
     xticks([0:6])
     xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
     title(strcat('Joint Correlation Dimension-',subjname,'-',param1,'-',param2))
-    cd(origin)
+    drawnow;
     %savefig(strcat('./plots/jointcorr/',param1,'-',param2,'-corrdim-',subjname))
 end
+cd(origin)

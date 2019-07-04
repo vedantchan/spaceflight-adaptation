@@ -1,8 +1,8 @@
 clear; close all;
 origin = pwd;
 addpath('.')
-
-paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed_gemini/*.csv','output','cell');
+master = [];
+paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/*.csv','output','cell');
 allscores = [];
 for j = 1:length(paths)
     path = paths{j};
@@ -36,7 +36,6 @@ for j = 1:length(paths)
     for i = 1:5
 
        signal1 = load(file1{i});
-
        [H,pval,p] = dfa(signal1);
 
        dfas = [dfas H];
@@ -44,8 +43,8 @@ for j = 1:length(paths)
     end
  
     allscores = [allscores; dfas];
-    figure()
-    plot(dfas,'b','MarkerSize',12)
+    hold on
+    plot(dfas,'o','MarkerSize',12)
     xlim([0,6])
     xlabel('Epoch')
     ylabel('DFA')
@@ -55,4 +54,5 @@ for j = 1:length(paths)
     cd(origin)
     savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
     csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
+    master = [master; dfas];
 end

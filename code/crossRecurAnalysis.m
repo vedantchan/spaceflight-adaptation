@@ -10,7 +10,7 @@ for j = 1:length(paths)
     prefiles = dir('*.csv');
     files = {prefiles.name};
     str = pwd;
-    idx = strfind(str,'/')
+    idx = strfind(str,'/');
     subjname = str(idx(end)+1:end);
 
 
@@ -44,7 +44,7 @@ for j = 1:length(paths)
        signal1 = load(file1{i});
        signal2 = load(file2{i});
 
-       [S,t, N2] = cross_recur(signal1,signal2,4,50,1);
+       [S,t, N2] = cross_recur(signal1,signal2,4,50,0);
 
        Ss = [Ss; S];
        ts = [ts; t];
@@ -56,7 +56,7 @@ for j = 1:length(paths)
     for plotID = 1:5
         subplot(1,5,plotID);
         title(epochs{plotID});
-        imagesc(ts{plotID}(1:(N2s{plotID})), ts{plotID}(1:(N2s{plotID})), -(Ss{plotID}));
+        imagesc(ts{plotID}(1:(N2s{plotID})), flip(ts{plotID}(1:(N2s{plotID}))), -(Ss{plotID}));
         colormap jet;
         axis square;
         caxis([-4,0])
@@ -65,7 +65,6 @@ for j = 1:length(paths)
     sgtitle(strcat('Cross-Recurrence-',subjname,'-',param1,'-',param2))
     cd(origin)
     savefig(strcat('./plots/crossrecur/',param1,'-',param2,'-CrossRecurrence-',subjname))
-    close
     %c = colorbar('Direction','reverse');
     %title(c,'Negative Distance');
 %     figure()
