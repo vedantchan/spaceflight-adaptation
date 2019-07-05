@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5);
     c1 = 1;
 
-    param1 = 'HR';
+    param1 = 'body';
 
 
     for i = 1:length(files)
@@ -44,7 +44,7 @@ for j = 1:length(paths)
  
     allscores = [allscores; dfas];
     hold on
-    plot(dfas,'o','MarkerSize',12)
+    plot(dfas,'MarkerSize',12)
     xlim([0,6])
     xlabel('Epoch')
     ylabel('DFA')
