@@ -1,31 +1,31 @@
-% 6/12/19: Split for skylab (most code copied from splittrials_empa
+% 6/12/19: Split for skylab (most code copied from splittrials_empa)
 
 clear all; close;
 
 current = pwd;
-rawfold = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-adaptation/data');
+rawfold = uipickfiles('filterspec','C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data');
 % pick the entire raw folder
 subj = 'subj1969';
 subjfold = fullfile(rawfold{1},subj);
 % files = ls(fullfile(rawfold{1},subjfold));
 % files = strsplit(files);
-f = (ls([subjfold '/' '*.zip']));
+files = (ls([subjfold '/' '*.zip']));
 
 %for mac
-filelist = strsplit(f);
-files = filelist(~cellfun('isempty',filelist));
+% filelist = strsplit(f);
+% files = filelist(~cellfun('isempty',filelist));
 % zip out into the same subject folder, and put the split stuff into a separate folder, which is still inside subject folder
 
 % **change filecount manually! **
- for filecount = 1:9
+ for filecount = 1:10
      
      %for pc: **remember to change all files to files(filecount,1:end-4)!**
-     %outPath = [subjfold '/' 'EmpaticaData/' files(filecount,1:end-4) '/'];
-     %zipPath = [subjfold '/' files(filecount,1:end)];
+     outPath = [subjfold '/' 'EmpaticaData/' files(filecount,1:end-4) '/'];
+     zipPath = [subjfold '/' files(filecount,1:end)];
      
      % for mac
-     outPath = [subjfold '/' 'EmpaticaData/' files{filecount}(end-13:end-4) '/'];
-     zipPath = [subjfold '/' files{filecount}(end-13:end-4)];
+%      outPath = [subjfold '/' 'EmpaticaData/' files{filecount}(end-13:end-4) '/'];
+%      zipPath = [subjfold '/' files(filecount,1:end-4)];
 
      unzip(zipPath,outPath);
     
@@ -61,7 +61,7 @@ files = filelist(~cellfun('isempty',filelist));
 %         end
 %      end
     
-    subjectSplit = [subjfold  '/' 'E4Clean' '/' files{filecount}(end-13:end-4)];
+    subjectSplit = [subjfold  '/' 'E4Clean' '/' files(filecount,1:end-4)];
     mkdir(subjectSplit)
     
     %% Empatica split
@@ -71,6 +71,7 @@ files = filelist(~cellfun('isempty',filelist));
             data = importdata(strcat(outPath,dfile{j}),delim,header);
             lendata = length(data.data);
             
+            %data is resampled to 1Hz before splitting
             if contains(dfile{j},'HR')
                 resmpdata = data.data;
             elseif contains(dfile{j},'TEMP')
@@ -95,23 +96,23 @@ files = filelist(~cellfun('isempty',filelist));
              
              unpert1 = resmpdata(1:4800,:);
              plot(unpert1)
-             title([files{filecount}(end-13:end-4) '_' dfile{j} '_UP1'])
+             title([files(filecount,1:end-4) '_' dfile{j} '_UP1'])
              saveas(gcf,strcat(subjectSplit, '/',dfile{j},'_','E4_UP1','.fig'));
              unpert2= resmpdata(4800:7200,:);
              plot(unpert2)
-             title([files{filecount}(end-13:end-4) '_' dfile{j} '_UP2'])
+             title([files(filecount,1:end-4) '_' dfile{j} '_UP2'])
              saveas(gcf,strcat(subjectSplit, '/',dfile{j},'_','E4_UP2','.fig'));
              pert1 = resmpdata(7200:7200+splitind,:);
              plot(pert1)
-             title([files{filecount}(end-13:end-4) '_' dfile{j} '_P1'])
+             title([files(filecount,1:end-4) '_' dfile{j} '_P1'])
              saveas(gcf,strcat(subjectSplit, '/',dfile{j},'_','E4_P1','.fig'));
              pert2 = resmpdata(7200+splitind:7200+splitind*2,:);
              plot(pert2)
-             title([files{filecount}(end-13:end-4) '_' dfile{j} '_P2'])
+             title([files(filecount,1:end-4) '_' dfile{j} '_P2'])
              saveas(gcf,strcat(subjectSplit, '/',dfile{j},'_','E4_P2','.fig'));
              recover = resmpdata(7200+splitind*2:end,:);
              plot(recover)
-             title([files{filecount}(end-13:end-4) '_' dfile{j} '_Rec'])
+             title([files(filecount,1:end-4) '_' dfile{j} '_Rec'])
              saveas(gcf,strcat(subjectSplit, '/',dfile{j},'_','E4_Rec','.fig'));
              
             dlmwrite(strcat(subjectSplit, '/',dfile{j},'_','E4_UP1','.csv'), unpert1,',');
