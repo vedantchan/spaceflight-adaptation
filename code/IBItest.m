@@ -12,6 +12,9 @@ subjnum = inputdlg("what subject number?");
 
 data = importdata([subjfold{1} '/' 'IBI.csv'],',',1);
 
+%test for max differnce in data collection time
+maxlag = max(diff(data.data(1:end,1)))
+
 %won't need this in the future, changed both splitting code to include IBI
 %split: for skylab
 splitind = uint64(round(length(data.data(7200:end,:)))/3);
@@ -25,13 +28,14 @@ trials = [unpert1' unpert2' pert1' pert2' recover'];
 %split: for regular run
 % split_ind = uint64(round(length(data.data)/153));
 % unpert1 = data.data(1:(split_ind)*32,:);
-%              unpert2= data.data((split_ind)*32:(split_ind)*32*2,:);
-%              pert1 = data.data((split_ind)*32*2:(split_ind)*32*3,:);
-%              pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
-%              pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
+% unpert2= data.data((split_ind)*32:(split_ind)*32*2,:);
+% pert1 = data.data((split_ind)*32*2:(split_ind)*32*3,:);
+% pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
+% pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
 
 % We want the raw data too bc can do many things with it
-newfolder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/apenShim'; %or something
+trialnames = ["UP1" "UP2" "P1" "P2" "Rec"]';
+newfolder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/IBItest'; %or something
 dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI.csv']),trials);
 
 for tr = 1:5
@@ -42,7 +46,7 @@ for tr = 1:5
     plot(dfs)
 
     %variance in difference, window = 10
-
+    
 
     %std dev in raw, window = 10 (same as for hr variance)
 

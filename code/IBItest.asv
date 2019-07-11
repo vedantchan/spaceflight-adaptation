@@ -1,13 +1,19 @@
 % 7/7/19: playing with IBI data
 % THERE IS ONLY ONE FILE  U ARE WORKING WITH
+%doing it per subj atm; still works too slowly
 
 clear all;
 close;
 
 subjfold = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-adaptation/data');
+%change eventually
+subjnum = inputdlg("what subject number?");
 % just do one day for now, on skylab
 
 data = importdata([subjfold{1} '/' 'IBI.csv'],',',1);
+
+%test for max differnce in data collection time
+
 
 %won't need this in the future, changed both splitting code to include IBI
 %split: for skylab
@@ -28,8 +34,8 @@ trials = [unpert1' unpert2' pert1' pert2' recover'];
 %              pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
 
 % We want the raw data too bc can do many things with it
-newfolder = 'apenShim';
-dlmwrite(fullfile(newfolder,subjfold{1}(,
+newfolder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/IBItest'; %or something
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI.csv']),trials);
 
 for tr = 1:5
     

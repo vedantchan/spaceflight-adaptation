@@ -25,11 +25,19 @@ files = dir(fullfile(subj{1},'*.csv'));
 % filelist = strsplit(f);
 % files = filelist(~cellfun('isempty',filelist));
 
+newdir = 'ApEn';
+mkdir([subj{1} '/' newdir]);
+
 trialnames = ["UP1" "UP2" "P1" "P2" "Rec"]';
 apenx = [];
 apeny = [];
 apenz = [];
-for f = 1:5
+sampenx = [];
+sampeny = [];
+sampenz = [];
+
+%**change file size manually for now
+for f = 1:20
         %just do x,y,z first
         
         %for pc
@@ -51,12 +59,13 @@ for f = 1:5
         z(iz) = [];
         %r vector?
 
-        % Optional to use these
-        radx = std(x)*.15;
-        rady = std(y)*.15;
-        radz = std(z)*.15;
+        % Optional to use these: currently set to .2 b/c this is default
+        % for matlab apen func
+        radx = std(x)*.20;
+        rady = std(y)*.20;
+        radz = std(z)*.20;
         
-        edim = 3; % optional change embedding dim
+        edim = 2; % optional change embedding dim
 
         %old approx, takes too long
 %         apenx = approx_entropy(2,radx,x);
@@ -65,25 +74,41 @@ for f = 1:5
 
         %new Apen >> *NOTE: does not produce quite the same values as
         %above; values are slightly larger 
-        apenx = [apenx approximateEntropy(x)]';
-        apeny = [apeny approximateEntropy(y)]';
-        apenz = [apenz approximateEntropy(z)]';
+        apenx = [apenx approximateEntropy(x)];
+        apeny = [apeny approximateEntropy(y)];
+        apenz = [apenz approximateEntropy(z)];
+        
+        %sampen
+        sampenx = [sampenx SampEn(2,radx,x)];
+        sampeny = [sampeny SampEn(2,rady,y)];
+        sampenz = [sampenz SampEn(2,radz,z)];
+        
         
         if mod(f,5) == 0
-            Tunsorted = table(trialnames,apenx,apeny,apenz);
+            apenx = apenx';
+            apeny = apeny';
+            apenz = apenz';
+            sampenx = sampenx';
+            sampeny = sampeny';
+            sampenz = sampenz';
+            Tunsorted = table(trialnames,apenx,apeny,apenz,sampenx, sampeny, sampenz);
             %sort
             T = Tunsorted;
-            T(1,2:4) = Tunsorted(4,2:4);
-            T(2,2:4) = Tunsorted(5,2:4);
-            T(3,2:4) = Tunsorted(1,2:4);
-            T(4,2:4) = Tunsorted(2,2:4);
-            T(5,2:4) = Tunsorted(3,2:4);
+            T(1,2:7) = Tunsorted(4,2:7);
+            T(2,2:7) = Tunsorted(5,2:7);
+            T(3,2:7) = Tunsorted(1,2:7);
+            T(4,2:7) = Tunsorted(2,2:7);
+            T(5,2:7) = Tunsorted(3,2:7);
 
             %writetable(T,fullfile(subj,[files{f}(end-10:end-4) '_apen.csv']));
-            writetable(T,fullfile(subj{1},[files(f).name(1:end-4) '_apen.csv']));
+            writetable(T,fullfile(subj{1},newdir,[files(f).name(1:end-4) '_apen.csv']));
             apenx = [];
             apeny = [];
             apenz = [];
+            sampenx = [];
+            sampeny = [];
+            sampenz = [];
+
         end
 end
 
