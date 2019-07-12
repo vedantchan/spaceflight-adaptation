@@ -6,6 +6,7 @@
 %should i filter first? 
 
 %7/9/19: change to approximateEntropy function
+%7/11/19: added SampEn
 
 clear all;
 close;

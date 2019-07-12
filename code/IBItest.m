@@ -24,7 +24,7 @@ pert1 = data.data(7200:7200+splitind,:);
 pert2 = data.data(7200+splitind:7200+splitind*2,:);
 recover = data.data(7200+splitind*2:end,:);
 
-trials = [unpert1' unpert2' pert1' pert2' recover'];
+%trials = [unpert1' unpert2' pert1' pert2' recover'];
 %split: for regular run
 % split_ind = uint64(round(length(data.data)/153));
 % unpert1 = data.data(1:(split_ind)*32,:);
@@ -36,7 +36,11 @@ trials = [unpert1' unpert2' pert1' pert2' recover'];
 % We want the raw data too bc can do many things with it
 trialnames = ["UP1" "UP2" "P1" "P2" "Rec"]';
 newfolder = '/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/IBItest'; %or something
-dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI.csv']),trials);
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI_UP1.csv']),unpert1);
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI_UP2.csv']),unpert2);
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI_P1.csv']),pert1);
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI_P2.csv']),pert2);
+dlmwrite(fullfile(newfolder,[subjnum{1} '_IBI_REC.csv']),recover);
 
 for tr = 1:5
     
@@ -45,8 +49,12 @@ for tr = 1:5
     dfs = abs(ds);
     plot(dfs)
 
-    %variance in difference, window = 10
-    
+    %variance in difference, moving window = 10
+    up1var = windowvar(fullfile(newfolder,[subjnum{1} '_IBI_UP1.csv']),.0051);
+    up2var = windowvar(fullfile(newfolder,[subjnum{1} '_IBI_UP2.csv']),.0051);
+    p1var = windowvar(fullfile(newfolder,[subjnum{1} '_IBI_P1.csv']),.0051);
+    p2var = windowvar(fullfile(newfolder,[subjnum{1} '_IBI_P1.csv']),.0051);
+    recvar = windowvar(fullfile(newfolder,[subjnum{1} '_IBI_REC.csv']),.0051);
 
     %std dev in raw, window = 10 (same as for hr variance)
 
@@ -55,6 +63,8 @@ for tr = 1:5
         ibivar = std(temp);
     end
 
-
     % spectral analysis?
+    
+    
+    
 end
