@@ -82,6 +82,8 @@ files = (ls([subjfold '/' '*.zip']));
                 resmpdata = resample(data.data,1,4);
             elseif contains(dfile{j},'ACC')
                 resmpdata = resample(data.data,1,32);
+            elseif contains(dfile{j},'IBI')
+                resmpdata = data.data;
             end
                        
              %% split

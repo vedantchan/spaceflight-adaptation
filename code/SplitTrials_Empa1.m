@@ -46,6 +46,8 @@ for subjectCount = 1:length(subjects)
              file{4}=prefile{i};
           elseif isequal(prefile{i},'TEMP.csv')
             file{5}=prefile{i};
+        elseif isequal(prefile{i}, 'IBI.csv')
+            file{6}=prefile{i};
         end
      end
     

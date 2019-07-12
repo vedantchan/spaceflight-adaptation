@@ -100,7 +100,9 @@ for f = 1:20
             T(3,2:7) = Tunsorted(1,2:7);
             T(4,2:7) = Tunsorted(2,2:7);
             T(5,2:7) = Tunsorted(3,2:7);
-
+            
+            %plot
+            
             %writetable(T,fullfile(subj,[files{f}(end-10:end-4) '_apen.csv']));
             writetable(T,fullfile(subj{1},newdir,[files(f).name(1:end-4) '_apen.csv']));
             apenx = [];

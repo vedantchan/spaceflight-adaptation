@@ -1,16 +1,17 @@
-% windowed variance function, 6/6/19
+% 6/6/19: windowed variance function
+% 7/12/19: change to matrix input
 
 % input: sorted files (by epoch) and chosen window size (percent)
 % output: array of variances
 
-function cellofvars = windowedvariance(hrsortedfiles, windowpercent)
+function cellofvars = windowedvariance(hrsortedmat, windowpercent)
 
 % resample data to max length data so window size can be applied to all
-hrrawdata1 = importdata(hrsortedfiles{1}{1});
-hrrawdata2 = importdata(hrsortedfiles{2}{1});
-hrrawdata3 = importdata(hrsortedfiles{3}{1});
-hrrawdata4 = importdata(hrsortedfiles{4}{1});
-hrrawdata5 = importdata(hrsortedfiles{5}{1});
+hrrawdata1 = (hrsortedmat(1:end,1));
+hrrawdata2 = (hrsortedmat(1:end,2));
+hrrawdata3 = (hrsortedmat(1:end,3));
+hrrawdata4 = (hrsortedmat(1:end,4));
+hrrawdata5 = (hrsortedmat(1:end,5));
 
 % hrrawdata1 = hrrawdata1(20:end);
 % hrrawdata5 = hrrawdata5(20:end-20);
@@ -26,7 +27,6 @@ hrdata5 = resample(hrrawdata5,maxlength,length(hrrawdata5));
 hralldata = [hrdata1 hrdata2 hrdata3 hrdata4 hrdata5];
 
 % window stuff
-
 windowsize = round(windowpercent*length(hrdata1));
 
 ml = maxlength;
