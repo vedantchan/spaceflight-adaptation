@@ -3,7 +3,7 @@
 % input: sorted files (by epoch) and chosen window size (percent)
 % output: array of variances
 
-function cellofvars = windowedvariance(hrsortedfiles, windowpercent)
+function cellofvars = windowvar(hrsortedfiles, windowpercent)
 
 % resample data to max length data so window size can be applied to all
 hrrawdata1 = importdata(hrsortedfiles{1}{1});
