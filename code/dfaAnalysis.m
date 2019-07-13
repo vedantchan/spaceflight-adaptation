@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5);
     c1 = 1;
 
-    param1 = 'body';
+    param1 = 'HR';
 
 
     for i = 1:length(files)
