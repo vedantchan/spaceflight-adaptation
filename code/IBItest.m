@@ -45,7 +45,7 @@ for subjcount = 1:length(subjarr)
         % We want the raw data too bc can do many things with it
         trialnames = {'UP1' 'UP2' 'P1' 'P2' 'Rec'}';
         mkdir(fullfile(newfolder,subjnum))
-        %% analysis
+      %% analysis
 
         %variance in difference, moving window ~ .5%
         cellofvar = windowvar(trials,.0051);
