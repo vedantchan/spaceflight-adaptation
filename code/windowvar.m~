@@ -2,7 +2,6 @@
 % 7/12/19: change to matrix input
 % need to fix: resampling (get rid of it), windowsize to windowpercent <<
 % but maybe thats ok b/c window size 
-%7/12/19: fixed resampling, still not sure about windowsize/percent
 
 % input: sorted files (by epoch) and chosen window size (percent)
 % output: array of variances
@@ -14,7 +13,17 @@ rawdata3 = (sortedcell{3});
 rawdata4 = (sortedcell{4});
 rawdata5 = (sortedcell{5});
 
-alldata = {rawdata1 rawdata2 rawdata3 rawdata4 rawdata5};
+% hrrawdata1 = hrrawdata1(20:end);
+% hrrawdata5 = hrrawdata5(20:end-20);
+
+% maxlength = max([length(hrrawdata1); length(hrrawdata2);length(hrrawdata3);length(hrrawdata4);length(hrrawdata5)]);
+% hrdata1 = resample(hrrawdata1,maxlength,length(hrrawdata1));
+% hrdata2 = resample(hrrawdata2,maxlength,length(hrrawdata2));
+% hrdata3 = resample(hrrawdata3,maxlength,length(hrrawdata3));
+% hrdata4 = resample(hrrawdata4,maxlength,length(hrrawdata4));
+% hrdata5 = resample(hrrawdata5,maxlength,length(hrrawdata5));
+
+alldata = [rawdata1 rawdata2 rawdata3 rawdata4 rawdata5];
 newdata1 = [];
 newdata2 = [];
 newdata3 = [];
@@ -23,12 +32,11 @@ newdata5 = [];
 cellofnew = {newdata1 newdata2 newdata3 newdata4 newdata5};
 
 for datacount = 1:5     % loop through all epochs
-    currentdata = alldata{datacount};
+    currentdata = alldata(:,datacount);
     tempnewarr = [];
 
     % window stuff
-    windowsize = floor(windowpercent*length(currentdata));
-    %***if less than 1:
+    windowsize = round(windowpercent*length(currentdata));
     maxlength = length(currentdata);
     ml = maxlength;
     m = mod(ml,windowsize);

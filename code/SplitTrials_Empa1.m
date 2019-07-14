@@ -1,6 +1,7 @@
 %% 2/2/19: Trial Split: 5 outputs
 % DONE 
 % MAKE SURE YOU CHANGE THE SUBJECT NUMBER
+% 7/13/19: why was recovery split changed??
 
 clear all; close;
 % 3/1/19: writes to a split folder within the raw/subj# folder
@@ -80,7 +81,7 @@ for subjectCount = 1:length(subjects)
              pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
              plot(pert2)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_P2','.fig'));
-             pert2 = data.data((split_ind)*32*3:(split_ind)*32*4,:);
+             recover = data.data((split_ind)*32*4:end,:);
              plot(recover)
              saveas(gcf,strcat(subjectSplit, '/',file{i},'_','E4_Rec','.fig'));
              

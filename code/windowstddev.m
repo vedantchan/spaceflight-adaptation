@@ -7,7 +7,7 @@
 % input: sorted files (by epoch) and chosen window size (percent)
 % output: array of variances
 
-function cellofvars = windowvar(sortedcell, windowpercent)
+function cellofvars = windowstddev(sortedcell, windowpercent)
 rawdata1 = (sortedcell{1});
 rawdata2 = (sortedcell{2});
 rawdata3 = (sortedcell{3});
@@ -28,7 +28,6 @@ for datacount = 1:5     % loop through all epochs
 
     % window stuff
     windowsize = floor(windowpercent*length(currentdata));
-    %***if less than 1:
     maxlength = length(currentdata);
     ml = maxlength;
     m = mod(ml,windowsize);
@@ -44,7 +43,7 @@ for datacount = 1:5     % loop through all epochs
             % - then put into new array
         for indcount = 1:windowsize:maxlength
             temparr = currentdata(indcount:indcount+windowsize-1);
-            varofwindow = var(temparr);
+            varofwindow = std(temparr);
             tempnewarr = [tempnewarr repelem(varofwindow,windowsize)];
         end
         cellofnew{datacount} = tempnewarr;
