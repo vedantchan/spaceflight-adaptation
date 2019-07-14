@@ -1,7 +1,7 @@
 clear; close all;
 origin = pwd;
 [file,path] = uigetfile('*.csv','MultiSelect','on');
-
+addpath('MATS')
 if class(file) == 'char'
     file = {file};
 end
@@ -42,7 +42,6 @@ for i = 1:length(file)
 
     
     [L,embDim,corrDim,std_corrDim] = vcorrdim(signal);
-    vcorrdim(signal);
     corrdims = [corrdims corrDim];
     stdcorrdims = [stdcorrdims std_corrDim];
     hold off

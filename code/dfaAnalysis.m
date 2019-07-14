@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5);
     c1 = 1;
 
-    param1 = 'HR';
+    param1 = 'BVP';
 
 
     for i = 1:length(files)
@@ -45,6 +45,7 @@ for j = 1:length(paths)
     allscores = [allscores; dfas];
     hold on
     plot(dfas,'MarkerSize',12)
+    drawnow;
     xlim([0,6])
     xlabel('Epoch')
     ylabel('DFA')
@@ -52,7 +53,7 @@ for j = 1:length(paths)
     xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
     title(strcat('DFA Exponent-',subjname,'-',param1))
     cd(origin)
-    savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
-    csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
+%     savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
+%     csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
     master = [master; dfas];
 end

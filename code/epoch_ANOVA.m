@@ -170,11 +170,13 @@ for i = 1:30
     p2pleft = [p2pleft,trialdata(182:186,subjname)];
     p2phead = [p2phead,trialdata(189:193,subjname)];
     
+    subjswitch = trialdata
+    
 end
 
 %% One Way ANOVA
 
-table = tempedaz; % Select which measure to perform ANOVA on
+table = puzzle; % Select which measure to perform ANOVA on
 
 array = table2array(table).';
 newtable = array2table(array);

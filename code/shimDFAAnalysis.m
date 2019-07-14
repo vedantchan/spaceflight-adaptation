@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5,1);
     c1 = 1;
 
-    param1 = 'right';
+    param1 = 'head';
 
 
     for i = 1:length(files)
@@ -33,15 +33,20 @@ for j = 1:length(paths)
 
     dfas = [];
     pvals = [];
-    for i = 1:5
+    try
+        for i = 1:5
 
-       signal1 = load(file1{i});
-       signal1 = signal1(:,3);
-       signal1 = resample(signal1,1,6);
-       [H,pval,p] = dfa(signal1);
+           signal = load(file1{i});
+           signal_normed = ( normalize(signal(:,2)).^2  + normalize(signal(:,3)).^2 + normalize(signal(:,4)).^2).^0.5;
+           signal_normed = resample(signal_normed,1,6);
+           [H,pval,p] = dfa(signal_normed);
 
-       dfas = [dfas H];
-       pvals = [pvals; pval];
+           dfas = [dfas H];
+           pvals = [pvals; pval];
+        end
+    catch 
+        disp('Error')
+        continue
     end
  
     allscores = [allscores; dfas];

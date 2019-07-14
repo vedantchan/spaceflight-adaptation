@@ -29,7 +29,7 @@ for mi = 1:m
     if mod(mi,2) == 1
         xe(:,mi) = signal1([1:N2] + tau * (mi-1));
     elseif mod(mi,2) == 0
-        xe(:,mi) = signal2([1:N2] + tau * (mi-2)); % CHANGE THIS BACK TO 2
+        xe(:,mi) = signal2([1:N2] + tau * (mi-1)); % CHANGE THIS BACK TO 2
     end
 end
  
