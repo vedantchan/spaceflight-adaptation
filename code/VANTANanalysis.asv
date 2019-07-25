@@ -3,7 +3,7 @@
 % Fix: do for entire subject folder, and change to abs values. Also made compatible with mission control computer
 
 %7/16/19: normalize to baseline data
-%7/17/19: run on apollo and gemini 
+%7/17/19: run on apollo and gemini
 clear; close all;
 
 % try

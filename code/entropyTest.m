@@ -49,8 +49,7 @@ for f = 1:20
        
         t = data(1:end,1);
         x = data(1:end,2);
-        %remove the potential outlier (find a better way)
-        [mx,ix] = max(x);
+        [mx,ix] = max(x);         %remove the potential outlier (find a better way)
         x(ix) = [];
         y = data(1:end,3);
         [my,iy] = max(y);
