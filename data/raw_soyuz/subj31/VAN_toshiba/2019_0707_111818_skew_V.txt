@@ -1,0 +1,51 @@
+   start   1 ypos  18  yang 0.00  2019-07-07 11:49:07.728, CDT  x -3.957  y 1.064  z 8.908 BLUE
+midtouch   1 ypos  10  yang 0.00  2019-07-07 11:49:14.126, CDT  x -7.519  y 0.037  z 6.584 BLUE
+     end   1 ypos  10  yang 0.00  2019-07-07 11:49:15.607, CDT  x -7.452  y -0.010  z 5.479 BLUE
+   start   2 ypos -11  yang 0.00  2019-07-07 11:49:15.610, CDT  x -7.452  y -0.010  z 5.479 BLUE
+midtouch   2 ypos   2  yang 0.00  2019-07-07 11:49:23.145, CDT  x -7.682  y -0.095  z 6.470 BLUE
+     end   2 ypos   2  yang 0.00  2019-07-07 11:49:24.705, CDT  x -7.375  y -0.227  z 5.755 BLUE
+   start   3 ypos -13  yang 0.00  2019-07-07 11:49:24.709, CDT  x -7.375  y -0.227  z 5.755 BLUE
+midtouch   3 ypos   5  yang 0.00  2019-07-07 11:49:31.648, CDT  x -7.347  y -0.255  z 6.508 BLUE
+     end   3 ypos   5  yang 0.00  2019-07-07 11:49:32.061, CDT  x -7.471  y -0.189  z 6.184 BLUE
+   start   4 ypos -19  yang 0.00  2019-07-07 11:49:32.063, CDT  x -7.471  y -0.189  z 6.184 BLUE
+midtouch   4 ypos -19  yang 0.00  2019-07-07 11:49:33.682, CDT  x -7.490  y -0.236  z 6.317 BLUE
+midtouch   4 ypos  -2  yang 0.00  2019-07-07 11:49:37.534, CDT  x -7.519  y 0.028  z 6.403 BLUE
+     end   4 ypos  -2  yang 0.00  2019-07-07 11:49:39.298, CDT  x -7.433  y -0.114  z 4.860 BLUE
+   start   5 ypos -18  yang 0.00  2019-07-07 11:49:39.301, CDT  x -7.433  y -0.114  z 4.860 BLUE
+midtouch   5 ypos  -2  yang 0.00  2019-07-07 11:49:44.169, CDT  x -7.481  y 0.320  z 6.365 BLUE
+     end   5 ypos  -2  yang 0.00  2019-07-07 11:49:45.186, CDT  x -7.471  y 0.178  z 5.698 BLUE
+   start   6 ypos -16  yang 0.00  2019-07-07 11:49:45.189, CDT  x -7.471  y 0.178  z 5.698 BLUE
+midtouch   6 ypos   1  yang 0.00  2019-07-07 11:49:49.411, CDT  x -7.500  y 0.103  z 6.203 BLUE
+     end   6 ypos   1  yang 0.00  2019-07-07 11:49:49.840, CDT  x -7.481  y 0.291  z 5.870 BLUE
+   start   7 ypos  18  yang 0.00  2019-07-07 11:49:49.843, CDT  x -7.481  y 0.291  z 5.870 BLUE
+midtouch   7 ypos   6  yang 0.00  2019-07-07 11:49:53.865, CDT  x -7.366  y -0.038  z 6.222 BLUE
+     end   7 ypos   6  yang 0.00  2019-07-07 11:49:54.258, CDT  x -7.490  y 0.009  z 6.232 BLUE
+   start   8 ypos  11  yang 0.00  2019-07-07 11:49:54.260, CDT  x -7.490  y 0.009  z 6.232 BLUE
+midtouch   8 ypos   3  yang 0.00  2019-07-07 11:49:58.170, CDT  x -7.356  y -0.161  z 6.184 BLUE
+     end   8 ypos   3  yang 0.00  2019-07-07 11:49:58.563, CDT  x -7.576  y -0.067  z 6.251 BLUE
+   start   9 ypos  -7  yang 0.00  2019-07-07 11:49:58.565, CDT  x -7.576  y -0.067  z 6.251 BLUE
+midtouch   9 ypos   0  yang 0.00  2019-07-07 11:50:03.540, CDT  x -7.222  y 0.122  z 6.470 BLUE
+     end   9 ypos   0  yang 0.00  2019-07-07 11:50:03.882, CDT  x -7.327  y 0.141  z 6.051 BLUE
+   start  10 ypos -11  yang 0.00  2019-07-07 11:50:03.885, CDT  x -7.327  y 0.141  z 6.051 BLUE
+midtouch  10 ypos   0  yang 0.00  2019-07-07 11:50:07.082, CDT  x -7.366  y 0.197  z 6.365 BLUE
+     end  10 ypos   0  yang 0.00  2019-07-07 11:50:08.353, CDT  x -7.375  y -0.246  z 5.841 BLUE
+   start  11 ypos -11  yang 0.00  2019-07-07 11:50:08.356, CDT  x -7.375  y -0.246  z 5.841 BLUE
+midtouch  11 ypos   0  yang 0.00  2019-07-07 11:50:12.789, CDT  x -7.308  y 0.442  z 6.670 BLUE
+     end  11 ypos   0  yang 0.00  2019-07-07 11:50:13.244, CDT  x -7.299  y 0.075  z 7.079 BLUE
+   start  12 ypos -10  yang 0.00  2019-07-07 11:50:13.247, CDT  x -7.299  y 0.075  z 7.079 BLUE
+midtouch  12 ypos   1  yang 0.00  2019-07-07 11:50:18.581, CDT  x -7.806  y 0.518  z 5.917 BLUE
+     end  12 ypos   1  yang 0.00  2019-07-07 11:50:18.974, CDT  x -7.988  y 0.282  z 5.174 BLUE
+   start  13 ypos -15  yang 0.00  2019-07-07 11:50:18.978, CDT  x -7.988  y 0.282  z 5.174 BLUE
+midtouch  13 ypos   3  yang 0.00  2019-07-07 11:50:22.530, CDT  x -7.777  y 0.508  z 6.460 BLUE
+     end  13 ypos   3  yang 0.00  2019-07-07 11:50:23.330, CDT  x -7.624  y 0.244  z 5.098 BLUE
+   start  14 ypos -12  yang 0.00  2019-07-07 11:50:23.333, CDT  x -7.624  y 0.244  z 5.098 BLUE
+midtouch  14 ypos   0  yang 0.00  2019-07-07 11:50:26.709, CDT  x -7.663  y 0.291  z 6.146 BLUE
+     end  14 ypos   0  yang 0.00  2019-07-07 11:50:27.039, CDT  x -7.423  y 0.273  z 5.412 BLUE
+   start  15 ypos  10  yang 0.00  2019-07-07 11:50:27.051, CDT  x -7.423  y 0.273  z 5.412 BLUE
+midtouch  15 ypos   0  yang 0.00  2019-07-07 11:50:31.051, CDT  x -7.701  y 0.254  z 6.327 BLUE
+     end  15 ypos   0  yang 0.00  2019-07-07 11:50:31.531, CDT  x -7.519  y 0.273  z 6.232 BLUE
+   start  16 ypos  16  yang 0.00  2019-07-07 11:50:31.534, CDT  x -7.519  y 0.273  z 6.232 BLUE
+midtouch  16 ypos   8  yang 0.00  2019-07-07 11:50:33.674, CDT  x -7.327  y 0.103  z 6.317 BLUE
+     end  16 ypos   8  yang 0.00  2019-07-07 11:50:34.848, CDT  x -6.734  y -1.875  z 5.298 BLUE
+   start  17 ypos  10  yang 0.00  2019-07-07 11:50:34.851, CDT  x -6.734  y -1.875  z 5.298 BLUE
+ endfile  17 ypos  10  yang 0.00  2019-07-07 11:50:57.706, CDT  x -3.813  y 0.781  z 8.775 BLUE

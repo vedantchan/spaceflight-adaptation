@@ -17,9 +17,8 @@ subjects = list(~cellfun('isempty',list));
 subjects = sort(subjects);
 
 for subjectCount = 1:length(subjects)
-     %load in the data
-     %[file, path] = uigetfile('*.csv');   
-     %[file, path] = uigetfile('*.csv', 'Multiselect','on');
+    
+     %if files are zipped
      subjectPath = [trialsPath '/' subjects{subjectCount} '/'];
      outPath = [trialsPath, '/', subjects{subjectCount} '/' subjects{subjectCount} 'EmpaticaData/'];
      zipPath = [trialsPath '/' subjects{subjectCount} '/' subjects{subjectCount} 'Empatica.zip'];
@@ -31,7 +30,8 @@ for subjectCount = 1:length(subjects)
      end
     
      unzip(zipPath,outPath);
-    
+     
+     
     string = ls(outPath);
     list = strsplit(string);
     prefile = list;
