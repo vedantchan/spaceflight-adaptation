@@ -1,18 +1,10 @@
 %% VanTan analysis, 2/28/19
 % done per subject (so one run per subject)
-% Fix: do for entire subject folder, and change to abs values. Also made compatible with mission control computer
+% Fix (done): do for entire subject folder, and change to abs values. Also made compatible with mission control computer
 
 %7/16/19: normalize to baseline data
 %7/17/19: run on apollo and gemini 
 clear; close all;
-
-% try
-% %load in the data
-% [file, path] = uigetfile('*.txt','multiselect','on');   
-% catch 
-%     disp('FIX: Make sure Current Folder matches where you get the data when prompted.')
-%     disp('You can do this by clicking Desktop above this and navigating in the Current Folder.')
-% end    
 
 % Instructions: multi-select subject files
 subjects = uipickfiles('filterspec','C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data');
@@ -36,13 +28,13 @@ van = uigetdir;
 %mkdir(writepath)
 
 for subj = 1:length(subjects)
-    currentsubjdata = ls([subjects{subj} '/VANTAN/*.txt']);
+    currentsubjdata = ls([subjects{subj} '/VAN/*.txt']);
     averagevan = [];
     averagetan = [];
     namevan = {};
     nametan = {};
     for d = 1:min(size(currentsubjdata))
-        data = importdata([subjects{subj} '/VANTAN/' currentsubjdata(d,1:end)]);
+        data = importdata([subjects{subj} '/VAN/' currentsubjdata(d,1:end)]);
         headers = string(data.textdata(4,:));
         %take data from anything past the first three data points
         %thestuffwecareabout = data.data(3:end,3);
