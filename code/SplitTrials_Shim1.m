@@ -46,11 +46,15 @@ clear all; close;
 current = pwd;
 uiwait(msgbox('Select your raw folder'))
 trialsPath = uigetdir; % SELECT THE FOLDER 'raw' OVER HERE
-cd(trialsPath);
-string = ls;
-list = strsplit(string);
-subjects = list(~cellfun('isempty',list));
 
+uiwait(msgbox('Select your subject folders'))
+subjects = uipickfiles('filterspec','C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data'); %pick all subj folders
+% 
+% cd(trialsPath{1});
+% 
+% string = ls;
+% lst = strsplit(string);
+% subjects = list(~cellfun('isempty',lst));
 
 %shimmer has one col of data, so no dot indexing
 
