@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5);
     c1 = 1;
 
-    param1 = 'BVP';
+    param1 = 'IBI';
 
 
     for i = 1:length(files)
@@ -36,6 +36,12 @@ for j = 1:length(paths)
     for i = 1:5
 
        signal1 = load(file1{i});
+       
+       if param1 == 'IBI'
+           signal1 = signal1(:,2).';
+           signal1 = interp1(1:length(signal1),signal1,1:0.1:length(signal1));
+       end
+       
        [H,pval,p] = dfa(signal1);
 
        dfas = [dfas H];

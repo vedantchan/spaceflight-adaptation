@@ -19,7 +19,7 @@ for j = 1:length(paths)
     c1 = 1;
     c2 = 1;
     param1 = 'TEMP';
-    param2 = 'HR';
+    param2 = 'EDA';
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
@@ -48,7 +48,7 @@ for j = 1:length(paths)
        fisherzs = [fisherzs z];
        errs = [errs; surrzs];
     end
-
+pl
     hold on
     plot(fisherzs)
     xlim([0,6])

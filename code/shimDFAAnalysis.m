@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5,1);
     c1 = 1;
 
-    param1 = 'head';
+    param1 = 'body';
 
 
     for i = 1:length(files)
@@ -58,8 +58,9 @@ for j = 1:length(paths)
     xticks([0:6])
     xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
     title(strcat('DFA Exponent-',subjname,'-',param1))
+    drawnow;
     cd(origin)
-    savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
-    csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
+%     savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
+%     csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
     master = [master; dfas];
 end
