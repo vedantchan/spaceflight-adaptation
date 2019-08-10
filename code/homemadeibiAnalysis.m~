@@ -9,8 +9,8 @@ subjects = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-ada
 % store into a separate folder called...homemadeibi-[inserttrialname]
 mkdir('/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi')
 for subjcount = 1:length(subjects)
-    bvpepoch = dir(fullfile(subjects{subjcount},'EmpaticaSplit','*BVP*.csv'));
-   % bvpepoch = dir(fullfile(subjects{subjcount},'*BVP*.csv'));
+   %bvpepoch = dir(fullfile(subjects{subjcount},'EmpaticaSplit','*BVP*.csv'));
+   bvpepoch = dir(fullfile(subjects{subjcount},'*BVP*.csv'));
     %sort
     prefile = {};
     for f = 1:5
