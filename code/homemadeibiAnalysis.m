@@ -9,15 +9,20 @@ subjects = uipickfiles('filterspec','/Users/SYT/Documents/GitHub/spaceflight-ada
 % store into a separate folder called...homemadeibi-[inserttrialname]
 mkdir('/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi')
 for subjcount = 1:length(subjects)
-    %bvpepoch = dir(fullfile(subjects{subjcount},'EmpaticaSplit','*BVP*.csv'));
-    bvpepoch = dir(fullfile(subjects{subjcount},'*BVP*.csv'));
+   %bvpepoch = dir(fullfile(subjects{subjcount},'EmpaticaSplit','*BVP*.csv'));
+   bvpepoch = dir(fullfile(subjects{subjcount},'*BVP*.csv'));
     %sort
     prefile = {};
     for f = 1:5
         prefile{f} = bvpepoch(f).name;
     end
     srtd = epochsort(prefile);
-    
+    up1 = [];
+    up2 = [];
+    p1 = [];
+    p2 = [];
+    rec = [];
+    tot = {up1, up2, p1, p2, rec};
     for file = 1:5
         %data = importdata(fullfile(subjects{subjcount},'EmpaticaSplit',srtd{file}));
         data = importdata(fullfile(subjects{subjcount},srtd{file}));
@@ -27,11 +32,18 @@ for subjcount = 1:length(subjects)
         title(['Peak Locations on BVP for IBI calculations:' 'subj1969_' num2str(subjcount)])
         subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi/subj1969_' num2str(subjcount)];
         mkdir(subjfold)
-        saveas(gca, fullfile(subjfold,'peakloc.fig'))
-        dlmwrite(fullfile(subjfold,['homemadeibi' '_E' num2str(file) '.csv']),ibi)
+        saveas(gca, fullfile(subjfold,['peakloc' '_E' num2str(file) '.fig']))
+        tot{file} = ibi;
         hold off
         %plot(ibi);
     end
+    dlmwrite(fullfile(subjfold,['homemadeibi_UP1.csv']),tot{1})
+    dlmwrite(fullfile(subjfold,['homemadeibi_UP2.csv']),tot{2})
+    dlmwrite(fullfile(subjfold,['homemadeibi' '_P1.csv']),tot{3})
+    dlmwrite(fullfile(subjfold,['homemadeibi_P2.csv']),tot{4})
+    dlmwrite(fullfile(subjfold,['homemadeibi_REC.csv']),tot{5})
+
+
 end
 
 function [ibi,pks,lc] = homemadeibi(bvp)
