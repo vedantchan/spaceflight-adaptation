@@ -29,8 +29,8 @@ for subjcount = 1:length(subjects)
         [ibi,pks,lc] = homemadeibi(data);
         x = 1:length(data);
         plot(x, data,lc,pks,'*')
-        title(['Peak Locations on BVP for IBI calculations:' 'subj' num2str(subjcount+30)])
-        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi/subj' num2str(subjcount+30)];
+        title(['Peak Locations on BVP for IBI calculations:' 'subj' num2str(subjcount+25)])
+        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi/subj' num2str(subjcount+25)];
         mkdir(subjfold)
         saveas(gca, fullfile(subjfold,['peakloc' '_E' num2str(file) '.fig']))
         tot{file} = ibi;
@@ -56,7 +56,7 @@ function [ibi,pks,lc] = homemadeibi(bvp)
 %use diff on peaks vector to find ibi
 %store ibi
 
-[pks,lc] = findpeaks(bvp,'minpeakdistance',26,'minpeakheight',1);
+[pks,lc] = findpeaks(bvp,'minpeakdistance',40,'minpeakheight',25);
 ibi = diff(lc); %this would be in... 1/64 sec? need to convert?
 
 end
