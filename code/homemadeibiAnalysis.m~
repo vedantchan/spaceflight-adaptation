@@ -25,10 +25,10 @@ for subjcount = 1:length(subjects)
         x = 1:length(data);
         plot(x, data,lc,pks,'*')
         title(['Peak Locations on BVP for IBI calculations:' 'subj1969_' num2str(subjcount)])
-        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi/subj1969_' num2str(subjcount)];
+        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi/subj1969' num2str(subjcount)];
         mkdir(subjfold)
         saveas(gca, fullfile(subjfold,'peakloc.fig'))
-        dlmwrite(fullfile(subjfold,['homemadeibi' '_E' num2str(file) '.csv']),ibi)
+        dlmwrite(fullfile(subjfold,'homemadeibi.csv'),ibi)
         hold off
         %plot(ibi);
     end
