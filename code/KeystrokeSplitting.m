@@ -1,3 +1,7 @@
+% (Aparajita Kashyap, 2019) Keystroke splitting
+% syt note: splits per subject b/c each keystroke file may be a little
+% different (in terms of the split index)
+
 clear ; close all;
 origin = pwd;
 uiwait(msgbox("Select your raw data"));
@@ -14,8 +18,11 @@ if class(file) == 'char'
 end
 
 uiwait(msgbox("Select the destination directory for split keystroke data. Should be keystroke/Splitdata"))
-mainfolder = uigetdir;
-cd(mainfolder);
+master = uigetdir;
+cd(master);
+answer = inputdlg("Enter subject name and number, i.e. subj20, etc.:");
+mainfolder = fullfile(master,answer{1});
+mkdir(mainfolder)
 
 
 for i = 1:length(file)
@@ -31,42 +38,54 @@ for i = 1:length(file)
     if ismember(MINS(1)+32, MINS) > 0
         [LIA1,LOCB1]= ismember(MINS(1)+32,MINS);
         unpert1=(KEYS(1:LOCB1));
+        MINS(1)+32
+    elseif ismember(MINS(1)+31, MINS) > 0
+        [LIA1,LOCB1]= ismember(MINS(1)+31,MINS);
+        unpert1=(KEYS(1:LOCB1));
+        MINS(1)+31
     elseif ismember(MINS(1)+33, MINS) > 0
         [LIA1,LOCB1]= ismember(MINS(1)+33,MINS);
         unpert1=(KEYS(1:LOCB1));
-    elseif ismember(MINS(1)+35, MINS) > 0
-        [LIA1,LOCB1]= ismember(MINS(1)+34,MINS);
-        unpert1=(KEYS(1:LOCB1));
+        MINS(1)+33
     end
-    if ismember(MINS(LOCB1)+30, MINS) > 0
-        [LIA2,LOCB2]=ismember(MINS(LOCB1)+30,MINS);
+    if ismember(MINS(LOCB1)+32, MINS) > 0
+        [LIA2,LOCB2]=ismember(MINS(LOCB1)+32,MINS);
         unpert2=(KEYS(LOCB1:LOCB2));
+        MINS(LOCB1)+32
+    elseif ismember(MINS(LOCB1)+31, MINS) > 0
+        [LIA2,LOCB2]=ismember(MINS(LOCB1)+31,MINS);
+        unpert2=(KEYS(LOCB1:LOCB2));
+        MINS(LOCB1)+31
     elseif ismember(MINS(LOCB1)+33, MINS) > 0
         [LIA2,LOCB2]=ismember(MINS(LOCB1)+33,MINS);
         unpert2=(KEYS(LOCB1:LOCB2));
-    elseif ismember(MINS(LOCB1)+35, MINS) > 0
-        [LIA2,LOCB2]=ismember(MINS(LOCB1)+35,MINS);
-        unpert2=(KEYS(LOCB1:LOCB2));
+        MINS(LOCB1)+33
     end
     if ismember(MINS(LOCB2)+32, MINS) > 0
         [LIA3,LOCB3]=ismember(MINS(LOCB2)+32,MINS);
         pert1=(KEYS(LOCB2:LOCB3));
-    elseif ismember(MINS(LOCB2)+34, MINS) > 0
-        [LIA3,LOCB3]=ismember(MINS(LOCB2)+34,MINS);
+        MINS(LOCB2)+32
+    elseif ismember(MINS(LOCB2)+31, MINS) > 0
+        [LIA3,LOCB3]=ismember(MINS(LOCB2)+31,MINS);
         pert1=(KEYS(LOCB2:LOCB3));
-    elseif ismember(MINS(LOCB2)+36, MINS) > 0
-        [LIA3,LOCB3]=ismember(MINS(LOCB2)+36,MINS);
+        MINS(LOCB2)+31
+    elseif ismember(MINS(LOCB2)+33, MINS) > 0
+        [LIA3,LOCB3]=ismember(MINS(LOCB2)+33,MINS);
         pert1=(KEYS(LOCB2:LOCB3));
+        MINS(LOCB2)+33
     end
-    if ismember(MINS(LOCB3)+32, MINS) > 0
-        [LIA4,LOCB4]=ismember(MINS(LOCB3)+32,MINS);
+    if ismember(MINS(LOCB3)+30, MINS) > 0
+        [LIA4,LOCB4]=ismember(MINS(LOCB3)+30,MINS);
         pert2=(KEYS(LOCB3:LOCB4));
-    elseif ismember(MINS(LOCB3)+34, MINS) > 0
-        [LIA4,LOCB4]=ismember(MINS(LOCB3)+34,MINS);
+        MINS(LOCB3)+30
+    elseif ismember(MINS(LOCB3)+31, MINS) > 0
+        [LIA4,LOCB4]=ismember(MINS(LOCB3)+31,MINS);
         pert2=(KEYS(LOCB3:LOCB4));
-    elseif ismember(MINS(LOCB3)+36, MINS) > 0
-        [LIA4,LOCB4]=ismember(MINS(LOCB3)+36,MINS);
+        MINS(LOCB3)+31
+    elseif ismember(MINS(LOCB3)+33, MINS) > 0
+        [LIA4,LOCB4]=ismember(MINS(LOCB3)+33,MINS);
         pert2=(KEYS(LOCB3:LOCB4));
+        MINS(LOCB3)+33
     end    
     recover=KEYS(LOCB4:length(MINS));
 

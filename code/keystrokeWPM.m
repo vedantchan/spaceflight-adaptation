@@ -4,7 +4,7 @@
 % avg person types ~30-40 wpm (look up)
 
 %6/11/19: penalty for shifts, need to fix
-% 6/12/19: DONE
+%6/12/19: DONE
 
 function [wpm,wpm_corrected,accuracy,totalwords] = keystrokeWPM(subjdatafile,subjnum,switchtimesheet)
     
