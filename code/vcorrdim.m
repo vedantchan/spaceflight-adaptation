@@ -1,7 +1,22 @@
-function [L,embDim,corrDim,std_corrDim] = vcorrdim(signal)
+function [L,embDim,corrDim,std_corrDim] = vcorrdim(signal,varargin)
 siz = size(signal);
 if siz(2) > 1
     signal=signal.';
+end
+
+if nargin > 1
+    embDim = varargin{1};
+    L = varargin{2};
+    corrDims = CorrelationDimension(signal,L,1:embDim*2,0,4,100);
+    %plot(corrDims)
+    %corrDims(isnan(corrDims)) = [];
+    if 2*embDim <= length(corrDims)
+        corrDim = nanmean(corrDims(embDim:2*embDim));
+    else
+        corrDim = nanmean(corrDims(embDim:end))
+    end
+    std_corrDim = nanstd(corrDims(embDim:end));
+    return
 end
 
 % Full pipeline to estimate the correlation dimension of a signal

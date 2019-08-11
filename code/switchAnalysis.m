@@ -43,3 +43,16 @@ plot(subjs,adaptation,'ko')
 hold on 
 plot(subjs(adaptors),adaptation(adaptors),'ro')
 yline(0,'k--')
+
+%%
+
+newtimes = zeros(size(times,1),5);
+newtimes(:,1) = mean(times(:,1:3),2);
+newtimes(:,2) = mean(times(:,4:6),2);
+newtimes(:,3) = mean(times(:,7:9),2);
+newtimes(:,4) = mean(times(:,10:12),2);
+newtimes(:,5) = mean(times(:,13:14),2);
+
+newtimes(15,:) = []; %remove subj 25 to match empatica
+master = newtimes;
+save('epochs/switches.mat','master');

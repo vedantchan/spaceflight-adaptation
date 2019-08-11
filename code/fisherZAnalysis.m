@@ -48,7 +48,6 @@ for j = 1:length(paths)
        fisherzs = [fisherzs z];
        errs = [errs; surrzs];
     end
-pl
     hold on
     plot(fisherzs)
     xlim([0,6])

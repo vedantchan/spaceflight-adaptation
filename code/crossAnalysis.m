@@ -3,7 +3,7 @@ origin = pwd;
 addpath('.')
 
 paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed_gemini/*.csv','output','cell');
-
+master = [];
 for j = 1:length(paths)
     path = paths{j};
     cd(path)
@@ -18,8 +18,8 @@ for j = 1:length(paths)
     file2 = cell(5);
     c1 = 1;
     c2 = 1;
-    param1 = 'TEMP';
-    param2 = 'HR';
+    param1 = 'HR';
+    param2 = 'TEMP';
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
@@ -32,6 +32,10 @@ for j = 1:length(paths)
             c2 = c2+1;
         end
     end
+    
+    if strcmp(param1,param2)
+        file2 = file1;
+    end
 
     file1 = epochsort(file1);
     file2 = epochsort(file2);
@@ -40,18 +44,28 @@ for j = 1:length(paths)
 
    signal1 = load(file1{3});
    signal2 = load(file2{3});
+   if strcmp(param1,'IBI')
+           signal1 = signal1(:,2);
+           signal2 = signal2(:,2);
+   end
+   if j == 1
+        [m, tau] = cross_fnn(signal1,signal2,0);
 
-    [m, tau] = cross_fnn(signal1,signal2,0);
+        if mod(m,2) == 1
+            m = m+1;
+        end
+        'EmbDim found';
+   end
     
-    if mod(m,2) == 1
-        m = m+1;
-    end
-    'EmbDim found'
     for i = 1:5
 
        signal1 = load(file1{i});
        signal2 = load(file2{i});
-        
+       
+       if strcmp(param1,'IBI')
+           signal1 = signal1(:,2);
+           signal2 = signal2(:,2);
+       end
        cdim = shcorrdim(signal1,signal2,m,tau);
        cdims = [cdims cdim];
     end
@@ -64,6 +78,7 @@ for j = 1:length(paths)
     xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
     title(strcat('Joint Correlation Dimension-',subjname,'-',param1,'-',param2))
     drawnow;
+    master = [master; cdims];
     %savefig(strcat('./plots/jointcorr/',param1,'-',param2,'-corrdim-',subjname))
 end
 cd(origin)

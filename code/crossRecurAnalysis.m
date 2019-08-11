@@ -3,7 +3,7 @@ origin = pwd;
 addpath('.')
 
 paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-adaptation/data/smoothed_gemini/*.csv','output','cell');
-
+masterdensity = [];
 for j = 1:length(paths)
     path = paths{j};
     cd(path)
@@ -18,7 +18,7 @@ for j = 1:length(paths)
     file2 = cell(5);
     c1 = 1;
     c2 = 1;
-    param1 = 'TEMP';
+    param1 = 'EDA';
     param2 = 'HR';
 
     for i = 1:length(files)
@@ -32,6 +32,10 @@ for j = 1:length(paths)
             c2 = c2+1;
         end
     end
+    
+    if strcmp(param1,param2)
+        file2 = file1;
+    end
 
     file1 = epochsort(file1);
     file2 = epochsort(file2);
@@ -39,17 +43,24 @@ for j = 1:length(paths)
     Ss = {};
     ts = {};
     N2s = {};
+    densities = [];
     for i = 1:5
 
        signal1 = load(file1{i});
        signal2 = load(file2{i});
+       
+       signal1 = signal1(25:end-25);
+       signal2 = signal2(25:end-25);
 
-       [S,t, N2] = cross_recur(signal1,signal2,4,50,0);
-
+       [S,t, N2] = cross_recur(signal1,signal2,4,50,1);
+       
+       density = sum(sum(S))/length(S)^2;
+       densities = [densities density];
        Ss = [Ss; S];
        ts = [ts; t];
        N2s = [N2s; N2];
     end
+    masterdensity = [masterdensity; densities];
     epochs = {'UP1','UP2','P1','P2','REC'}
     hFig = figure;
     set(hFig, 'Position', [0 0 2300 400])

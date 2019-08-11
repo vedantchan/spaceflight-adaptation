@@ -17,11 +17,12 @@ for j = 1:length(paths)
     str = pwd;
     idx = strfind(str,'/');
     subjname = str(idx(end)+1:end);
+    
 
 
     file = cell(5);
     c1 = 1;
-    param1 = 'IBI' ;
+    param1 = 'ibi';
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
@@ -39,9 +40,7 @@ for j = 1:length(paths)
     
     for i = 1:length(file)
         signal = load(file{i});
-        if param1 == 'IBI'
-            signal = signal(:,2);
-        end
+        signal = signal(2:end-2);
         [L,embDim,corrDim,std_corrDim] = vcorrdim(signal);
         corrdims = [corrdims corrDim];
         stdcorrdims = [stdcorrdims std_corrDim];
