@@ -37,8 +37,8 @@ for subjcount = 1:length(subjects)
         ind = find(hp > 100);
         hp(ind) = 0;
         plot(x, hp,lc,pks,'*')
-        title(['Peak Locations on BVP for IBI calculations:' 'subj' num2str(subjcount+30) '-E' num2str(file)])
-        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi2/subj' num2str(subjcount+30)];
+        title(['Peak Locations on BVP for IBI calculations:' 'subj' num2str(subjcount+10) '-E' num2str(file)])
+        subjfold = ['/Users/SYT/Documents/GitHub/spaceflight-adaptation/data/homemadeibi2/subj' num2str(subjcount+10)];
         mkdir(subjfold)
         saveas(gca, fullfile(subjfold,['peakloc' '_E' num2str(file) '.fig']))
         tot{file} = ibi;
