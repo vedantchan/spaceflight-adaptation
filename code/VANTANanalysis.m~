@@ -4,6 +4,7 @@
 
 %7/16/19: normalize to baseline data
 %7/17/19: run on apollo and gemini 
+% 9/10/19: added baseline consideration, run on salyut
 clear; close all;
 
 % Instructions: multi-select subject files
@@ -40,23 +41,23 @@ for subj = 1:length(subjects)
         %thestuffwecareabout = data.data(3:end,3);
         
         % ********for the future, including baseline reference file
-            % if contains(currentsubjdata(d,1:end),'baseline')
-                % baseline = mean(abs(data.data(3:end,3)));
-            % end
-            %if contains(currentsubjdata(d,1:end),'week3')
-%               averagevan = [averagevan; mean(abs(data.data(3:end,3)))-baseline];
-%             namevan = [namevan; currentsubjdata(d,1:end)];
+            if contains(currentsubjdata(d,1:end),'baseline')
+                baseline = mean(abs(data.data(3:end,3)));
+            end
+            if contains(currentsubjdata(d,1:end),'week3')
+              averagevan = [averagevan; mean(abs(data.data(3:end,3)))-baseline];
+               namevan = [namevan; currentsubjdata(d,1:end)];
             
-        if contains(currentsubjdata(d,1:end),'VAN')       
-            averagevan = [averagevan; mean(abs(data.data(3:end,3)))];
-            namevan = [namevan; currentsubjdata(d,1:end)];
-
-        else if contains(currentsubjdata(d,1:end),'TAN')
-            % if contains(currentsubjdata(d,1:end),'baseline')
-            % averagevan = [mean(abs(data.data(3:end,3)))];
-            % end
-            averagetan = [averagetan; mean(abs(data.data(3:end,4)))];
-            nametan = [nametan; currentsubjdata(d,1:end)];
+%         if contains(currentsubjdata(d,1:end),'VAN')       
+%             averagevan = [averagevan; mean(abs(data.data(3:end,3)))];
+%             namevan = [namevan; currentsubjdata(d,1:end)];
+% 
+%         else if contains(currentsubjdata(d,1:end),'TAN')
+%             % if contains(currentsubjdata(d,1:end),'baseline')
+%             % averagevan = [mean(abs(data.data(3:end,3)))];
+%             % end
+%             averagetan = [averagetan; mean(abs(data.data(3:end,4)))];
+%             nametan = [nametan; currentsubjdata(d,1:end)];
             end
         end
     end
@@ -72,6 +73,4 @@ for subj = 1:length(subjects)
     %mkdir(strcat(tan, '/', currentsubjdata(d,1:6)))
     %writetable(Ttan,strcat(writepath,'/Average Torsional Alignments.csv'));
     writetable(Tvan,strcat(van, '/', currentsubjdata(d,1:6),'/Average Vertical Alignments.csv'));
-
-end
 
