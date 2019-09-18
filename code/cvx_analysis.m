@@ -6,6 +6,7 @@ paths = uipickfiles('FilterSpec','/Users/vedantchandra/JHM-Research/spaceflight-
 allscores = [];
 for j = 1:length(paths)
     path = strcat(paths{j},'/EmpaticaSplit/');
+    %path = paths{j};
     try
         cd(path);
     catch
@@ -36,36 +37,27 @@ for j = 1:length(paths)
     end
 
     file1 = epochsort(file1);
-
-    dfas = [];
-    pvals = [];
+    
+    p_max = [];
     for i = 1:5
 
        signal1 = load(file1{i});
-       
-       if strcmp(param1,'IBI')
-           signal1 = signal1(:,2).';
-           signal1 = interp1(1:length(signal1),signal1,1:0.1:length(signal1));
-       end
-       
-       [H,pval,p] = dfa(signal1);
-
-       dfas = [dfas H];
-       pvals = [pvals; pval];
+%        Fs = 4.;
+%        yn = zscore(signal1);
+%        [r, p, t, l, d, e, obj] = cvxEDA(yn, 1/Fs);
+%        %figure;
+%        tm = (1:length(yn))'/Fs;
+%        %plot(tm,p);
+%        phasic_pks = findpeaks(p,'SortStr','descend','NPeaks',25);
+       p_max = [p_max iqr(signal1)];
+       %figure;
+       %plot(p);
     end
- 
-    allscores = [allscores; dfas];
-    hold on
-    plot(dfas,'MarkerSize',12)
-    drawnow;
-    xlim([0,6])
-    xlabel('Epoch')
-    ylabel('DFA')
-    xticks([0:6])
-    xticklabels({'','UP1', 'UP2' ,'P1','P2' ,'REC',''})
-    title(strcat('DFA Exponent-',subjname,'-',param1))
-    cd(origin)
-%     savefig(strcat('./plots/dfa/',param1,'DFA-',subjname))
-%     csvwrite(strcat('./meta/',param1,'-dfa',subjname,'.csv'),dfas)
-    master = [master; dfas];
+    
+master = [master; p_max];
+figure;
+hold on;
+plot(p_max);
+drawnow;
 end
+cd(origin);

@@ -17,7 +17,7 @@ for j = 1:length(paths)
     file1 = cell(5,1);
     c1 = 1;
 
-    param1 = 'body';
+    param1 = 'head';
 
 
     for i = 1:length(files)
@@ -46,6 +46,7 @@ for j = 1:length(paths)
         end
     catch 
         disp('Error')
+        master = [master; [nan, nan, nan, nan, nan]];
         continue
     end
  

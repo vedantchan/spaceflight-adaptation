@@ -18,7 +18,7 @@ for j = 1:length(paths)
     file2 = cell(5);
     c1 = 1;
     c2 = 1;
-    param1 = 'EDA';
+    param1 = 'TEMP';
     param2 = 'HR';
 
     for i = 1:length(files)

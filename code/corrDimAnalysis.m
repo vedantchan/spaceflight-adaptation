@@ -22,7 +22,7 @@ for j = 1:length(paths)
 
     file = cell(5);
     c1 = 1;
-    param1 = 'ibi';
+    param1 = 'IBI';
 
     for i = 1:length(files)
         if startsWith(files{i},'.')
