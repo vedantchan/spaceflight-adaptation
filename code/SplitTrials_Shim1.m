@@ -47,31 +47,25 @@ current = pwd;
 uiwait(msgbox('Select your raw folder'))
 trialsPath = uigetdir; % SELECT THE FOLDER 'raw' OVER HERE
 
-uiwait(msgbox('Select your subject folders'))
-subjects = uipickfiles('filterspec','C:/Users/Spaceexplorers/Documents/GitHub/spaceflight-adaptation/data'); %pick all subj folders
-% 
-% cd(trialsPath{1});
-% 
-% string = ls;
-% lst = strsplit(string);
-% subjects = list(~cellfun('isempty',lst));
+% uiwait(msgbox('Select your subject folders'))
+% subjects = uipickfiles('filterspec','/Users/SYT/Documents/spaceflight-adaptation_SHIM/data_SHIM/'); %pick all subj folders
 
-%shimmer has one col of data, so no dot indexing
-
-% must copy file as group, make sure file is zipped
-%files are within folder, which is within the previously zipped folder (2
-%folder layers within subj# before file)
+cd(trialsPath);
+string = ls;
+lst = strsplit(string);
+subjects = lst(~cellfun('isempty',lst));
 
 uiwait(msgbox('Select your destination folder'));
 mainfolder = uigetdir;
 
 for subjectCount = 1:length(subjects)
-     cd(trialsPath) % helps keeps things organized as you loop through subsequent subject folders
+     %cd(trialsPath) % helps keeps things organized as you loop through subsequent subject folders
      subjectPath = [trialsPath '/' subjects{subjectCount} '/'];
+     %subjectPath = subjects{subjectCount};
      cd(subjectPath) % now working in subject folder
            
 % zip out into one shimmer folder           
-     zipPath = [subjects{subjectCount} '-selected.zip']; %assuming name is something like subj4-selected.zip   
+     zipPath = [subjects{subjectCount}  '-selected.zip']; %assuming name is something like subj4-selected.zip   
      outPath = [trialsPath '/' subjects{subjectCount} '/' 'ShimmerData/'];
 
      unzip(zipPath,outPath);
@@ -94,8 +88,6 @@ for subjectCount = 1:length(subjects)
     subjectSplit = [mainfolder '/' subjects{subjectCount}];
     mkdir(subjectSplit)
     
-    
-     
 %% shimmer split
    for i = 1:length(file)
             
