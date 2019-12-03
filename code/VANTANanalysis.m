@@ -1,4 +1,4 @@
-%% VanTan analysis, 2/28/19
+%% VanTan analysis for multi, 2/28/19
 % done per subject (so one run per subject)
 % Fix (done): do for entire subject folder, and change to abs values. Also made compatible with mission control computer
 
